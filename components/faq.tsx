@@ -30,14 +30,14 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-24 relative bg-slate-950/40 border-t border-white/5">
+    <section className="py-24 relative bg-slate-50/50 border-t border-slate-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base">
             Everything you need to know about the architecture, security, and licensing.
           </p>
         </div>
@@ -48,17 +48,17 @@ export default function FAQ() {
             return (
               <div
                 key={i}
-                className="rounded-xl glass-panel border border-white/10 overflow-hidden transition-all bg-slate-900/50"
+                className="rounded-xl bg-white border border-slate-200 overflow-hidden shadow-xs"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : i)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-white text-sm hover:text-violet-300 transition-colors"
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-slate-900 text-sm hover:text-violet-700 transition-colors"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown className={`h-4 w-4 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-3">
+                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
                     {faq.a}
                   </div>
                 )}

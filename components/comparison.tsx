@@ -14,40 +14,40 @@ export default function Comparison() {
   ];
 
   return (
-    <section className="py-24 relative bg-slate-950/70 border-t border-white/5">
+    <section className="py-24 relative bg-slate-50/50 border-t border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             Why Developers & Agencies Choose phpinfo() WP
           </h2>
-          <p className="text-slate-400 text-base">
+          <p className="text-slate-600 text-base">
             See how phpinfo() WP compares against default PHP outputs and external monitoring agents.
           </p>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
           <table className="w-full text-left text-sm border-collapse">
             <thead>
-              <tr className="border-b border-white/10">
-                <th className="py-4 px-4 font-semibold text-slate-300">Feature / Capability</th>
-                <th className="py-4 px-4 font-semibold text-slate-400 text-center">Native phpinfo()</th>
-                <th className="py-4 px-4 font-semibold text-slate-400 text-center">Generic SaaS Monitors</th>
-                <th className="py-4 px-4 font-bold text-violet-300 text-center bg-violet-600/10 rounded-t-xl">phpinfo() WP Pro</th>
+              <tr className="border-b border-slate-200 bg-slate-50/80">
+                <th className="py-4 px-5 font-semibold text-slate-700">Feature / Capability</th>
+                <th className="py-4 px-4 font-semibold text-slate-500 text-center">Native phpinfo()</th>
+                <th className="py-4 px-4 font-semibold text-slate-500 text-center">Generic SaaS Monitors</th>
+                <th className="py-4 px-4 font-bold text-violet-700 text-center bg-violet-50/70">phpinfo() WP Pro</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5 text-slate-300">
+            <tbody className="divide-y divide-slate-100 text-slate-700">
               {rows.map((r, i) => (
-                <tr key={i} className="hover:bg-white/[0.02]">
-                  <td className="py-3.5 px-4 font-medium">{r.feature}</td>
+                <tr key={i} className="hover:bg-slate-50/50 transition-colors">
+                  <td className="py-3.5 px-5 font-medium">{r.feature}</td>
                   <td className="py-3.5 px-4 text-center">
-                    {r.rawPhp ? <Check className="h-4 w-4 text-emerald-400 mx-auto" /> : <X className="h-4 w-4 text-slate-600 mx-auto" />}
+                    {r.rawPhp ? <Check className="h-4 w-4 text-emerald-600 mx-auto" /> : <X className="h-4 w-4 text-slate-300 mx-auto" />}
                   </td>
                   <td className="py-3.5 px-4 text-center">
-                    {r.genericMon ? <Check className="h-4 w-4 text-emerald-400 mx-auto" /> : <X className="h-4 w-4 text-slate-600 mx-auto" />}
+                    {r.genericMon ? <Check className="h-4 w-4 text-emerald-600 mx-auto" /> : <X className="h-4 w-4 text-slate-300 mx-auto" />}
                   </td>
-                  <td className="py-3.5 px-4 text-center bg-violet-600/5 font-semibold text-emerald-400">
-                    <Check className="h-4 w-4 text-emerald-400 mx-auto" />
+                  <td className="py-3.5 px-4 text-center bg-violet-50/30 font-semibold text-emerald-600">
+                    <Check className="h-4 w-4 text-emerald-600 mx-auto" />
                   </td>
                 </tr>
               ))}

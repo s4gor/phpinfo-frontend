@@ -391,27 +391,27 @@ export default function DocsPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0b10] text-slate-100 selection:bg-violet-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#fcfcfd] text-slate-900 selection:bg-violet-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
         
         {/* Header */}
         <div className="mb-12 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs font-semibold text-violet-300 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-xs font-semibold text-violet-700 mb-3">
             <BookOpen className="h-3.5 w-3.5" />
             <span>Complete Architecture Reference</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             28 Diagnostic & Telemetry Modules
           </h1>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg">
             Comprehensive documentation for all core diagnostics, Pro scanning engines, and system hardening tools.
           </p>
         </div>
 
         {/* Search & Filter Toolbar */}
-        <div className="glass-panel rounded-2xl p-4 sm:p-5 border border-white/10 mb-10 shadow-2xl bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="rounded-2xl p-4 sm:p-5 border border-slate-200 mb-10 shadow-sm bg-white flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Search Box */}
           <div className="relative w-full md:w-96">
@@ -421,7 +421,7 @@ export default function DocsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search directive, module or fix (e.g. 0755, opcache, wp-config)..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-violet-500 transition-colors"
             />
           </div>
 
@@ -440,7 +440,7 @@ export default function DocsPage() {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   selectedCat === cat.id
                     ? "bg-violet-600 text-white shadow-md shadow-violet-600/30"
-                    : "text-slate-400 hover:text-white bg-slate-950/60 hover:bg-slate-950 border border-white/5"
+                    : "text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200"
                 }`}
               >
                 {cat.label}
@@ -451,12 +451,12 @@ export default function DocsPage() {
         </div>
 
         {/* Results Counter */}
-        <div className="mb-6 flex items-center justify-between text-xs text-slate-400 font-mono">
+        <div className="mb-6 flex items-center justify-between text-xs text-slate-500 font-mono">
           <span>Showing {filtered.length} of {MODULES.length} modules</span>
           {search && (
             <button
               onClick={() => setSearch("")}
-              className="text-violet-400 hover:underline"
+              className="text-violet-600 hover:underline font-semibold"
             >
               Clear filter
             </button>
@@ -469,18 +469,18 @@ export default function DocsPage() {
             <div
               key={mod.id}
               id={`mod-${mod.id}`}
-              className="glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-white/10 bg-slate-900/60 shadow-lg"
+              className="rounded-2xl p-6 sm:p-8 border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-violet-300 transition-all duration-200"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                <h2 className="text-xl font-bold text-white tracking-tight">
+                <h2 className="text-xl font-bold text-slate-900 tracking-tight">
                   {mod.title}
                 </h2>
-                <span className="self-start sm:self-auto text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/20 font-mono">
+                <span className="self-start sm:self-auto text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200 font-mono">
                   Module #{mod.id}
                 </span>
               </div>
 
-              <p className="text-slate-300 text-sm mb-4 leading-relaxed font-normal">
+              <p className="text-slate-600 text-sm mb-4 leading-relaxed font-normal">
                 {mod.summary}
               </p>
 
@@ -504,13 +504,13 @@ export default function DocsPage() {
 
               {/* Key Capabilities */}
               <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2 font-mono">
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2 font-mono">
                   Engine Capabilities & Rules:
                 </span>
                 <ul className="space-y-2">
                   {mod.points.map((pt, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                      <span className="h-1.5 w-1.5 rounded-full bg-violet-400 mt-2 shrink-0" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <span className="h-1.5 w-1.5 rounded-full bg-violet-600 mt-2 shrink-0" />
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -522,11 +522,11 @@ export default function DocsPage() {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-16 glass-panel rounded-2xl p-8 border border-violet-500/30 bg-gradient-to-r from-violet-950/40 via-indigo-950/30 to-emerald-950/40 text-center shadow-2xl">
-          <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">
+        <div className="mt-16 rounded-2xl p-8 border border-violet-200 bg-gradient-to-r from-violet-50 via-indigo-50 to-emerald-50 text-center shadow-sm">
+          <h3 className="text-2xl font-bold text-slate-900 mb-2 tracking-tight">
             Ready to Run All 28 Diagnostic Modules on Your Stack?
           </h3>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto mb-6">
+          <p className="text-slate-600 text-sm max-w-xl mx-auto mb-6">
             Get instant access to automated permissions hardening, Update Guard, and white-label executive reporting today.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -541,7 +541,7 @@ export default function DocsPage() {
               href="https://wordpress.org/plugins/phpinfo-wp/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 rounded-xl glass-panel border border-white/10 hover:border-white/20 text-slate-300 hover:text-white text-xs font-semibold transition-all"
+              className="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-900 shadow-xs text-xs font-semibold transition-all"
             >
               Download Free Version
             </a>

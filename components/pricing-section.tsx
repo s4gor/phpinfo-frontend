@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import confetti from "canvas-confetti";
-import { Check, Zap, ShieldCheck, ArrowRight } from "lucide-react";
+import { Check, Zap, ShieldCheck } from "lucide-react";
 
 export default function PricingSection() {
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
@@ -14,7 +14,6 @@ export default function PricingSection() {
       spread: 60,
       origin: { y: 0.7 }
     });
-    // Redirect to checkout or exeebit endpoint
     window.location.href = `https://exeebit.com/api/checkout?tier=${tier}`;
   };
 
@@ -78,10 +77,10 @@ export default function PricingSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Start in 60 Seconds.
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg">
             Install free from WordPress.org, or go straight to Pro with our 14-day refund policy, no questions asked.
           </p>
         </div>
@@ -91,89 +90,89 @@ export default function PricingSection() {
           {tiers.map((t) => (
             <div
               key={t.id}
-              className={`rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 relative ${
+              className={`rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 relative bg-white ${
                 t.popular
-                  ? "glass-panel border-violet-500/50 shadow-2xl shadow-violet-500/20 bg-slate-900/80 md:scale-105 z-10"
-                  : "glass-panel border-white/10 bg-slate-950/60"
+                  ? "border-2 border-violet-500 shadow-xl shadow-violet-500/10 md:scale-105 z-10"
+                  : "border border-slate-200 shadow-sm hover:border-slate-300"
               }`}
             >
               {t.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-violet-600 text-white shadow-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-violet-600 text-white shadow-sm">
                   Most Popular · Increases Sept 30
                 </span>
               )}
               {t.flag && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-slate-950 shadow-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-300 shadow-xs">
                   {t.flag}
                 </span>
               )}
 
               <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                   {t.name}
                 </div>
                 <div className="flex items-baseline gap-1.5 mb-2">
                   {t.prevPrice && (
-                    <span className="text-sm font-medium text-slate-500 line-through">
+                    <span className="text-sm font-medium text-slate-400 line-through">
                       {t.prevPrice}
                     </span>
                   )}
-                  <span className="text-4xl sm:text-5xl font-black text-white tracking-tight">
+                  <span className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
                     {t.price}
                   </span>
-                  <span className="text-sm text-slate-400 font-medium">
+                  <span className="text-sm text-slate-500 font-medium">
                     {t.cadence}
                   </span>
                 </div>
-                <p className="text-xs text-slate-400 mb-5 min-h-[34px]">
+                <p className="text-xs text-slate-600 mb-5 min-h-[34px]">
                   {t.blurb}
                 </p>
 
                 {/* Unlimited Notice Box */}
                 {t.notice && (
-                  <div className="mb-5 rounded-xl bg-violet-500/10 border border-violet-500/20 p-3 text-[11px] text-violet-200 leading-snug">
+                  <div className="mb-5 rounded-xl bg-violet-50 border border-violet-200 p-3 text-[11px] text-violet-900 leading-snug">
                     <strong>⚡ Notice:</strong> {t.notice}
                   </div>
                 )}
 
                 {/* Lifetime Compact Extension Widget */}
                 {t.isLifetime && (
-                  <div className="mb-5 rounded-xl bg-gradient-to-r from-amber-500/10 to-emerald-500/10 border border-amber-500/20 p-3 text-[11px] leading-snug flex flex-col gap-2">
+                  <div className="mb-5 rounded-xl bg-gradient-to-r from-amber-50/90 to-emerald-50/80 border border-amber-200/90 p-3 text-[11px] leading-snug flex flex-col gap-2">
                     <div className="flex items-center justify-between">
-                      <span className="font-semibold text-amber-300 flex items-center gap-1">
-                        <Zap className="h-3.5 w-3.5 text-amber-400 fill-amber-400" />
+                      <span className="font-semibold text-amber-950 flex items-center gap-1">
+                        <Zap className="h-3.5 w-3.5 text-amber-600 fill-amber-500" />
                         Set to increase at 55: Extended +5!
                       </span>
-                      <span className="text-slate-300 font-medium">
-                        <strong className="text-emerald-400 font-bold">5 left</strong> at $149 ($249 after that)
+                      <span className="text-slate-600 font-medium">
+                        <strong className="text-emerald-700 font-bold">5 left</strong> at $149 ($249 after that)
                       </span>
                     </div>
 
                     <div className="flex items-center justify-between text-[10px] font-semibold">
-                      <div className="flex items-center gap-1 text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded px-1.5 py-0.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                      <div className="flex items-center gap-1 text-amber-800 bg-amber-100/90 border border-amber-300/80 rounded px-1.5 py-0.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                         <span>55 Original (Filled)</span>
                       </div>
-                      <div className="flex items-center gap-1 text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 rounded px-1.5 py-0.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <div className="flex items-center gap-1 text-emerald-800 bg-emerald-100/90 border border-emerald-300/80 rounded px-1.5 py-0.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span>+5 Extended (5 left)</span>
                       </div>
                     </div>
 
                     <div className="flex h-1.5 w-full gap-1 items-center">
-                      <div className="h-1.5 flex-1 rounded-full bg-amber-400" title="55 Original: Sold Out" />
-                      <div className="h-1.5 w-14 rounded-full bg-emerald-950 border border-emerald-500/40 overflow-hidden">
-                        <div className="h-full bg-emerald-400 w-0" />
+                      <div className="h-1.5 flex-1 rounded-full bg-amber-500" title="55 Original: Sold Out" />
+                      <div className="h-1.5 w-14 rounded-full bg-emerald-100 border border-emerald-300 overflow-hidden">
+                        <div className="h-full bg-emerald-500 w-0" />
                       </div>
                     </div>
                   </div>
                 )}
 
                 {/* Features List */}
-                <ul className="space-y-2.5 mb-8 text-xs text-slate-300">
+                <ul className="space-y-2.5 mb-8 text-xs text-slate-700">
                   {t.features.map((f, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-violet-400 shrink-0 mt-0.5" />
+                      <Check className="h-4 w-4 text-violet-600 shrink-0 mt-0.5" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -183,10 +182,10 @@ export default function PricingSection() {
               <button
                 onClick={() => handleCheckout(t.id)}
                 disabled={loadingTier !== null}
-                className={`w-full py-3 rounded-xl font-semibold text-xs transition-all duration-200 shadow-lg ${
+                className={`w-full py-3 rounded-xl font-semibold text-xs transition-all duration-200 shadow-md ${
                   t.popular
-                    ? "bg-violet-600 hover:bg-violet-500 text-white shadow-violet-600/30"
-                    : "bg-white/10 hover:bg-white/20 text-white border border-white/10"
+                    ? "bg-violet-600 hover:bg-violet-700 text-white shadow-violet-500/25"
+                    : "bg-slate-900 hover:bg-slate-800 text-white"
                 }`}
               >
                 {loadingTier === t.id ? "Redirecting..." : t.buttonText}
@@ -196,12 +195,12 @@ export default function PricingSection() {
         </div>
 
         {/* Guarantee Badge */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400">
-            <ShieldCheck className="h-4 w-4" />
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-600">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 font-medium">
+            <ShieldCheck className="h-4 w-4 text-emerald-600" />
             <span>14-day refund guarantee, no questions asked</span>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-slate-300">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-700">
             <span>Instant HMAC license delivery</span>
           </div>
         </div>

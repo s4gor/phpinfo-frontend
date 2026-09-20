@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg-main: #0a0b10;
-  --bg-card: rgba(18, 20, 29, 0.75);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(139, 92, 246, 0.35);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-violet: #8b5cf6;
-  --accent-indigo: #6366f1;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
+  --bg-main: #fcfcfd;
+  --bg-card: #ffffff;
+  --border-subtle: #e2e8f0;
+  --border-glow: rgba(124, 58, 237, 0.25);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-violet: #7c3aed;
+  --accent-indigo: #4f46e5;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
 }
 
 body {
@@ -20,26 +20,26 @@ body {
   overflow-x: hidden;
 }
 
-/* Stripe-inspired Background Mesh */
+/* Light Stripe-grade subtle mesh gradient */
 .bg-mesh-radial {
   background: 
-    radial-gradient(1000px circle at 50% 0%, rgba(99, 102, 241, 0.12), transparent 70%),
-    radial-gradient(800px circle at 85% 25%, rgba(16, 185, 129, 0.06), transparent 60%),
-    radial-gradient(800px circle at 15% 65%, rgba(139, 92, 246, 0.08), transparent 60%);
+    radial-gradient(1000px circle at 50% 0%, rgba(99, 102, 241, 0.05), transparent 70%),
+    radial-gradient(800px circle at 85% 25%, rgba(16, 185, 129, 0.03), transparent 60%),
+    radial-gradient(800px circle at 15% 65%, rgba(139, 92, 246, 0.04), transparent 60%);
 }
 
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
 }
 
 .glass-panel {
-  background: rgba(18, 20, 29, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .glass-panel-hover {
@@ -47,20 +47,20 @@ body {
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 0 12px 36px -10px rgba(99, 102, 241, 0.15);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 16px 36px -12px rgba(99, 102, 241, 0.12);
   transform: translateY(-2px);
 }
 
-/* Stripe-style gradient text */
+/* Stripe-style gradient text on light */
 .text-gradient-stripe {
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 60%, #94a3b8 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #334155 60%, #475569 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-accent {
-  background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #34d399 100%);
+  background: linear-gradient(135deg, #6d28d9 0%, #4338ca 50%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -71,12 +71,12 @@ body {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0b10;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(148, 163, 184, 0.4);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(148, 163, 184, 0.7);
 }

@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#fcfcfd] text-slate-900 selection:bg-violet-600 selection:text-white">
+      <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 selection:bg-violet-600 selection:text-white">
         {children}
       </body>
     </html>

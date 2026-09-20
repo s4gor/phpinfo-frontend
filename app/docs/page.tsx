@@ -391,7 +391,7 @@ export default function DocsPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcfcfd] text-slate-900 selection:bg-violet-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-white text-[#0a2540] selection:bg-violet-500 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
@@ -402,16 +402,16 @@ export default function DocsPage() {
             <BookOpen className="h-3.5 w-3.5" />
             <span>Complete Architecture Reference</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0a2540] tracking-tight mb-4">
             28 Diagnostic & Telemetry Modules
           </h1>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-[#425466] text-base sm:text-lg">
             Comprehensive documentation for all core diagnostics, Pro scanning engines, and system hardening tools.
           </p>
         </div>
 
         {/* Search & Filter Toolbar */}
-        <div className="rounded-2xl p-4 sm:p-5 border border-slate-200 mb-10 shadow-sm bg-white flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="rounded-2xl p-4 sm:p-5 border border-[#e6e8eb] mb-10 shadow-sm bg-white flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Search Box */}
           <div className="relative w-full md:w-96">
@@ -421,7 +421,7 @@ export default function DocsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search directive, module or fix (e.g. 0755, opcache, wp-config)..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-violet-500 transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-[#e6e8eb] text-xs sm:text-sm text-[#0a2540] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-violet-500 transition-colors"
             />
           </div>
 
@@ -439,8 +439,8 @@ export default function DocsPage() {
                 onClick={() => setSelectedCat(cat.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   selectedCat === cat.id
-                    ? "bg-violet-600 text-white shadow-md shadow-violet-600/30"
-                    : "text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200"
+                    ? "bg-[#635bff] text-white shadow-md shadow-violet-600/30"
+                    : "text-[#425466] hover:text-[#0a2540] bg-slate-100 hover:bg-slate-200 border border-[#e6e8eb]"
                 }`}
               >
                 {cat.label}
@@ -456,7 +456,7 @@ export default function DocsPage() {
           {search && (
             <button
               onClick={() => setSearch("")}
-              className="text-violet-600 hover:underline font-semibold"
+              className="text-[#635bff] hover:underline font-semibold"
             >
               Clear filter
             </button>
@@ -469,10 +469,10 @@ export default function DocsPage() {
             <div
               key={mod.id}
               id={`mod-${mod.id}`}
-              className="rounded-2xl p-6 sm:p-8 border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-violet-300 transition-all duration-200"
+              className="rounded-2xl p-6 sm:p-8 border border-[#e6e8eb]/90 bg-white shadow-sm hover:shadow-md hover:border-violet-300 transition-all duration-200"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+                <h2 className="text-xl font-bold text-[#0a2540] tracking-tight">
                   {mod.title}
                 </h2>
                 <span className="self-start sm:self-auto text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200 font-mono">
@@ -480,13 +480,13 @@ export default function DocsPage() {
                 </span>
               </div>
 
-              <p className="text-slate-600 text-sm mb-4 leading-relaxed font-normal">
+              <p className="text-[#425466] text-sm mb-4 leading-relaxed font-normal">
                 {mod.summary}
               </p>
 
               {/* Code Snippet Chip */}
               {mod.codeSnippet && (
-                <div className="mb-5 rounded-xl bg-slate-950 p-3.5 border border-white/10 font-mono text-xs text-emerald-400 flex items-center justify-between gap-3 overflow-x-auto">
+                <div className="mb-5 rounded-xl bg-[#f8faff] p-3.5 border border-white/10 font-mono text-xs text-[#00a389] flex items-center justify-between gap-3 overflow-x-auto">
                   <code>{mod.codeSnippet}</code>
                   <button
                     onClick={() => handleCopy(mod.codeSnippet!)}
@@ -494,7 +494,7 @@ export default function DocsPage() {
                     title="Copy snippet"
                   >
                     {copiedCode === mod.codeSnippet ? (
-                      <Check className="h-3.5 w-3.5 text-emerald-400" />
+                      <Check className="h-3.5 w-3.5 text-[#00a389]" />
                     ) : (
                       <Copy className="h-3.5 w-3.5" />
                     )}
@@ -509,8 +509,8 @@ export default function DocsPage() {
                 </span>
                 <ul className="space-y-2">
                   {mod.points.map((pt, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                      <span className="h-1.5 w-1.5 rounded-full bg-violet-600 mt-2 shrink-0" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#425466]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#635bff] mt-2 shrink-0" />
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -523,16 +523,16 @@ export default function DocsPage() {
 
         {/* Bottom CTA Banner */}
         <div className="mt-16 rounded-2xl p-8 border border-violet-200 bg-gradient-to-r from-violet-50 via-indigo-50 to-emerald-50 text-center shadow-sm">
-          <h3 className="text-2xl font-bold text-slate-900 mb-2 tracking-tight">
+          <h3 className="text-2xl font-bold text-[#0a2540] mb-2 tracking-tight">
             Ready to Run All 28 Diagnostic Modules on Your Stack?
           </h3>
-          <p className="text-slate-600 text-sm max-w-xl mx-auto mb-6">
+          <p className="text-[#425466] text-sm max-w-xl mx-auto mb-6">
             Get instant access to automated permissions hardening, Update Guard, and white-label executive reporting today.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               href="/#pricing"
-              className="px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-xs shadow-lg shadow-violet-600/30 transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-[#635bff] hover:bg-violet-500 text-white font-semibold text-xs shadow-lg shadow-violet-600/30 transition-all flex items-center gap-2"
             >
               <span>Unlock Pro Access ($149)</span>
               <ArrowRight className="h-4 w-4" />
@@ -541,7 +541,7 @@ export default function DocsPage() {
               href="https://wordpress.org/plugins/phpinfo-wp/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-900 shadow-xs text-xs font-semibold transition-all"
+              className="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-slate-400 text-[#425466] hover:text-[#0a2540] shadow-xs text-xs font-semibold transition-all"
             >
               Download Free Version
             </a>

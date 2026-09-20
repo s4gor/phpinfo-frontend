@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -13,8 +14,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "phpinfo() WP - Modern PHP Telemetry & Server Diagnostics for WordPress",
-  description: "Ditch unreadable static tables. Surface security vulnerabilities, inspect OPcache hit rates, test PHP 8.x compatibility, and auto-fix dangerous permissions with zero downtime.",
+  title: "phpinfo() WP - Precision Server Telemetry & Diagnostics for WordPress",
+  description: "Ditch 1995 static tables. The precision server diagnostic instrument for WordPress: OPcache telemetry, automated permissions hardening, Update Guard safety checks, and zero-downtime Safe Mode.",
   keywords: [
     "phpinfo",
     "WordPress PHP diagnostics",
@@ -35,9 +36,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
+      className={`${jakarta.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 selection:bg-violet-600 selection:text-white">
+      <body className="min-h-full flex flex-col font-sans bg-white text-[#0a2540] selection:bg-[#635bff] selection:text-white">
         {children}
       </body>
     </html>

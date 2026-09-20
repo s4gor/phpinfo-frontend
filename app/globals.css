@@ -1,90 +1,127 @@
 @import "tailwindcss";
 
 :root {
-  --stripe-navy: #0a2540;
-  --stripe-slate: #425466;
-  --stripe-light-slate: #697386;
-  --stripe-blurple: #635bff;
-  --stripe-blurple-hover: #4f45e5;
-  --stripe-teal: #00d4b2;
-  --stripe-emerald: #059669;
-  --stripe-border: #e6e8eb;
-  --stripe-bg-light: #f8faff;
-  --stripe-card-bg: #ffffff;
+  --navy: #0a2540;
+  --slate: #425466;
+  --muted: #697386;
+  --blurple: #635bff;
+  --teal: #00d4b2;
+  --amber: #ff8a00;
+  --rose: #df1b41;
+  --surface-border: rgba(10, 37, 64, 0.08);
 }
 
 body {
   background-color: #ffffff;
-  color: var(--stripe-slate);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  color: var(--slate);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Stripe Iconic Gradient Mesh Background */
-.stripe-gradient-canvas {
+/* Radiant Ambient Mesh Aura */
+.radiant-mesh {
   background: 
-    radial-gradient(60% 80% at 50% -20%, rgba(99, 91, 255, 0.12) 0%, rgba(0, 212, 178, 0.08) 50%, rgba(255, 255, 255, 0) 100%),
-    linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+    radial-gradient(1200px 500px at 50% -5%, rgba(99, 91, 255, 0.14) 0%, rgba(0, 212, 178, 0.08) 45%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 }
 
-.stripe-card {
+.subtle-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(10, 37, 64, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 37, 64, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 70%, transparent 100%);
+}
+
+/* Precision Hardware Card (Milled Plate Aesthetics) */
+.precision-card {
   background: #ffffff;
-  border: 1px solid #e6e8eb;
-  border-radius: 1.25rem;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.05), 0 8px 16px -8px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(10, 37, 64, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 1px 3px rgba(10, 37, 64, 0.03),
+    0 16px 36px -12px rgba(10, 37, 64, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.stripe-card:hover {
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.1), 0 18px 36px -18px rgba(0, 0, 0, 0.12);
-  border-color: #d1d5db;
+.precision-card:hover {
+  border-color: rgba(99, 91, 255, 0.25);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 24px 48px -12px rgba(99, 91, 255, 0.12),
+    0 1px 4px rgba(10, 37, 64, 0.04);
   transform: translateY(-2px);
 }
 
-.stripe-button-primary {
-  background-color: #635bff;
+/* Workstation Glass HUD */
+.workstation-hud {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(10, 37, 64, 0.1);
+  border-radius: 1.75rem;
+  box-shadow: 
+    0 30px 60px -15px rgba(10, 37, 64, 0.1),
+    0 0 0 1px rgba(10, 37, 64, 0.02);
+}
+
+/* Precision Buttons */
+.btn-primary-workstation {
+  background: linear-gradient(180deg, #6b63ff 0%, #5850ec 100%);
   color: #ffffff;
   font-weight: 600;
   border-radius: 9999px;
-  box-shadow: 0 4px 14px rgba(99, 91, 255, 0.25);
-  transition: all 0.2s ease;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 4px 14px rgba(99, 91, 255, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.stripe-button-primary:hover {
-  background-color: #4f45e5;
-  box-shadow: 0 6px 20px rgba(99, 91, 255, 0.35);
+.btn-primary-workstation:hover {
+  background: linear-gradient(180deg, #5850ec 0%, #4c44d8 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 6px 20px rgba(99, 91, 255, 0.45);
   transform: translateY(-1px);
 }
 
-.stripe-button-secondary {
-  background-color: #ffffff;
+.btn-secondary-workstation {
+  background: #ffffff;
   color: #0a2540;
   font-weight: 600;
-  border: 1px solid #e6e8eb;
+  border: 1px solid rgba(10, 37, 64, 0.12);
   border-radius: 9999px;
-  box-shadow: 0 2px 6px rgba(50, 50, 93, 0.05);
-  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(10, 37, 64, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.stripe-button-secondary:hover {
-  background-color: #f8fafc;
-  border-color: #d1d5db;
+.btn-secondary-workstation:hover {
+  background: #f8faff;
+  border-color: rgba(10, 37, 64, 0.2);
   color: #0a2540;
   transform: translateY(-1px);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Status Halos */
+.halo-teal {
+  box-shadow: 0 0 12px rgba(0, 212, 178, 0.45);
 }
-::-webkit-scrollbar-track {
-  background: #f8faff;
+
+.halo-blurple {
+  box-shadow: 0 0 12px rgba(99, 91, 255, 0.45);
 }
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 9999px;
+
+.halo-amber {
+  box-shadow: 0 0 12px rgba(255, 138, 0, 0.45);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+
+/* Smooth pulse animation */
+@keyframes softPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.96); }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 3s ease-in-out infinite;
 }

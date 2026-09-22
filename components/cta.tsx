@@ -109,14 +109,14 @@ export default function CTA() {
         </motion.div>
 
         {/* Centered Brand Icon with Glow */}
-        <motion.div variants={itemVariants} className="relative my-1">
+        {/* <motion.div variants={itemVariants} className="relative my-1">
           <div className="absolute -inset-2 rounded-full bg-violet-400/20 blur-xl" />
           <img
             src="/logo.svg"
             alt="phpinfo() WP logo"
             className="relative mx-auto h-20 w-20 drop-shadow-sm"
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* Punchy Hero Headline */}
         <motion.h1
@@ -169,7 +169,7 @@ export default function CTA() {
         {/* Proof Pills */}
         <motion.div
           variants={itemVariants}
-          className="mt-3 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           <a
             href={WP_ORG_URL}
             target="_blank"

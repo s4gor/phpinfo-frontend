@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-20">
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip lg:pt-36 pt-20">
       <div className="fixed left-0 right-0 top-0 z-[60]">
         <ExeebitBar />
         <Header />

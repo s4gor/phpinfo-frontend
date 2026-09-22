@@ -1,136 +1,190 @@
-import Navbar from "@/components/navbar";
+"use client";
+
+import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Sparkles, ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
+import ExeebitBar from "@/components/exeebit-bar";
 
-export default function ChangelogPage() {
-  const releases = [
-    {
-      version: "v8.0.0",
-      date: "September 2026",
-      tag: "Latest Major",
-      badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-300",
-      headline: "1-Click Permissions Auto-Fix & Host Lock Detection Engine",
-      highlights: [
-        "Added 1-Click Auto-Fix Permissions button directly in the WordPress admin to harden wp-config.php (0600) and directories (0755) via native PHP.",
-        "Introduced Host Lock Detection to detect whether directives take effect via .user.ini, php.ini, or host dashboards.",
-        "Refactored Safe Mode with cookie-based mu-plugin isolation, ensuring 100% zero downtime for live visitors during plugin troubleshooting.",
-        "Added WP-CLI headless scan and permissions auto-fix commands (wp phpinfo fix-perms).",
-      ],
-    },
-    {
-      version: "v7.8.0",
-      date: "August 2026",
-      tag: "Feature Release",
-      badgeColor: "bg-violet-50 text-violet-700 border-violet-200",
-      headline: "Update Guard Pre-Flight Scanner & OPcache Telemetry",
-      highlights: [
-        "Launched Update Guard: pre-update safety probe that inspects pending plugin upgrades for deprecated PHP 8.3/8.4 syntax.",
-        "New OPcache Engine Visualizer with live hit-rate ratio, memory consumption buffer, and restart alert counters.",
-        "Integrated white-labeled Executive PDF Audit report generator with custom agency logo upload.",
-      ],
-    },
-    {
-      version: "v7.0.0",
-      date: "June 2026",
-      tag: "Major Architecture",
-      badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
-      headline: "PHP 8.3 Compatibility Engine & Security Headers Matrix",
-      highlights: [
-        "Asynchronous non-blocking background queue for full plugin and theme PHP 8.3 compatibility scans.",
-        "OWASP security header auditor: grades CSP, HSTS, X-Frame-Options, and referrer policy.",
-        "Visual .htaccess and .user.ini IDE with self-healing syntax probe and automatic HTTP 500 rollback.",
-      ],
-    },
-    {
-      version: "v6.0.0",
-      date: "March 2026",
-      tag: "Performance Milestone",
-      badgeColor: "bg-slate-100 text-[#425466] border-[#e6e8eb]",
-      headline: "Database Index Telemetry & WP-Cron Inspector",
-      highlights: [
-        "Added MySQL table fragmentation telemetry, InnoDB buffer hit ratios, and unindexed query detection.",
-        "Visual WP-Cron scheduled task monitor with overdue job detection and orphaned callback alerts.",
-        "Outbound HTTP latency probe measuring DNS and API socket speeds to Stripe, PayPal, and WordPress.org.",
-      ],
-    },
-  ];
+const changelog = [
+  {
+    version: "8.0.0",
+    changes: [
+      {
+        type: "Major Release",
+        text: "Actionable Server Operations Dashboard: Completely reimagined the main overview to give you instant visibility into live PHP memory usage, key resource limits, and a real-time configuration grade with direct triage recommendations.",
+      },
+      {
+        type: "Feature",
+        text: "Full WordPress Admin Activity Log: Real-time security audit trail capturing user logins, failed authentication attempts (with IP tracking), plugin/theme activations and deletions, core setting updates, user role changes, and server operations with 1-click CSV export and automatic database pruning.",
+      },
+      {
+        type: "Feature",
+        text: "Smart PHP Upgrade Scanner (Zero False Alarms): Upgraded the compatibility engine with relative delta scanning and smart guard detection. It now focuses exclusively on real breaking changes for your upcoming PHP upgrade (e.g. PHP 8.3 ➜ 8.4), eliminating false positives from dormant legacy shims in popular plugins.",
+      },
+      {
+        type: "Feature",
+        text: "Priority Security & Config Triage: Automatically detects critical server vulnerabilities (such as display_errors in production, expose_php, and end-of-life PHP runtimes) with 1-click automated fix profiles tailored for page builders and high-traffic sites.",
+      },
+      {
+        type: "Enhancement",
+        text: "Streamlined Security Headers Audit: Re-architected header diagnostics to prioritize missing protections first, making it faster to inspect and auto-fix security headers with built-in rollback safety.",
+      },
+    ],
+  },
+  {
+    version: "7.2.7",
+    changes: [
+      {
+        type: "Feature",
+        text: "Enriched Update Guard: Added Plugin & Theme pre-update compatibility scanning (PHP/WP floors, changelog risk parsing, abandonment checks), automated 60-second post-update health diagnostics (loopback, admin reachability, error log delta, cron integrity), and per-component stability tracking.",
+      },
+      {
+        type: "Fix",
+        text: "Renamed admin page query string slugs to `piwp-*` to prevent 403 Forbidden false-positives caused by 8G/7G Firewalls, BBQ (Block Bad Queries), and LiteSpeed rules blocklisting the `phpinfo` token in URL parameters. Special thanks to Simon Richards for discovering and reporting this.",
+      },
+      {
+        type: "Enhancement",
+        text: "Added seamless AJAX license activation and deactivation with instant inline validation and loading feedback.",
+      },
+      {
+        type: "Enhancement",
+        text: "Made Technical Support & Server Diagnostics accessible to all users with live environment signals.",
+      },
+      {
+        type: "Fix",
+        text: "Corrected whitespace formatting and line wrapping in PHP error log viewer.",
+      },
+    ],
+  },
+  {
+    version: "7.2.6",
+    changes: [
+      {
+        type: "Compatibility",
+        text: "Tested up to WordPress 7.1.",
+      },
+    ],
+  },
+  {
+    version: "7.2.5",
+    changes: [
+      {
+        type: "Improved",
+        text: "Enhanced upgrade prompts now surface your site's real config issues so you know exactly what Pro will fix on your site.",
+      },
+      {
+        type: "Improved",
+        text: "Minor UI polish across the admin dashboard and feature gate screens.",
+      },
+    ],
+  },
+  {
+    version: "7.2.4",
+    changes: [
+      {
+        type: "NEW",
+        text: "Complete visual plugin localization and translation files for French, German, Spanish, Italian, and Dutch.",
+      },
+      {
+        type: "Improved",
+        text: "Optimized server EOL lifecycle gauges and HTTP header audits.",
+      },
+    ],
+  },
+  {
+    version: "7.2.3",
+    changes: [
+      {
+        type: "Pro",
+        text: "Aligned Single Site plan feature restrictions with pricing tier limits. Capped Outbound API Monitors at 1, Config Snapshots at 3, locked Slack/Discord webhooks and Weekly digests, and set PDF audit reports to default branded styling.",
+      },
+      {
+        type: "Pro",
+        text: "Added license grandfathering to ensure existing Single Site license holders retain unlimited access to all features.",
+      },
+      {
+        type: "Improved",
+        text: "Standardized and optimized CSS layout margins and vertical padding on the landing page for visual consistency across desktop and mobile screens.",
+      },
+    ],
+  },
+  {
+    version: "7.0.0",
+    changes: [
+      {
+        type: "Major Release",
+        text: "phpinfo() WP is now a full WordPress site-health and server-audit plugin, representing a modern, actively-maintained take on the Health Check & Troubleshooting workflow. Free adds Troubleshooting Mode (per-user safe-mode that cannot leave your site broken), PHP Compatibility Scanner that works on managed hosts, pre-update PHP-version warnings, PHP EOL Timeline, Config Grader summary, admin-bar health scoreboard, WordPress 7.0 Abilities API integration for AI assistants, and AI explanations on failing Config Grader checks. Pro adds one-click Config Auto-Fix, security headers, SSL monitor, OPcache dashboard, white-label PDF audit reports, and more.",
+      },
+    ],
+  },
+];
 
+const badgeColors: Record<string, string> = {
+  Feature: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-800",
+  Fix: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800",
+  Enhancement: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-800",
+  Improved: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-800",
+  Compatibility: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400 border-orange-200 dark:border-orange-800",
+  NEW: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 border-purple-200 dark:border-purple-800",
+  Pro: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800",
+  "Major Release": "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 border-indigo-200 dark:border-indigo-800",
+};
+
+export default function Changelog() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0a2540] selection:bg-violet-500 selection:text-white">
-      <Navbar />
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-20">
+      <div className="fixed left-0 right-0 top-0 z-[60]">
+        <ExeebitBar />
+        <Header />
+      </div>
 
-      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
-        
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs font-semibold text-violet-300 mb-3">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Product Updates</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0a2540] tracking-tight mb-4">
-            Changelog & Roadmap
+      <section className="flex w-full max-w-4xl flex-col px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div className="mb-16 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl mb-4">
+            Changelog
           </h1>
-          <p className="text-[#425466] text-base sm:text-lg">
-            See everything new, improved, and fixed across every phpinfo() WP release.
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            New updates, features, and improvements to phpinfo() WP Pro.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative border-l border-[#e6e8eb] pl-6 sm:pl-8 ml-2 sm:ml-4 space-y-12">
-          {releases.map((rel, idx) => (
-            <div key={idx} className="relative">
-              
-              {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 h-4 w-4 rounded-full bg-[#635bff] border-4 border-white shadow-sm ring-2 ring-violet-500" />
+        <div className="relative border-l border-gray-200 dark:border-gray-800 ml-4 md:ml-6">
+          {changelog.map((release, index) => (
+            <div key={release.version} className="mb-12 relative">
+              {/* Timeline Dot */}
+              <div className="absolute -left-[9px] top-2 h-4 w-4 rounded-full border-2 border-white dark:border-gray-950 bg-[#A78BFA] shadow" />
 
-              <div className="flex flex-wrap items-center gap-2.5 mb-2">
-                <span className="font-mono text-base font-bold text-[#0a2540]">
-                  {rel.version}
-                </span>
-                <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${rel.badgeColor}`}>
-                  {rel.tag}
-                </span>
-                <span className="text-xs text-slate-500 font-mono">
-                  {rel.date}
-                </span>
+              <div className="pl-8 md:pl-12">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-3">
+                  v{release.version}
+                  {index === 0 && (
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-950/50 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                      Latest Version
+                    </span>
+                  )}
+                </h2>
+
+                <div className="mt-6 space-y-5">
+                  {release.changes.map((change, i) => (
+                    <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-3">
+                      <span
+                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold shrink-0 sm:w-28 justify-center ${badgeColors[change.type] || "bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700"
+                          }`}
+                      >
+                        {change.type}
+                      </span>
+                      <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
+                        {change.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              <h2 className="text-lg sm:text-xl font-bold text-slate-800 mb-3 tracking-tight">
-                {rel.headline}
-              </h2>
-
-              <ul className="space-y-2 p-5 rounded-2xl border border-[#e6e8eb] bg-white shadow-sm">
-                {rel.highlights.map((h, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#425466]">
-                    <CheckCircle2 className="h-4 w-4 text-[#635bff] shrink-0 mt-0.5" />
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-
             </div>
           ))}
         </div>
-
-        {/* Pro Banner */}
-        <div className="mt-16 rounded-2xl p-8 border border-[#e6e8eb] bg-slate-50 text-center">
-          <h3 className="text-xl font-bold text-[#0a2540] mb-2">
-            Get Lifetime Access to All v8.x and Future Releases
-          </h3>
-          <p className="text-xs sm:text-sm text-[#425466] max-w-lg mx-auto mb-6">
-            All minor and patch updates are included free. Lifetime licenses receive all major releases forever with zero renewal fees.
-          </p>
-          <a
-            href="/#pricing"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#635bff] hover:bg-violet-500 text-white font-semibold text-xs shadow-lg shadow-violet-600/30 transition-all"
-          >
-            <span>View Pricing & Licenses</span>
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-
-      </main>
+      </section>
 
       <Footer />
-    </div>
+    </main>
   );
 }

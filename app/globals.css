@@ -1,127 +1,111 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --navy: #0a2540;
-  --slate: #425466;
-  --muted: #697386;
-  --blurple: #635bff;
-  --teal: #00d4b2;
-  --amber: #ff8a00;
-  --rose: #df1b41;
-  --surface-border: rgba(10, 37, 64, 0.08);
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
 }
 
-body {
-  background-color: #ffffff;
-  color: var(--slate);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-/* Radiant Ambient Mesh Aura */
-.radiant-mesh {
-  background: 
-    radial-gradient(1200px 500px at 50% -5%, rgba(99, 91, 255, 0.14) 0%, rgba(0, 212, 178, 0.08) 45%, rgba(255, 255, 255, 0) 100%),
-    linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
-}
-
-.subtle-grid {
-  background-size: 48px 48px;
-  background-image: 
-    linear-gradient(to right, rgba(10, 37, 64, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 37, 64, 0.03) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 70%, transparent 100%);
-}
-
-/* Precision Hardware Card (Milled Plate Aesthetics) */
-.precision-card {
-  background: #ffffff;
-  border: 1px solid rgba(10, 37, 64, 0.08);
-  border-radius: 1.5rem;
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    0 1px 3px rgba(10, 37, 64, 0.03),
-    0 16px 36px -12px rgba(10, 37, 64, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.precision-card:hover {
-  border-color: rgba(99, 91, 255, 0.25);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    0 24px 48px -12px rgba(99, 91, 255, 0.12),
-    0 1px 4px rgba(10, 37, 64, 0.04);
-  transform: translateY(-2px);
-}
-
-/* Workstation Glass HUD */
-.workstation-hud {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(10, 37, 64, 0.1);
-  border-radius: 1.75rem;
-  box-shadow: 
-    0 30px 60px -15px rgba(10, 37, 64, 0.1),
-    0 0 0 1px rgba(10, 37, 64, 0.02);
-}
-
-/* Precision Buttons */
-.btn-primary-workstation {
-  background: linear-gradient(180deg, #6b63ff 0%, #5850ec 100%);
+::selection {
+  background-color: #0216D1;
   color: #ffffff;
-  font-weight: 600;
-  border-radius: 9999px;
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 4px 14px rgba(99, 91, 255, 0.3);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-primary-workstation:hover {
-  background: linear-gradient(180deg, #5850ec 0%, #4c44d8 100%);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.35),
-    0 6px 20px rgba(99, 91, 255, 0.45);
-  transform: translateY(-1px);
+/* 1:1 Stripe Animated Arrow Interaction */
+.stripe-hover-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  flex-shrink: 0;
 }
 
-.btn-secondary-workstation {
-  background: #ffffff;
-  color: #0a2540;
-  font-weight: 600;
-  border: 1px solid rgba(10, 37, 64, 0.12);
-  border-radius: 9999px;
-  box-shadow: 0 2px 6px rgba(10, 37, 64, 0.04);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.stripe-arrow-group {
+  transform: translateX(0);
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
-.btn-secondary-workstation:hover {
-  background: #f8faff;
-  border-color: rgba(10, 37, 64, 0.2);
-  color: #0a2540;
-  transform: translateY(-1px);
+.stripe-arrow-shaft {
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Status Halos */
-.halo-teal {
-  box-shadow: 0 0 12px rgba(0, 212, 178, 0.45);
+:not([disabled]):where(.group:hover, button:hover, a:hover) .stripe-arrow-group,
+.stripe-arrow-container:hover .stripe-arrow-group {
+  transform: translateX(6px);
 }
 
-.halo-blurple {
-  box-shadow: 0 0 12px rgba(99, 91, 255, 0.45);
+:not([disabled]):where(.group:hover, button:hover, a:hover) .stripe-arrow-shaft,
+.stripe-arrow-container:hover .stripe-arrow-shaft {
+  opacity: 1;
 }
 
-.halo-amber {
-  box-shadow: 0 0 12px rgba(255, 138, 0, 0.45);
-}
-
-/* Smooth pulse animation */
-@keyframes softPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.96); }
-}
-
-.animate-soft-pulse {
-  animation: softPulse 3s ease-in-out infinite;
-}

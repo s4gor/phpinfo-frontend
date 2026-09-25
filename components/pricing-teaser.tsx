@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import { ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -14,13 +12,9 @@ const tiers = [
 
 export default function PricingTeaser() {
   return (
-    <motion.div
-      className="flex w-full max-w-3xl flex-col items-center gap-3 pt-8 md:pt-12"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
-      <motion.div
-        variants={itemVariants}
+    <div
+      className="flex w-full max-w-3xl flex-col items-center gap-3 pt-8 md:pt-12">
+      <div
         className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
         {tiers.map((t) => (
           <Link
@@ -48,16 +42,16 @@ export default function PricingTeaser() {
             <div className="mt-0.5 text-xs text-zinc-600">{t.blurb}</div>
           </Link>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.div variants={itemVariants}>
+      <div>
         <Link
           href="#compare"
           className="inline-flex items-center gap-1.5 text-xs font-medium text-violet-700 transition hover:text-violet-700">
           Compare plans
           <ArrowDown className="h-3.5 w-3.5" />
         </Link>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

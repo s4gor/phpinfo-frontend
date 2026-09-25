@@ -2388,7 +2388,7 @@ export default function DocumentationPage() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-20 bg-zinc-50/50 dark:bg-zinc-950">
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-24 sm:pt-28 lg:pt-36 bg-zinc-50/50 dark:bg-zinc-950">
       <div className="fixed left-0 right-0 top-0 z-[60]">
         <ExeebitBar />
         <Header />

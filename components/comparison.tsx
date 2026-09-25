@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import { Check, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -68,25 +66,19 @@ const cols: Array<{
 
 export default function Comparison() {
   return (
-    <motion.div
+    <div
       id="compare"
-      className="flex w-full max-w-5xl flex-col gap-2 pt-16 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
-      <motion.h2
-        variants={itemVariants}
+      className="flex w-full max-w-5xl flex-col gap-2 pt-16 md:pt-24">
+      <h2
         className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
         Compare plans
-      </motion.h2>
-      <motion.p
-        variants={itemVariants}
+      </h2>
+      <p
         className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg">
         Everything in Free, plus the Pro depth - see exactly what you get at each tier.
-      </motion.p>
+      </p>
 
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-8 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm bg-white">
@@ -149,7 +141,7 @@ export default function Comparison() {
             </tbody>
           </table>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

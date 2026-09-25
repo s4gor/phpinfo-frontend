@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
 
 const faqs = [
@@ -61,21 +59,18 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <motion.div
+    <div
       id="faq"
-      className="flex w-full max-w-3xl flex-col gap-3 pb-16 pt-16 md:pb-24 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
+      className="flex w-full max-w-3xl flex-col gap-3 pb-16 pt-16 md:pb-24 md:pt-24">
 
-      <motion.div variants={itemVariants}>
+      <div>
         <TextBlur
           className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"
           text="Common questions"
         />
-      </motion.div>
+      </div>
 
-      <motion.div variants={itemVariants} className="mt-6 flex flex-col gap-3">
+      <div className="mt-6 flex flex-col gap-3">
         {faqs.map((faq, i) => (
           <details
             key={i}
@@ -91,10 +86,9 @@ export default function FAQ() {
             </div>
           </details>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.p
-        variants={itemVariants}
+      <p
         className="mt-6 text-center text-sm text-zinc-500">
         Still have questions? Email{" "}
         <a
@@ -102,7 +96,7 @@ export default function FAQ() {
           className="text-violet-700 underline underline-offset-2 hover:text-violet-700">
           support@exeebit.com
         </a>
-      </motion.p>
-    </motion.div>
+      </p>
+    </div>
   );
 }

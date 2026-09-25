@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
 import {
   FileText,
@@ -230,31 +228,26 @@ export default function Screenshots() {
   }, [lightboxIdx, prevLightbox, nextLightbox]);
 
   return (
-    <motion.div
+    <div
       id="screenshots"
-      className="flex w-full max-w-5xl flex-col items-center gap-2 pt-16 md:pt-24 scroll-mt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
+      className="flex w-full max-w-5xl flex-col items-center gap-2 pt-16 md:pt-24 scroll-mt-24">
 
-      <motion.div variants={itemVariants}>
+      <div>
         <TextBlur
           className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"
           text="The exact operations suite you'll run."
         />
-      </motion.div>
-      <motion.div variants={itemVariants}>
+      </div>
+      <div>
         <TextBlur
           className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg"
           text="From live server telemetry and pre-update guards to client-ready PDF audits - built directly into WordPress."
           duration={0.8}
         />
-      </motion.div>
+      </div>
 
       {/* Segmented Interactive Tab Navigation */}
-      <motion.div
-        variants={itemVariants}
-        className="mt-6 w-full max-w-5xl">
+      <div className="mt-6 w-full max-w-5xl">
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-xl border border-zinc-200/80 bg-zinc-100/70 backdrop-blur-sm shadow-2xs">
           {shots.map((shot, idx) => {
             const Icon = shot.badge.icon;
@@ -269,10 +262,8 @@ export default function Screenshots() {
                     : "text-zinc-600 hover:text-zinc-900 hover:bg-white/60"
                 }`}>
                 {isSelected && (
-                  <motion.div
-                    layoutId="activeTabBadge"
+                  <div
                     className="absolute inset-0 rounded-xl bg-white border border-violet-200/90 shadow-sm"
-                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-1.5">
@@ -283,11 +274,10 @@ export default function Screenshots() {
             );
           })}
         </div>
-      </motion.div>
+      </div>
 
       {/* Primary Cinematic Showcase Stage */}
-      <motion.div
-        variants={itemVariants}
+      <div
         className="relative mt-5 w-full">
         {/* Soft Ambient Violet Glow Behind Window */}
         <div className="absolute -inset-3 rounded-2xl bg-gradient-to-r from-violet-400/20 via-purple-400/15 to-indigo-400/20 blur-2xl opacity-70 pointer-events-none" />
@@ -324,14 +314,9 @@ export default function Screenshots() {
           <div
             onClick={() => openLightbox(selectedIdx)}
             className="group relative aspect-[16/10] w-full cursor-pointer overflow-hidden bg-zinc-950">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeShot.id}
-                initial={{ opacity: 0, scale: 0.99 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.01 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                className="relative h-full w-full">
+            <div
+              key={activeShot.id}
+              className="relative h-full w-full">
                 {!imgErrorMap[activeShot.id] ? (
                   <img
                     src={activeShot.src}
@@ -375,8 +360,7 @@ export default function Screenshots() {
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </div>
           </div>
 
           {/* Bottom Stage Subtitle */}
@@ -385,11 +369,10 @@ export default function Screenshots() {
             <span className="text-zinc-500">Screen {selectedIdx + 1} of {shots.length} · Pro v8.0</span>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* 3 Value Pillars for Active Screen */}
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-4 grid w-full grid-cols-1 sm:grid-cols-3 gap-3.5">
         {activeShot.highlights.map((h, i) => (
           <div
@@ -404,22 +387,20 @@ export default function Screenshots() {
             </p>
           </div>
         ))}
-      </motion.div>
+      </div>
 
       {/* Fullscreen Interactive Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxIdx !== null && (
-          <LightboxModal
-            shot={shots[lightboxIdx]}
-            currentIndex={lightboxIdx}
-            totalCount={shots.length}
-            onClose={closeLightbox}
-            onPrev={prevLightbox}
-            onNext={nextLightbox}
-          />
-        )}
-      </AnimatePresence>
-    </motion.div>
+      {lightboxIdx !== null && (
+        <LightboxModal
+          shot={shots[lightboxIdx]}
+          currentIndex={lightboxIdx}
+          totalCount={shots.length}
+          onClose={closeLightbox}
+          onPrev={prevLightbox}
+          onNext={nextLightbox}
+        />
+      )}
+    </div>
   );
 }
 
@@ -446,10 +427,7 @@ function LightboxModal({
   }, [shot.src]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+    <div
       onClick={onClose}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 p-3 sm:p-6 backdrop-blur-md">
 
@@ -522,6 +500,6 @@ function LightboxModal({
           {shot.tagline}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }

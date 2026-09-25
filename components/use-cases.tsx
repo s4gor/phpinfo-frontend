@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
 import { Users, User, Globe } from "lucide-react";
 
@@ -43,28 +41,24 @@ const cases = [
 
 export default function UseCases() {
   return (
-    <motion.div
+    <div
       id="use-cases"
-      className="flex w-full max-w-6xl flex-col gap-2 pt-16 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
-      <motion.div variants={itemVariants}>
+      className="flex w-full max-w-6xl flex-col gap-2 pt-16 md:pt-24">
+      <div>
         <TextBlur
           className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"
           text="Built for the way you actually work."
         />
-      </motion.div>
-      <motion.div variants={itemVariants}>
+      </div>
+      <div>
         <TextBlur
           className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg"
           text="Three audiences, same plugin - pick the row that sounds like your week."
           duration={0.8}
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
         {cases.map((c) => {
           const Icon = c.icon;
@@ -91,7 +85,7 @@ export default function UseCases() {
             </div>
           );
         })}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

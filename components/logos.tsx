@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
 import { Shield, Zap, Activity, FileText } from "lucide-react";
 
@@ -53,28 +51,24 @@ const pillars = [
 
 export default function Logos() {
   return (
-    <motion.div
-      className="flex w-full flex-col gap-2 pt-16 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
-      <motion.div variants={itemVariants}>
+    <div
+      className="flex w-full flex-col gap-2 pt-16 md:pt-24">
+      <div>
         <TextBlur
           className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"
           text="One plugin. Four missions handled."
         />
-      </motion.div>
+      </div>
 
-      <motion.div variants={itemVariants}>
+      <div>
         <TextBlur
           className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg"
           text="No external SaaS. No per-site monthly subscriptions. 100% in-admin server operations and security."
           duration={0.8}
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-6 grid w-full grid-cols-1 items-stretch justify-center gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
         {pillars.map((pillar, index) => {
           const Icon = pillar.icon;
@@ -100,16 +94,15 @@ export default function Logos() {
             </div>
           );
         })}
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-8 text-center text-sm text-zinc-500">
         <p>
           Free tier on WordPress.org includes phpinfo viewer, .htaccess editor,
           PHP EOL Timeline, Troubleshooting Mode, and Config Grader summary.
         </p>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

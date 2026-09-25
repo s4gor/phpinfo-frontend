@@ -131,7 +131,7 @@ const badgeColors: Record<string, string> = {
 
 export default function Changelog() {
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-20">
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-24 sm:pt-28 lg:pt-36">
       <div className="fixed left-0 right-0 top-0 z-[60]">
         <ExeebitBar />
         <Header />

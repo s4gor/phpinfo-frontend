@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { X, MessageCircle, Send, Sparkles } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -15,37 +14,18 @@ export default function WhatsAppWidget({
   defaultMessage = "Hi Exeebit team, I have a question about phpinfo() WP licenses...",
 }: WhatsAppWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-
-  // Auto-open tooltip popup after 3 seconds on first visit
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!hasInteracted) {
-        setIsOpen(true);
-      }
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [hasInteracted]);
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
   return (
     <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-3 pointer-events-auto">
       {/* Popup Message Box */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 15, scale: 0.95 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative w-80 rounded-xl border border-zinc-200/90 bg-white/95 p-4 shadow-2xl backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/95">
+      {isOpen && (
+        <div
+          className="relative w-80 rounded-xl border border-zinc-200/90 bg-white/95 p-4 shadow-2xl backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/95">
             {/* Close Button */}
             <button
-              onClick={() => {
-                setIsOpen(false);
-                setHasInteracted(true);
-              }}
+              onClick={() => setIsOpen(false)}
               aria-label="Close message"
               className="absolute right-3 top-3 rounded-full p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200 transition-colors">
               <X className="h-4 w-4" />
@@ -86,22 +66,17 @@ export default function WhatsAppWidget({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setHasInteracted(true)}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:bg-emerald-700 hover:shadow-lg active:scale-[0.98]">
               <FaWhatsapp className="h-4 w-4" />
               <span>Talk to the Team on WhatsApp</span>
               <Send className="h-3.5 w-3.5 opacity-80" />
             </a>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
 
       {/* Floating Toggle Button */}
       <button
-        onClick={() => {
-          setIsOpen(!isOpen);
-          setHasInteracted(true);
-        }}
+        onClick={() => setIsOpen(!isOpen)}
         aria-label="Open WhatsApp Chat"
         className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl transition-all duration-300 hover:scale-110 hover:bg-emerald-600 active:scale-95">
         {/* Pulsing ring indicator */}

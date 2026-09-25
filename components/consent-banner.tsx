@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { grantConsent, denyConsent, getStoredConsent } from "@/lib/gtag";
 
@@ -15,13 +14,11 @@ export default function ConsentBanner() {
     if (stored === "granted") {
       grantConsent();
     } else if (!stored) {
-      // Slight delay so the page renders first
-      const t = setTimeout(() => setVisible(true), 600);
-      return () => clearTimeout(t);
+      setVisible(true);
     }
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || !visible) return null;
 
   const handleAccept = () => {
     grantConsent();
@@ -34,16 +31,7 @@ export default function ConsentBanner() {
   };
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          key="consent"
-          initial={{ y: 100, opacity: 0, scale: 0.97 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          exit={{ y: 100, opacity: 0, scale: 0.97 }}
-          transition={{ type: "spring", stiffness: 260, damping: 26, delay: 0 }}
-          className="fixed inset-x-4 bottom-5 z-[9999] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-80"
-        >
+    <div className="fixed inset-x-4 bottom-5 z-[9999] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-80">
           <div className="relative overflow-hidden rounded-xl bg-white shadow-[0_20px_60px_-10px_rgba(0,0,0,0.18),0_0_0_1px_rgba(0,0,0,0.06),0_0_40px_-8px_rgba(2,22,209,0.12)]">
             {/* Top accent bar */}
             <div className="h-[3px] w-full bg-gradient-to-r from-[#0216D1] via-[#1a3ae8] to-[#0216D1]" />
@@ -89,8 +77,6 @@ export default function ConsentBanner() {
               </div>
             </div>
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </div>
   );
 }

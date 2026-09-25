@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import AnimatedShinyText from "@/components/ui/shimmer-text";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import Link from "next/link";
 import { SiWordpress } from "react-icons/si";
 import { Star, RefreshCcw, Download, ShieldCheck } from "lucide-react";
@@ -89,14 +87,10 @@ export default function CTA() {
   return (
     <div className="flex w-full flex-col items-center">
       {/* Text, Buttons & Proof Pills - cleanly constrained to max-w-4xl */}
-      <motion.div
-        className="flex w-full max-w-4xl flex-col items-center gap-4 text-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible">
+      <div className="flex w-full max-w-4xl flex-col items-center gap-5 text-center">
 
         {/* Release Announcement Pill */}
-        <motion.div variants={itemVariants}>
+        <div>
           <Link
             href="#pricing"
             className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs">
@@ -106,54 +100,39 @@ export default function CTA() {
             </AnimatedShinyText>
             <AnimatedArrow className="ml-1 text-violet-600" />
           </Link>
-        </motion.div>
-
-        {/* Centered Brand Icon with Glow */}
-        {/* <motion.div variants={itemVariants} className="relative my-1">
-          <div className="absolute -inset-2 rounded-full bg-violet-400/20 blur-xl" />
-          <img
-            src="/logo.svg"
-            alt="phpinfo() WP logo"
-            className="relative mx-auto h-20 w-20 drop-shadow-sm"
-          />
-        </motion.div> */}
+        </div>
 
         {/* Punchy Hero Headline */}
-        <motion.h1
-          variants={itemVariants}
-          className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl leading-[1.12]">
+        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl leading-[1.12]">
           Stop WordPress update crashes{" "}
           <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
             before they take you down.
           </span>
-        </motion.h1>
+        </h1>
 
         {/* Subheading */}
-        <motion.p
-          variants={itemVariants}
-          className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 leading-relaxed">
+        <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 leading-relaxed">
           Real-time server health, update warnings, and security reports - all in your WP admin, no SaaS fees, no downtime.
-        </motion.p>
+        </p>
 
         {/* CTA Button Group */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-2 flex flex-col items-center gap-2.5">
-          <div className="flex flex-col items-stretch gap-2.5 sm:flex-row sm:items-center sm:gap-3.5">
+        <div className="mt-2 flex flex-col items-center gap-3">
+          <div className="flex flex-col items-stretch gap-2.5 sm:flex-row sm:items-center sm:gap-3">
             <Link
-              href="#pricing"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-600">
+              href="/pricing"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-700">
               <span>See plans & pricing</span>
               <AnimatedArrow className="ml-1" />
             </Link>
             <Link
-              href="https://wordpress.org/plugins//"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 shadow-xs transition hover:border-zinc-300 hover:bg-zinc-50">
-              <SiWordpress className="h-4 w-4 text-violet-700" />
-              <span>Try the free version</span>
-              <AnimatedArrow className="ml-1 text-zinc-400 group-hover:text-zinc-800" />
+              href="/demo"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-300 bg-emerald-50/60 px-5 py-3 text-sm font-semibold text-emerald-900 shadow-xs transition hover:bg-emerald-100/70">
+              <span className="relative flex h-2 w-2 mr-0.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Try It Live</span>
+              <AnimatedArrow className="ml-1 text-emerald-600" />
             </Link>
           </div>
           <p className="text-xs text-zinc-500 flex items-center gap-1.5 mt-1">
@@ -164,12 +143,10 @@ export default function CTA() {
               14-day money-back guarantee
             </span>
           </p>
-        </motion.div>
+        </div>
 
         {/* Proof Pills */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           <a
             href={WP_ORG_URL}
             target="_blank"
@@ -197,8 +174,8 @@ export default function CTA() {
             <RefreshCcw className="h-3 w-3" />
             <span>Updated {lastUpdated}</span>
           </span>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Deepnote Showcase & Chakra Container - Full Width (max-w-[1400px]) */}
       <div className="w-full max-w-[1400px] mt-4">

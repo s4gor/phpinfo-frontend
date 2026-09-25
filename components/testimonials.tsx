@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
 import { Star, ShieldCheck, Sparkles } from "lucide-react";
 
@@ -58,15 +56,12 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <motion.div
+    <div
       id="testimonials"
-      className="flex w-full max-w-6xl flex-col gap-2 pt-16 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
+      className="flex w-full max-w-6xl flex-col gap-2 pt-16 md:pt-24">
       
       {/* Section Header */}
-      <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
+      <div className="flex flex-col items-center text-center">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-violet-300/80 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-800 shadow-sm">
           <Sparkles className="h-3.5 w-3.5 text-violet-600" />
           <span>Proven by 3,000+ WordPress Developers & Site Owners</span>
@@ -96,10 +91,10 @@ export default function Testimonials() {
             <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Verified Customer Feedback
           </span>
         </div>
-      </motion.div>
+      </div>
 
       {/* Static 3-Card Grid */}
-      <motion.div variants={itemVariants} className="mt-8 w-full">
+      <div className="mt-8 w-full">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
           {testimonials.map((t, idx) => (
             <div
@@ -148,7 +143,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import { Server, Zap, Shield, AlertOctagon, Lock } from "lucide-react";
 import TextBlur from "./ui/text-blur";
 import { cn } from "@/lib/utils";
@@ -80,29 +78,26 @@ export default function ServerSnippets() {
   const codeToCopy = serverType === "apache" ? activeSnippet.apache : activeSnippet.nginx;
 
   return (
-    <motion.div
+    <div
       id="snippets"
       className="flex w-full max-w-5xl flex-col gap-2 pt-16 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
     >
-      <motion.div variants={itemVariants}>
+      <div>
         <TextBlur
           className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"
           text="Web Server Snippet Library"
         />
-      </motion.div>
-      <motion.div variants={itemVariants}>
+      </div>
+      <div>
         <TextBlur
           className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg"
           text="Copy production-ready optimization and security rules, or let the Pro plugin inject them with one click."
           duration={0.8}
         />
-      </motion.div>
+      </div>
 
       {/* Server Type Toggle */}
-      <motion.div variants={itemVariants} className="mt-8 flex justify-center">
+      <div className="mt-8 flex justify-center">
         <div className="flex rounded-lg border border-zinc-200 bg-zinc-100/80 p-1">
           <button
             onClick={() => setServerType("apache")}
@@ -127,11 +122,10 @@ export default function ServerSnippets() {
             Nginx (nginx.conf)
           </button>
         </div>
-      </motion.div>
+      </div>
 
       {/* Snippets Interface Grid */}
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8"
       >
         {/* Left Column: Snippet Selector Tabs */}
@@ -225,7 +219,7 @@ export default function ServerSnippets() {
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

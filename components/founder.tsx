@@ -1,17 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
-
 export default function Founder() {
   return (
-    <motion.div
-      className="flex w-full max-w-3xl flex-col items-center gap-2 pt-16 md:pt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
-      <motion.div
-        variants={itemVariants}
+    <div
+      className="flex w-full max-w-3xl flex-col items-center gap-2 pt-16 md:pt-24">
+      <div
         className="flex flex-col items-center gap-6 rounded-xl border border-zinc-200 bg-white p-8 shadow-xs text-center sm:flex-row sm:text-left">
         <div className="flex-shrink-0">
           <img
@@ -52,7 +43,7 @@ export default function Founder() {
             - I read everything.
           </p>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import { Check, ShieldCheck, Lock, Clock, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AnimatedArrow from "@/components/ui/animated-arrow";
@@ -156,28 +154,22 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
   const lifetimeRemaining = Math.max(0, LIFETIME_CAP - lifetimeSoldEffective);
 
   return (
-    <motion.div
+    <div
       id="pricing"
       ref={sectionRef}
-      className="flex w-full max-w-5xl scroll-mt-24 flex-col gap-2 mt-16 md:mt-24"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
+      className="flex w-full max-w-5xl scroll-mt-24 flex-col gap-2 mt-16 md:mt-24">
 
-      <motion.h2
-        variants={itemVariants}
+      <h2
         className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
         Start in 60 seconds.
-      </motion.h2>
-      <motion.p
-        variants={itemVariants}
+      </h2>
+      <p
         className="mx-auto max-w-md text-center text-base text-zinc-600">
         Install free from WordPress.org, or go straight to Pro - 14-day refund, no questions asked.
-      </motion.p>
+      </p>
 
       {/* Price Increase Notice Banner with Live Countdown */}
-      <motion.div
-        variants={itemVariants}
+      <div
         className="w-full bg-gradient-to-r from-amber-50/95 via-orange-50/70 to-violet-50/90 border border-amber-200/90 rounded-2xl p-4 sm:p-5 mt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm shadow-sm">
         <div className="flex items-start sm:items-center gap-3.5">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/15 text-amber-700 font-bold text-base md:text-lg border border-amber-300/70">
@@ -230,10 +222,9 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
             </div>
           </div>
         )}
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={itemVariants}
+      <div
         className="grid w-full grid-cols-1 items-stretch gap-4 md:grid-cols-3 md:gap-5 mt-6">
         {tiers.map((tier) => {
           const loading = loadingTier === tier.id;
@@ -359,10 +350,9 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
             </div>
           );
         })}
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={itemVariants}
+      <div
         className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-5">
         <Link
           href="/refund"
@@ -387,10 +377,9 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
           <GooglePayLogo className="h-3 w-auto" />
           <LinkLogo className="h-3.5 w-auto" />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.p
-        variants={itemVariants}
+      <p
         className="mt-3 text-center text-xs text-zinc-500">
         Prices in USD · No extra taxes or hidden fees · View our{" "}
         <Link href="/terms" className="underline hover:text-zinc-800">
@@ -400,8 +389,8 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
         <Link href="/refund" className="underline hover:text-zinc-800">
           Refund Policy
         </Link>
-      </motion.p>
-    </motion.div>
+      </p>
+    </div>
   );
 }
 

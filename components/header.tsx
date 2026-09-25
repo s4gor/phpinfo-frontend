@@ -52,6 +52,13 @@ export default function Header() {
 
   const isHeaderVisible = isVisible || mobileMenuOpen;
 
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--header-height",
+      isHeaderVisible ? "4.25rem" : "0rem"
+    );
+  }, [isHeaderVisible]);
+
   return (
     <header
       className={`relative border-b border-zinc-200/60 bg-white/85 backdrop-blur-md supports-[backdrop-filter]:bg-white/75 dark:border-zinc-800/80 dark:bg-zinc-950/85 transition-transform duration-300 ease-in-out will-change-transform ${

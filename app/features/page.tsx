@@ -138,7 +138,7 @@ Update Guard active, PHP 8.3 certified.`,
           <Sparkles className="h-3.5 w-3.5" /> Complete Pro v8.0 Capabilities
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-normal text-zinc-900 dark:text-zinc-100 max-w-4xl mx-auto leading-snug sm:leading-tight">
+        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
           Everything You Need to Run Bulletproof WordPress Servers
         </h1>
 
@@ -178,7 +178,7 @@ Update Guard active, PHP 8.3 certified.`,
                   <span dangerouslySetInnerHTML={{ __html: pillar.badge }} />
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100 tracking-tight">
+                <h2 className="max-w-4xl text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100 tracking-tight">
                   {pillar.title}
                 </h2>
 
@@ -219,7 +219,7 @@ Update Guard active, PHP 8.3 certified.`,
       {/* Screenshots Gallery Section */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          <h2 className="max-w-4xl mx-auto text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
             Engineered for Modern WordPress Dashboards
           </h2>
           <p className="mt-2 text-sm text-zinc-500">
@@ -232,7 +232,7 @@ Update Guard active, PHP 8.3 certified.`,
       {/* Bottom CTA Banner */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
         <div className="rounded-3xl bg-zinc-900 p-8 sm:p-12 text-white text-center shadow-xl border border-zinc-800">
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+          <h2 className="max-w-4xl mx-auto text-2xl sm:text-4xl font-black tracking-tight">
             Stop guessing server health. Start managing it like a pro.
           </h2>
           <p className="mt-3 text-sm sm:text-base text-zinc-400 max-w-xl mx-auto">

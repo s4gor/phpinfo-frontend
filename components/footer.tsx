@@ -165,10 +165,6 @@ export default function Footer() {
               Exeebit
             </a>
           </div>
-
-          <div className="flex items-center gap-3">
-            <span>WordPress&reg; is a registered trademark of the WordPress Foundation.</span>
-          </div>
         </div>
       </div>
     </footer>

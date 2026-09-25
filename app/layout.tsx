@@ -1,5 +1,4 @@
 import "./globals.css";
-import "./deepnote-hero.css";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
@@ -53,6 +52,14 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
   openGraph: {
     title: "phpinfo() WP Pro 8.0 - WordPress Server Operations & Security Suite",

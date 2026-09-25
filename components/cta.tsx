@@ -177,8 +177,8 @@ export default function CTA() {
         </div>
       </div>
 
-      {/* Deepnote Showcase & Chakra Container - Full Width (max-w-[1400px]) */}
-      <div className="w-full max-w-[1400px] mt-4">
+      {/* Hero Showcase & Feature Suite Cards - Full Width (max-w-[1400px]) */}
+      <div className="w-full max-w-[1400px] mt-2 sm:mt-4">
         <HeroShowcase />
       </div>
     </div>

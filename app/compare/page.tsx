@@ -81,7 +81,7 @@ export default function ComparePage() {
           <Sparkles className="h-3.5 w-3.5" /> Direct Objective Comparison
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-normal text-zinc-900 dark:text-zinc-100 max-w-4xl mx-auto leading-snug sm:leading-tight">
+        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
           How phpinfo() WP Compares to the Alternatives
         </h1>
 
@@ -159,7 +159,7 @@ export default function ComparePage() {
       {/* 4 Architectural Advantages */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+          <h2 className="max-w-4xl mx-auto text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
             The 4 Reasons WordPress Teams Switch to phpinfo() WP
           </h2>
         </div>
@@ -215,7 +215,7 @@ export default function ComparePage() {
       {/* Bottom CTA Block */}
       <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
         <div className="rounded-3xl bg-gradient-to-br from-violet-600 to-indigo-800 p-8 sm:p-12 text-white text-center shadow-xl">
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+          <h2 className="max-w-4xl mx-auto text-2xl sm:text-4xl font-black tracking-tight">
             Ready to upgrade your WordPress management?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-violet-100 max-w-lg mx-auto">

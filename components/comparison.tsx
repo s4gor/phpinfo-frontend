@@ -70,7 +70,7 @@ export default function Comparison() {
       id="compare"
       className="flex w-full max-w-5xl flex-col gap-2 pt-16 md:pt-24">
       <h2
-        className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
+        className="max-w-4xl mx-auto text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
         Compare plans
       </h2>
       <p

@@ -127,7 +127,7 @@ export default function TryItLivePage() {
           Interactive Live Sandbox &bull; No Installation Required
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-normal text-zinc-900 dark:text-zinc-100 max-w-4xl mx-auto leading-snug sm:leading-tight">
+        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
           Experience <span className="text-violet-600">phpinfo() WP</span> Live in Your Browser
         </h1>
 
@@ -717,7 +717,7 @@ export default function TryItLivePage() {
 
         {/* Bottom CTA Block */}
         <div className="mt-12 rounded-2xl bg-gradient-to-br from-violet-600 via-violet-700 to-purple-800 p-8 sm:p-12 text-white text-center shadow-xl">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+          <h2 className="max-w-4xl mx-auto text-2xl sm:text-3xl font-bold tracking-tight">
             Ready to bring this level of intelligence to your WordPress sites?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-violet-100 max-w-xl mx-auto">

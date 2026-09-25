@@ -2351,7 +2351,7 @@ export default function DocumentationPage() {
     const handleScroll = () => {
       if (isClickingRef.current) return;
 
-      const scrollPosition = window.scrollY + 180;
+      const scrollPosition = window.scrollY + 110;
       for (let i = sections.length - 1; i >= 0; i--) {
         const sec = sections[i];
         const el = document.getElementById(sec.id);
@@ -2401,7 +2401,7 @@ export default function DocumentationPage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3">
               <Sparkles className="h-3.5 w-3.5" /> Complete Documentation & Reference Guide (v8.0)
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
+            <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12]">
               phpinfo() WP Documentation
             </h1>
             <p className="mt-2 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl">
@@ -2459,7 +2459,7 @@ export default function DocumentationPage() {
           {/* Sticky Sidebar Navigation */}
           <aside
             ref={sidebarNavRef}
-            className="lg:col-span-4 sticky top-40 max-h-[calc(100vh-11rem)] overflow-y-auto rounded-2xl border border-zinc-200 bg-white p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 scrollbar-thin scrollbar-thumb-zinc-300 dark:scrollbar-thumb-zinc-700"
+            className="lg:col-span-4 docs-sidebar-sticky overflow-y-auto rounded-2xl border border-zinc-200 bg-white p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 scrollbar-thin scrollbar-thumb-zinc-300 dark:scrollbar-thumb-zinc-700"
           >
             <div className="px-2 py-1.5 mb-2 border-b border-zinc-100 dark:border-zinc-800">
               <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
@@ -2530,7 +2530,7 @@ export default function DocumentationPage() {
                   <article
                     key={sec.id}
                     id={sec.id}
-                    className="scroll-mt-32 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-7 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+                    className="scroll-mt-24 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-7 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
                   >
                     {/* Header */}
                     <div className="flex items-start justify-between gap-4 pb-5 border-b border-zinc-100 dark:border-zinc-800">

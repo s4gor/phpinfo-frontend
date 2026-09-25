@@ -13,7 +13,7 @@ interface TextBlurProps {
 }
 
 const TextBlur = ({ text, className }: TextBlurProps) => {
-  return <h1 className={cn(className)}>{text}</h1>;
+  return <h1 className={cn("max-w-4xl mx-auto", className)}>{text}</h1>;
 };
 
 export default TextBlur;

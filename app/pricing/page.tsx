@@ -74,7 +74,7 @@ export default function PricingPage() {
           <Sparkles className="h-3.5 w-3.5" /> 100% In-Admin &bull; No Monthly Per-Site Fees
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 dark:text-zinc-100 max-w-3xl mx-auto">
+        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
           Predictable Pricing for WordPress Professionals
         </h1>
 

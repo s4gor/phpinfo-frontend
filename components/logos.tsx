@@ -96,13 +96,6 @@ export default function Logos() {
         })}
       </div>
 
-      <div
-        className="mt-8 text-center text-sm text-zinc-500">
-        <p>
-          Free tier on WordPress.org includes phpinfo viewer, .htaccess editor,
-          PHP EOL Timeline, Troubleshooting Mode, and Config Grader summary.
-        </p>
-      </div>
     </div>
   );
 }

@@ -160,7 +160,7 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
       className="flex w-full max-w-5xl scroll-mt-24 flex-col gap-2 mt-16 md:mt-24">
 
       <h2
-        className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
+        className="max-w-4xl mx-auto text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
         Start in 60 seconds.
       </h2>
       <p

@@ -85,7 +85,7 @@ export function ActivationsClient({
 
         <div className="rounded-2xl border border-amber-200/70 bg-amber-50/40 p-4 shadow-xs">
           <div className="flex items-center justify-between text-amber-700 mb-1.5">
-            <span className="text-xs font-medium uppercase tracking-wider">Stale 7–30d</span>
+            <span className="text-xs font-medium uppercase tracking-wider">Stale 7-30d</span>
             <Clock className="h-4 w-4 text-amber-600" />
           </div>
           <div className="text-2xl font-bold tracking-tight text-amber-900 font-mono">
@@ -140,7 +140,7 @@ export function ActivationsClient({
           >
             <option value="all">All Heartbeats</option>
             <option value="active">🟢 Active (&lt;7 days)</option>
-            <option value="stale">🟡 Stale (7–30 days)</option>
+            <option value="stale">🟡 Stale (7-30 days)</option>
             <option value="dormant">⚪ Dormant (&gt;30 days)</option>
             <option value="abuse">⚠️ Abuse Violations Only</option>
           </select>

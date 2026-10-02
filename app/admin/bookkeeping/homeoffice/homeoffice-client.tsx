@@ -360,7 +360,7 @@ export function HomeofficeClient({ initialDays, initialYear }: Props) {
               disabled={loading}
               className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg transition-colors shadow-xs"
             >
-              <Layers className="w-3.5 h-3.5" /> Auto-Log Mon–Fri
+              <Layers className="w-3.5 h-3.5" /> Auto-Log Mon-Fri
             </button>
           </div>
         </div>

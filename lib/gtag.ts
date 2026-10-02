@@ -13,14 +13,62 @@ function gtag(...args: unknown[]) {
 
 // ─── Consent Mode v2 ─────────────────────────────────────────────────────────
 
+export interface CookiePreferences {
+  necessary: boolean; // always true
+  analytics: boolean;
+  marketing: boolean;
+  timestamp?: number;
+}
+
+export function saveConsentPreferences(prefs: { analytics: boolean; marketing: boolean }) {
+  const analyticsGranted = prefs.analytics ? "granted" : "denied";
+  const marketingGranted = prefs.marketing ? "granted" : "denied";
+
+  gtag("consent", "update", {
+    analytics_storage: analyticsGranted,
+    ad_storage: marketingGranted,
+    ad_user_data: marketingGranted,
+    ad_personalization: marketingGranted,
+  });
+
+  try {
+    localStorage.setItem("cookie_consent", prefs.analytics ? "granted" : "denied");
+    localStorage.setItem(
+      "cookie_consent_preferences",
+      JSON.stringify({
+        necessary: true,
+        analytics: prefs.analytics,
+        marketing: prefs.marketing,
+        timestamp: Date.now(),
+      })
+    );
+  } catch { /* noop */ }
+}
+
+export function getStoredPreferences(): CookiePreferences | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem("cookie_consent_preferences");
+    if (raw) {
+      return JSON.parse(raw);
+    }
+    const legacy = localStorage.getItem("cookie_consent");
+    if (legacy === "granted") {
+      return { necessary: true, analytics: true, marketing: true };
+    }
+    if (legacy === "denied") {
+      return { necessary: true, analytics: false, marketing: false };
+    }
+  } catch { /* noop */ }
+  return null;
+}
+
 export function grantConsent() {
-  gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted" });
-  try { localStorage.setItem("cookie_consent", "granted"); } catch { /* noop */ }
+  saveConsentPreferences({ analytics: true, marketing: true });
 }
 
 export function denyConsent() {
-  gtag("consent", "update", { analytics_storage: "denied", ad_storage: "denied" });
-  try { localStorage.setItem("cookie_consent", "denied"); } catch { /* noop */ }
+  saveConsentPreferences({ analytics: false, marketing: false });
 }
 
 export function getStoredConsent(): "granted" | "denied" | null {
@@ -36,8 +84,8 @@ export function getStoredConsent(): "granted" | "denied" | null {
 
 const TIER_META: Record<string, { name: string; price: number }> = {
   single:    { name: "Single Site", price: 39  },
-  unlimited: { name: "Unlimited",   price: 69  },
-  lifetime:  { name: "Lifetime",    price: 149 },
+  unlimited: { name: "Unlimited",   price: 79  },
+  lifetime:  { name: "Lifetime",    price: 249 },
 };
 
 function itemPayload(tier: string) {

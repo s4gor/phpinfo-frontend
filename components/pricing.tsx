@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Check, ShieldCheck, Lock, Clock, Zap } from "lucide-react";
+import { Check, ShieldCheck, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AnimatedArrow from "@/components/ui/animated-arrow";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { trackViewItemList, trackViewItem, trackBeginCheckout } from "@/lib/gtag";
 
 type Tier = "single" | "unlimited" | "lifetime";
@@ -14,24 +14,10 @@ interface PricingProps {
   loadingTier: string | null;
 }
 
-const ORIGINAL_CAP = 55;
-const EXTENDED_SPOTS = 5;
-const LIFETIME_CAP = 60;
-const TARGET_INCREASE_TIMESTAMP = new Date("2026-09-30T23:59:59Z").getTime();
-
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  isExpired: boolean;
-}
-
 const tiers: Array<{
   id: Tier;
   name: string;
   price: string;
-  nextPrice?: string;
   cadence: string;
   blurb: string;
   features: string[];
@@ -54,9 +40,8 @@ const tiers: Array<{
   {
     id: "unlimited",
     name: "Unlimited",
-    price: "$69",
-    nextPrice: "$79",
-    cadence: "/1st yr",
+    price: "$79",
+    cadence: "/year",
     blurb: "You manage multiple sites. One license covers every one of them.",
     features: [
       "All Pro v8.0 features on unlimited sites",
@@ -71,8 +56,7 @@ const tiers: Array<{
   {
     id: "lifetime",
     name: "Lifetime",
-    price: "$149",
-    nextPrice: "$249",
+    price: "$249",
     cadence: "once",
     blurb: "One payment. Updates and support forever. Zero renewal fees.",
     features: [
@@ -86,51 +70,8 @@ const tiers: Array<{
 ];
 
 export default function Pricing({ onBuy, loadingTier }: PricingProps) {
-  const [lifetimeSold, setLifetimeSold] = useState<number | null>(null);
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    isExpired: false,
-  });
-  const [mounted, setMounted] = useState(false);
-
   const sectionRef = useRef<HTMLDivElement>(null);
   const listTracked = useRef(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const updateCountdown = () => {
-      const now = Date.now();
-      const diff = TARGET_INCREASE_TIMESTAMP - now;
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isExpired: true });
-        return;
-      }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      setTimeLeft({ days, hours, minutes, seconds, isExpired: false });
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/pricing-stats", { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        if (cancelled || !d) return;
-        if (typeof d.lifetimeSold === "number") setLifetimeSold(d.lifetimeSold);
-      })
-      .catch(() => { /* silent - counter just stays hidden */ });
-    return () => { cancelled = true; };
-  }, []);
 
   // Fire view_item_list once when pricing section enters viewport
   useEffect(() => {
@@ -150,9 +91,6 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
     return () => observer.disconnect();
   }, []);
 
-  const lifetimeSoldEffective = 55 + (lifetimeSold != null ? Math.max(0, lifetimeSold - 10) : 0);
-  const lifetimeRemaining = Math.max(0, LIFETIME_CAP - lifetimeSoldEffective);
-
   return (
     <div
       id="pricing"
@@ -160,69 +98,13 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
       className="flex w-full max-w-5xl scroll-mt-24 flex-col gap-2 mt-16 md:mt-24">
 
       <h2
-        className="max-w-4xl mx-auto text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl">
+        className="max-w-4xl mx-auto text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl dark:text-zinc-100">
         Start in 60 seconds.
       </h2>
       <p
-        className="mx-auto max-w-md text-center text-base text-zinc-600">
+        className="mx-auto max-w-md text-center text-base text-zinc-600 dark:text-zinc-400">
         Install free from WordPress.org, or go straight to Pro - 14-day refund, no questions asked.
       </p>
-
-      {/* Price Increase Notice Banner with Live Countdown */}
-      <div
-        className="w-full bg-gradient-to-r from-amber-50/95 via-orange-50/70 to-violet-50/90 border border-amber-200/90 rounded-2xl p-4 sm:p-5 mt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm shadow-sm">
-        <div className="flex items-start sm:items-center gap-3.5">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/15 text-amber-700 font-bold text-base md:text-lg border border-amber-300/70">
-            <Zap className="h-5 w-5 text-amber-600 fill-amber-500/30" />
-          </div>
-          <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <h3 className="text-base sm:text-lg tracking-tight text-zinc-900 font-semibold">
-                Price Increase Notice: September 30, 2026
-              </h3>
-              <span className="rounded-md bg-amber-100/90 border border-amber-300 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                Increasing Soon
-              </span>
-            </div>
-            <p className="text-sm text-zinc-700 mt-1 leading-relaxed max-w-xl">
-              On September 30, Unlimited increases to $79/year. Lifetime was set to increase at 55 spots and has been extended by +5 final spots ({lifetimeRemaining} spots left at $149 before jumping to $249). Secure current rates now.
-            </p>
-          </div>
-        </div>
-
-        {mounted && !timeLeft.isExpired && (
-          <div className="flex shrink-0 items-center gap-1.5 self-stretch sm:self-auto justify-center bg-white border border-amber-200/90 rounded-xl px-4 py-2.5 shadow-xs">
-            <div className="flex flex-col items-center px-1.5">
-              <span className="font-mono text-base sm:text-lg font-bold text-zinc-900 leading-none">
-                {String(timeLeft.days).padStart(2, "0")}
-              </span>
-              <span className="text-[9.5px] font-medium text-zinc-500 uppercase tracking-wider mt-1">days</span>
-            </div>
-            <span className="font-bold text-zinc-400 text-sm -mt-3">:</span>
-            <div className="flex flex-col items-center px-1.5">
-              <span className="font-mono text-base sm:text-lg font-bold text-zinc-900 leading-none">
-                {String(timeLeft.hours).padStart(2, "0")}
-              </span>
-              <span className="text-[9.5px] font-medium text-zinc-500 uppercase tracking-wider mt-1">hrs</span>
-            </div>
-            <span className="font-bold text-zinc-400 text-sm -mt-3">:</span>
-            <div className="flex flex-col items-center px-1.5">
-              <span className="font-mono text-base sm:text-lg font-bold text-zinc-900 leading-none">
-                {String(timeLeft.minutes).padStart(2, "0")}
-              </span>
-              <span className="text-[9.5px] font-medium text-zinc-500 uppercase tracking-wider mt-1">min</span>
-            </div>
-            <span className="font-bold text-zinc-400 text-sm -mt-3">:</span>
-            <div className="flex flex-col items-center px-1.5">
-              <span className="font-mono text-base sm:text-lg font-bold text-amber-600 leading-none">
-                {String(timeLeft.seconds).padStart(2, "0")}
-              </span>
-              <span className="text-[9.5px] font-medium text-amber-600 uppercase tracking-wider mt-1">sec</span>
-            </div>
-          </div>
-        )}
-      </div>
 
       <div
         className="grid w-full grid-cols-1 items-stretch gap-4 md:grid-cols-3 md:gap-5 mt-6">
@@ -230,111 +112,50 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
           const loading = loadingTier === tier.id;
           const disabled = loadingTier !== null && !loading;
           const isLifetime = tier.id === "lifetime";
-          const isLifetimeCapped = isLifetime && lifetimeRemaining === 0;
-
-          const displayPrice = isLifetimeCapped ? "$249" : tier.price;
-          const displayNextPrice = isLifetimeCapped ? undefined : tier.nextPrice;
 
           const flagLabel =
             isLifetime
-              ? isLifetimeCapped
-                ? `All ${LIFETIME_CAP} Claimed · Now $249`
-                : `55 Sold Out · Extended +5 Spots`
+              ? "One-Time Payment"
               : tier.flagFor === "popular"
-                ? "Most Popular · Increases Sept 30"
+                ? "Most Popular"
                 : null;
-          const flagWarn = isLifetime;
           return (
             <div
               key={tier.id}
               onMouseEnter={() => trackViewItem(tier.id)}
               className={cn(
-                "relative flex flex-col rounded-xl border bg-white p-6 transition-all duration-200",
+                "relative flex flex-col rounded-xl border bg-white p-6 transition-all duration-200 dark:bg-zinc-900",
                 tier.featured
-                  ? "border-violet-400/40 shadow-[0_0_40px_-10px_rgba(167,139,250,0.30)] md:scale-[1.02]"
-                  : "border-border md:hover:border-zinc-300"
+                  ? "border-violet-400/40 shadow-[0_0_40px_-10px_rgba(167,139,250,0.30)] md:scale-[1.02] dark:border-violet-600/50"
+                  : "border-border md:hover:border-zinc-300 dark:border-zinc-800 dark:md:hover:border-zinc-700"
               )}>
               {flagLabel && (
                 <div
                   className={cn(
                     "absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider",
-                    flagWarn
-                      ? "bg-amber-100 text-amber-700 border border-amber-300"
-                      : "bg-violet-400/20 text-violet-700 border border-violet-300"
+                    isLifetime
+                      ? "bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800"
+                      : "bg-violet-400/20 text-violet-700 border border-violet-300 dark:bg-violet-950/60 dark:text-violet-300 dark:border-violet-800"
                   )}>
                   {flagLabel}
                 </div>
               )}
 
-              <div className="mb-1 text-xs font-bold uppercase tracking-wider text-zinc-600">
+              <div className="mb-1 text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
                 {tier.name}
               </div>
               <div className="mb-1 flex items-baseline gap-1">
-                {displayNextPrice && (
-                  <span className="text-sm font-medium text-zinc-400 line-through mr-1">
-                    {displayNextPrice}
-                  </span>
-                )}
-                <span className="text-4xl font-bold tracking-tight text-zinc-900">
-                  {displayPrice}
+                <span className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                  {tier.price}
                 </span>
-                <span className="text-sm text-zinc-500">{tier.cadence}</span>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400">{tier.cadence}</span>
               </div>
-              <div className="mb-5 text-sm text-zinc-600">{tier.blurb}</div>
+              <div className="mb-5 text-sm text-zinc-600 dark:text-zinc-400">{tier.blurb}</div>
 
-              {tier.id === "unlimited" && (
-                <div className="mb-4 rounded-lg bg-violet-50/80 border border-violet-200/70 p-3 text-[11.5px] text-violet-900 leading-snug">
-                  <strong>⚡ Price Increases Sept 30:</strong> Get Unlimited at $69 for your first year before it increases to $79/year on September 30. Subsequent renewals at $79/year.
-                </div>
-              )}
-
-              {isLifetime && (
-                <div className="mb-4 rounded-lg bg-gradient-to-r from-amber-50/90 to-emerald-50/80 border border-amber-200/80 p-2.5 text-[11.5px] leading-snug">
-                  {isLifetimeCapped ? (
-                    <div><strong>⚡ All {LIFETIME_CAP} founder spots filled:</strong> Lifetime pricing is now $249. One payment, zero renewal fees forever.</div>
-                  ) : (
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center justify-between text-[11px]">
-                        <span className="font-semibold text-amber-950 flex items-center gap-1">
-                          <Zap className="h-3.5 w-3.5 text-amber-600 fill-amber-500 shrink-0" />
-                          Set to increase at 55: Extended +5!
-                        </span>
-                        <span className="text-zinc-600 font-medium">
-                          <strong className="text-emerald-700 font-bold">{lifetimeRemaining} left</strong> at $149 ($249 after that)
-                        </span>
-                      </div>
-
-                      {/* Two distinct colored tabs: 55 Original in Amber, +5 Extended in Emerald */}
-                      <div className="flex items-center justify-between text-[10px] font-semibold">
-                        <div className="flex items-center gap-1 text-amber-800 bg-amber-100/90 border border-amber-300/80 rounded px-1.5 py-0.5">
-                          <span className="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                          <span>55 Original (Filled)</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-emerald-800 bg-emerald-100/90 border border-emerald-300/80 rounded px-1.5 py-0.5">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                          <span>+5 Extended ({isLifetimeCapped ? "0" : lifetimeRemaining} left)</span>
-                        </div>
-                      </div>
-
-                      {/* Dual-color segmented progress bar */}
-                      <div className="flex h-1.5 w-full gap-1 items-center">
-                        <div className="h-1.5 flex-1 rounded-full bg-amber-500" title="55 Original Spots: 100% Sold Out"></div>
-                        <div className="h-1.5 w-14 rounded-full bg-emerald-100 overflow-hidden border border-emerald-300/80" title={`5 Extended Spots: ${lifetimeRemaining} left`}>
-                          <div
-                            className="h-full bg-emerald-500 transition-all duration-700"
-                            style={{ width: `${Math.min(100, Math.max(0, ((EXTENDED_SPOTS - lifetimeRemaining) / EXTENDED_SPOTS) * 100))}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              <ul className="mb-6 flex flex-grow flex-col gap-2 text-sm text-zinc-700">
+              <ul className="mb-6 flex flex-grow flex-col gap-2 text-sm text-zinc-700 dark:text-zinc-300">
                 {tier.features.map((f, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-violet-600" />
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-violet-600 dark:text-violet-400" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -345,7 +166,7 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
                 disabled={disabled || loading}
                 className="group flex items-center justify-center gap-2 w-full rounded-xl bg-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-600 disabled:bg-violet-500/40 disabled:cursor-not-allowed">
                 <span>{loading ? "Opening checkout…" : `Buy ${tier.name}`}</span>
-                {!loading && <AnimatedArrow className="ml-2" />}
+                {!loading && <AnimatedArrow className="ml-1" />}
               </button>
             </div>
           );
@@ -356,17 +177,17 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
         className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-5">
         <Link
           href="/refund"
-          className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 transition-colors hover:bg-emerald-100 hover:text-emerald-800">
+          className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 transition-colors hover:bg-emerald-100 hover:text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
           <ShieldCheck className="h-4 w-4" />
           14-day refund · No questions asked
         </Link>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-2.5 py-1 text-xs text-zinc-700">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-2.5 py-1 text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
           <Lock className="h-3.5 w-3.5 text-zinc-500 shrink-0" />
           <span>Secure checkout via</span>
           <StripeLogo className="h-3.5 w-auto inline-block" />
         </span>
-        <div className="relative inline-flex items-center gap-3.5 rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs text-zinc-700">
-          <span className="absolute -top-[-2px] left-1/2 -translate-x-1/2 -translate-y-full inline-flex items-center rounded-full border border-zinc-300 bg-white px-2 py-0.5 text-[9px] font-semibold text-zinc-600 shadow-sm leading-none whitespace-nowrap">
+        <div className="relative inline-flex items-center gap-3.5 rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
+          <span className="absolute -top-[-2px] left-1/2 -translate-x-1/2 -translate-y-full inline-flex items-center rounded-full border border-zinc-300 bg-white px-2 py-0.5 text-[9px] font-semibold text-zinc-600 shadow-sm leading-none whitespace-nowrap dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
             Available Methods
           </span>
           <CardLogo className="h-2.5 w-auto" />
@@ -380,13 +201,13 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
       </div>
 
       <p
-        className="mt-3 text-center text-xs text-zinc-500">
+        className="mt-3 text-center text-xs text-zinc-500 dark:text-zinc-400">
         Prices in USD · No extra taxes or hidden fees · View our{" "}
-        <Link href="/terms" className="underline hover:text-zinc-800">
+        <Link href="/terms" className="underline hover:text-zinc-800 dark:hover:text-zinc-200">
           Terms
         </Link>{" "}
         and{" "}
-        <Link href="/refund" className="underline hover:text-zinc-800">
+        <Link href="/refund" className="underline hover:text-zinc-800 dark:hover:text-zinc-200">
           Refund Policy
         </Link>
       </p>
@@ -442,7 +263,7 @@ function PaypalLogo({ className = "h-[15px] w-auto" }: { className?: string }) {
 function ApplePayLogo({ className = "h-3 w-auto" }: { className?: string }) {
   return (
     <svg
-      className={cn(className, "shrink-0 inline-block text-zinc-900")}
+      className={cn(className, "shrink-0 inline-block text-zinc-900 dark:text-zinc-100")}
       viewBox="0 120 640 270"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -496,7 +317,7 @@ function MastercardLogo({ className = "h-3.5" }: { className?: string }) {
 function CardLogo({ className = "h-3 w-auto" }: { className?: string }) {
   return (
     <svg
-      className={cn(className, "shrink-0 inline-block text-zinc-700")}
+      className={cn(className, "shrink-0 inline-block text-zinc-700 dark:text-zinc-300")}
       viewBox="0 0 24 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

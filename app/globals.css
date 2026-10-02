@@ -5,6 +5,7 @@
 
 @layer base {
   :root {
+    --header-height: 4.25rem;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -80,7 +81,12 @@
 }
 
 ::selection {
-  background-color: #0216D1;
+  background-color: #7c3aed;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #7c3aed;
   color: #ffffff;
 }
 
@@ -488,4 +494,18 @@
     max-height: calc(100vh - var(--header-height, 4.25rem) - 2rem);
     transition: top 300ms ease-in-out, max-height 300ms ease-in-out;
   }
+}
+
+/* Hide scrollbars cross-browser while preserving scroll functionality */
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.scrollbar-none,
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
 }

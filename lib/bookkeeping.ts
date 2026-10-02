@@ -12,7 +12,7 @@ import { getStripeFeeSummary, type StripeBalanceSummary } from "./stripe-fees";
 
 export interface QuarterSummary {
   quarter: string; // "Q1", "Q2", "Q3", "Q4"
-  label: string; // "Jan – Mar"
+  label: string; // "Jan - Mar"
   revenueGrossEurCents: number;
   paymentFeesEurCents: number;
   operatingExpensesEurCents: number;
@@ -253,10 +253,10 @@ export async function computeEuerReport(
 
   // Build quarters array
   const qLabels = [
-    { quarter: "Q1", label: "Jan – Mar" },
-    { quarter: "Q2", label: "Apr – Jun" },
-    { quarter: "Q3", label: "Jul – Sep" },
-    { quarter: "Q4", label: "Oct – Dec" },
+    { quarter: "Q1", label: "Jan - Mar" },
+    { quarter: "Q2", label: "Apr - Jun" },
+    { quarter: "Q3", label: "Jul - Sep" },
+    { quarter: "Q4", label: "Oct - Dec" },
   ];
 
   const quarters: QuarterSummary[] = qLabels.map((ql, idx) => {

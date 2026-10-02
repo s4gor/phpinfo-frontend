@@ -268,17 +268,17 @@ export default function HeroShowcase() {
                   <div className="flex items-center gap-1 text-[7.5px] text-slate-700 leading-tight">
                     <span className="w-2.5 h-2.5 rounded-full font-black text-[6.5px] flex items-center justify-center shrink-0 bg-amber-100 text-amber-600">!</span>
                     <span className="flex-1 truncate">Tested up to WordPress 7.0.4 (you run 7.1)</span>
-                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Explain with AI</span>
+                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Inspect</span>
                   </div>
                   <div className="flex items-center gap-1 text-[7.5px] text-slate-700 leading-tight">
                     <span className="w-2.5 h-2.5 rounded-full font-black text-[6.5px] flex items-center justify-center shrink-0 bg-amber-100 text-amber-600">!</span>
                     <span className="flex-1 truncate">Changelog mentions: &quot;removed&quot;</span>
-                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Explain with AI</span>
+                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Inspect</span>
                   </div>
                   <div className="flex items-center gap-1 text-[7.5px] text-slate-700 leading-tight">
                     <span className="w-2.5 h-2.5 rounded-full font-black text-[6.5px] flex items-center justify-center shrink-0 bg-sky-100 text-sky-600">i</span>
                     <span className="flex-1 truncate">Changelog mentions: &quot;deprecated&quot;</span>
-                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Explain with AI</span>
+                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Inspect</span>
                   </div>
                 </div>
               </div>
@@ -304,22 +304,22 @@ export default function HeroShowcase() {
                   <div className="flex items-center gap-1 text-[7.5px] text-slate-700 leading-tight">
                     <span className="w-2.5 h-2.5 rounded-full font-black text-[6.5px] flex items-center justify-center shrink-0 bg-amber-100 text-amber-600">!</span>
                     <span className="flex-1 truncate">Changelog mentions: &quot;fatal&quot;</span>
-                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Explain with AI</span>
+                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Inspect</span>
                   </div>
                   <div className="flex items-center gap-1 text-[7.5px] text-slate-700 leading-tight">
                     <span className="w-2.5 h-2.5 rounded-full font-black text-[6.5px] flex items-center justify-center shrink-0 bg-sky-100 text-sky-600">i</span>
                     <span className="flex-1 truncate">Changelog mentions: &quot;requires wordpress&quot;</span>
-                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Explain with AI</span>
+                    <span className="text-[6.5px] font-semibold text-indigo-600 underline cursor-pointer shrink-0 ml-auto">Inspect</span>
                   </div>
                 </div>
               </div>
 
-              {/* AI Insight Box */}
+              {/* Pre-Flight Insight Box */}
               <div className="bg-gradient-to-b from-purple-50 to-purple-100/70 border border-purple-200 rounded-lg p-1.5 flex flex-col gap-1 shadow-[0_4px_12px_-6px_rgba(109,40,217,0.15)]">
                 <div className="flex items-center gap-1">
-                  <span className="w-3.5 h-3.5 rounded bg-purple-200 text-purple-700 text-[9px] flex items-center justify-center">✦</span>
-                  <span className="text-[9px] font-extrabold text-purple-900">Update Guard AI</span>
-                  <span className="ml-auto text-[7px] font-extrabold text-purple-600 tracking-wider uppercase">INSIGHT</span>
+                  <span className="w-3.5 h-3.5 rounded bg-purple-200 text-purple-700 text-[9px] flex items-center justify-center">🛡️</span>
+                  <span className="text-[9px] font-extrabold text-purple-900">Update Guard</span>
+                  <span className="ml-auto text-[7px] font-extrabold text-purple-600 tracking-wider uppercase">PRE-FLIGHT</span>
                 </div>
                 <div className="text-[8px] leading-relaxed text-purple-950">
                   Complianz 1.4 has 1 deprecated call removed in PHP 8.3. Safety snapshot created &amp; 60s rollback armed.
@@ -471,11 +471,11 @@ export default function HeroShowcase() {
                 </div>
               </div>
 
-              {/* AI Verification Box */}
+              {/* Benchmark Verification Box */}
               <div className="bg-gradient-to-b from-emerald-50 to-emerald-100/60 border border-emerald-200 rounded-lg p-1.5 flex flex-col gap-1 shadow-[0_4px_12px_-6px_rgba(16,185,129,0.15)]">
                 <div className="flex items-center gap-1">
-                  <span className="w-3.5 h-3.5 rounded bg-emerald-200 text-emerald-700 text-[9px] flex items-center justify-center">✦</span>
-                  <span className="text-[9px] font-extrabold text-emerald-900">Config Grader AI</span>
+                  <span className="w-3.5 h-3.5 rounded bg-emerald-200 text-emerald-700 text-[9px] flex items-center justify-center font-bold">✓</span>
+                  <span className="text-[9px] font-extrabold text-emerald-900">Config Grader</span>
                   <span className="ml-auto text-[7px] font-extrabold text-emerald-700 tracking-wider uppercase">OPTIMAL</span>
                 </div>
                 <div className="text-[8px] leading-relaxed text-emerald-950">

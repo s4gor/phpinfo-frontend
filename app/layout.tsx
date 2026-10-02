@@ -1,10 +1,12 @@
 import "./globals.css";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import ConsentBanner from "@/components/consent-banner";
+import AnalyticsTracker from "@/components/analytics-tracker";
 
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
@@ -150,7 +152,7 @@ const faqJsonLd = {
       name: "Refund policy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "14 days, no questions asked. Email support@exeebit.com with your order number and we will refund within 1–2 business days.",
+        text: "14 days, no questions asked. Email support@exeebit.com with your order number and we will refund within 1-2 business days.",
       },
     },
     {
@@ -221,8 +223,8 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag("consent", "default", {
-              analytics_storage: "denied",
-              ad_storage: "denied",
+              analytics_storage: "granted",
+              ad_storage: "granted",
               wait_for_update: 500
             });
           `,
@@ -232,7 +234,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={FigtreeFont.className}>
+      <body className={`${FigtreeFont.className} selection:bg-violet-600 selection:text-white`}>
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
         {children}
         <ConsentBanner />
         <Toaster richColors position="top-center" />

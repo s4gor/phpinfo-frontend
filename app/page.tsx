@@ -5,7 +5,6 @@ import Features from "@/components/logos";
 import UseCases from "@/components/use-cases";
 import Testimonials from "@/components/testimonials";
 import Founder from "@/components/founder";
-import FAQ from "@/components/faq";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
@@ -28,8 +27,6 @@ export default function Home() {
         <Testimonials />
 
         <Founder />
-
-        <FAQ />
       </section>
 
       <Footer />

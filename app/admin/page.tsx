@@ -266,7 +266,7 @@ export default async function AdminOverviewPage() {
             <div className="flex items-center justify-between py-1 border-b border-zinc-50">
               <span className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-                Stale Domains (7–30 days)
+                Stale Domains (7-30 days)
               </span>
               <span className="font-mono font-medium text-zinc-800">{s.domainsStaleCount}</span>
             </div>

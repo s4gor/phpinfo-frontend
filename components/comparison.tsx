@@ -41,7 +41,7 @@ const rows: Row[] = [
   { label: "Mail deliverability check", free: false, single: true, unlimited: true, lifetime: true },
 
   // Deliverable & integrations
-  { label: "Native AI Plain-English Fix Explanations", free: false, single: true, unlimited: true, lifetime: true },
+  { label: "Plain-English Directive Fix Guides", free: false, single: true, unlimited: true, lifetime: true },
   { label: "Email alerts on issues", free: false, single: true, unlimited: true, lifetime: true },
   { label: "External API Monitor", free: false, single: "1 Endpoint", unlimited: true, lifetime: true },
   { label: "Config Snapshots & diff", free: false, single: "Latest 3", unlimited: true, lifetime: true },
@@ -60,8 +60,8 @@ const cols: Array<{
 }> = [
   { id: "free", name: "Free", price: "$0", cadence: "WP.org" },
   { id: "single", name: "Single Site", price: "$39", cadence: "/year" },
-  { id: "unlimited", name: "Unlimited", price: "$69", cadence: "/year", featured: true },
-  { id: "lifetime", name: "Lifetime", price: "$149", cadence: "once" },
+  { id: "unlimited", name: "Unlimited", price: "$79", cadence: "/year", featured: true },
+  { id: "lifetime", name: "Lifetime", price: "$249", cadence: "once" },
 ];
 
 export default function Comparison() {
@@ -79,20 +79,20 @@ export default function Comparison() {
       </p>
 
       <div
-        className="mt-8 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-xs">
-        <div className="overflow-x-auto">
+        className="mt-8 rounded-xl border border-zinc-200 bg-white shadow-xs">
+        <div className="overflow-x-auto sm:overflow-x-visible">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm bg-white">
-            <thead>
-              <tr className="border-b border-zinc-200 bg-white">
-                <th className="px-4 py-4 text-xs font-medium uppercase tracking-wider text-zinc-500 bg-white">
+            <thead className="sticky top-[var(--header-height,0rem)] z-20 transition-[top] duration-300 ease-in-out">
+              <tr className="border-b border-zinc-200 bg-white/95 backdrop-blur-md shadow-xs">
+                <th className="sticky top-[var(--header-height,0rem)] z-20 px-4 py-4 text-xs font-medium uppercase tracking-wider text-zinc-500 bg-white/95 backdrop-blur-md first:rounded-tl-xl transition-[top] duration-300 ease-in-out">
                   Feature
                 </th>
                 {cols.map((c) => (
                   <th
                     key={c.id}
                     className={cn(
-                      "px-4 py-4 text-center",
-                      c.featured ? "bg-violet-50/70" : "bg-white",
+                      "sticky top-[var(--header-height,0rem)] z-20 px-4 py-4 text-center backdrop-blur-md transition-[top] duration-300 ease-in-out",
+                      c.featured ? "bg-violet-50/95" : "bg-white/95",
                     )}>
                     <div className="text-xs font-bold uppercase tracking-wider text-zinc-600">
                       {c.name}

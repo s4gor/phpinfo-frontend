@@ -33,7 +33,7 @@ export default function ComparePage() {
     },
     {
       feature: "Cost & Pricing Model",
-      phpinfo: "One flat annual or lifetime license ($39 - $69/yr). Unlimited sites.",
+      phpinfo: "One flat annual or lifetime license ($39 - $79/yr). Unlimited sites.",
       healthCheck: "Free, but abandoned features and no Pro support",
       queryMonitor: "Free, but no agency reporting or update safeguards",
       saas: "Recurring monthly fee ($2 - $5/month) per connected website",
@@ -47,7 +47,7 @@ export default function ComparePage() {
     },
     {
       feature: "Smart PHP 8.4 Upgrade Scanner",
-      phpinfo: "Zero false-alarm delta engine with AI 1-click patch generator",
+      phpinfo: "Zero false-alarm delta engine with 1-click patch generator",
       healthCheck: "Basic PHP version string check only",
       queryMonitor: "No forward-looking PHP upgrade scanner",
       saas: "Basic PHP version report, no AST code compatibility scanner",
@@ -93,7 +93,7 @@ export default function ComparePage() {
           <Link href="/demo">
             <Button size="lg" className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 shadow-sm">
               <Play className="mr-2 h-4 w-4" />
-              <span>Try It Live In Browser</span>
+              <span>Try it live In Browser</span>
             </Button>
           </Link>
           <Link href="/pricing">
@@ -107,19 +107,21 @@ export default function ComparePage() {
 
       {/* Comparison Matrix Table */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-6">
-        <div className="rounded-2xl border border-zinc-200 bg-white shadow-sm overflow-hidden dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs sm:text-sm">
-              <thead>
-                <tr className="border-b border-zinc-200 bg-zinc-100/70 dark:border-zinc-800 dark:bg-zinc-800/60">
-                  <th className="p-4 sm:p-5 font-bold text-zinc-900 dark:text-zinc-100 w-1/4">Feature / Aspect</th>
-                  <th className="p-4 sm:p-5 font-bold text-violet-700 dark:text-violet-400 bg-violet-50/60 dark:bg-violet-950/30 w-1/4">
+        <div className="rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="overflow-x-auto sm:overflow-x-visible">
+            <table className="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead className="sticky top-16 md:top-20 z-20">
+                <tr className="border-b border-zinc-200 bg-zinc-100/95 dark:border-zinc-800 dark:bg-zinc-800/95 backdrop-blur-md shadow-xs">
+                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-zinc-900 dark:text-zinc-100 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md first:rounded-tl-2xl">
+                    Feature / Aspect
+                  </th>
+                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-violet-700 dark:text-violet-400 bg-violet-50/95 dark:bg-violet-950/80 backdrop-blur-md w-1/4">
                     phpinfo() WP Pro 8.0
                   </th>
-                  <th className="p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4">
+                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md">
                     Health Check (WP.org)
                   </th>
-                  <th className="p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4">
+                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md last:rounded-tr-2xl">
                     SaaS (ManageWP / Umbrella)
                   </th>
                 </tr>
@@ -181,7 +183,7 @@ export default function ComparePage() {
             </div>
             <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">2. Save Thousands in Monthly Per-Site SaaS Fees</h3>
             <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              If you manage 25 sites at $3/month, you are paying $900 every single year. With 50 sites, that climbs to $1,800/year. phpinfo() WP Unlimited is a flat $69/year license for unlimited websites, saving your agency thousands of dollars annually.
+              If you manage 25 sites at $3/month, you are paying $900 every single year. With 50 sites, that climbs to $1,800/year. phpinfo() WP Unlimited is a flat $79/year license for unlimited websites, saving your agency thousands of dollars annually.
             </p>
           </div>
 

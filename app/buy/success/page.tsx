@@ -5,7 +5,6 @@ import { stripe } from "@/lib/stripe";
 import { issueLicenseForSession } from "@/lib/license-issue";
 import PurchaseTracker from "@/components/purchase-tracker";
 import CopyButton from "@/components/copy-button";
-import MimonousUpsell from "@/components/mimonous-upsell";
 
 export const dynamic = "force-dynamic";
 
@@ -154,9 +153,6 @@ export default async function SuccessPage({ searchParams }: SuccessPageProps) {
           </Link>
         </div>
       </div>
-
-      {/* Mimonous upsell temporarily hidden - will re-enable later */}
-      {/* <MimonousUpsell /> */}
       </div>
     </main>
   );

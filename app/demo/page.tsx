@@ -172,7 +172,7 @@ export default function TryItLivePage() {
               </span>
               <Link href="/pricing">
                 <Button size="sm" className="h-7 text-xs bg-violet-600 hover:bg-violet-700 text-white rounded-lg">
-                  Get Pro
+                  Get pro
                 </Button>
               </Link>
             </div>
@@ -335,11 +335,11 @@ export default function TryItLivePage() {
                   </div>
                 </div>
 
-                {/* AI Auto-Fix Sidebar */}
+                {/* Auto-Fix Sidebar */}
                 <div className="rounded-xl border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900/50 dark:bg-violet-950/20">
                   <div className="flex items-center gap-2 text-violet-700 dark:text-violet-300 font-bold text-sm">
-                    <Sparkles className="h-4 w-4" />
-                    <span>Native AI Fix Recipe</span>
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span>Automated Patch Recipe</span>
                   </div>
                   <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     phpinfo() WP generates instant 1-click diffs for any detected deprecations before you upgrade your hosting PHP version.

@@ -58,7 +58,7 @@ export default function PricingPage() {
 
   // Typical SaaS monitoring tools charge ~$3/month per site ($36/yr)
   const saasAnnualCost = siteCount * 36;
-  const phpinfoCost = 69; // Unlimited tier
+  const phpinfoCost = 79; // Unlimited tier
   const annualSavings = Math.max(0, saasAnnualCost - phpinfoCost);
 
   return (
@@ -133,7 +133,7 @@ export default function PricingPage() {
                 ${annualSavings.toLocaleString()} <span className="text-xs font-normal text-zinc-500">/year</span>
               </div>
               <div className="text-xs text-zinc-500 mt-1">
-                (Based on average $3/mo per site SaaS charges vs $69/yr flat unlimited)
+                (Based on average $3/mo per site SaaS charges vs $79/yr flat unlimited)
               </div>
             </div>
           </div>

@@ -76,7 +76,7 @@ export function DomainHeartbeatPill({ status }: { status: "active" | "stale" | "
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-[10px] font-medium text-amber-700">
         <span className="h-2 w-2 rounded-full bg-amber-400" />
-        Stale (7–30d)
+        Stale (7-30d)
       </span>
     );
   }

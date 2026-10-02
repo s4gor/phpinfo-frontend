@@ -178,11 +178,11 @@ const shots: Shot[] = [
     src: "/screenshots/config-grader.v8.png",
     alt: "PHP Config Grader and 1-Click Fixes",
     title: "Config Grader & Security Score",
-    tagline: "Comprehensive A through F server grading with plain-English AI fix explanations.",
+    tagline: "Comprehensive A through F server grading with plain-English fix recommendations.",
     badge: { icon: CheckCircle2, label: "Config Grader" },
     callout: {
       text: "A - F Scoreboard",
-      subtext: "AI-assisted explanations for failing directives",
+      subtext: "Plain-English recommendations for failing directives",
     },
     highlights: [
       { title: "Instant Scorecard", desc: "Evaluates 25+ PHP, MySQL, and server settings into a clean 0-100 health score." },

@@ -58,13 +58,13 @@ $status = $guard->execute_safe_stage(); // -> Status: HEALTHY`,
       points: [
         "Relative delta scanning specifically for PHP 8.2 ➜ 8.3 ➜ 8.4 migrations",
         "Detects breaking syntax changes, implicit null deprecations, and removed functions",
-        "Native AI plain-English explanations explaining why a function is deprecated",
+        "Plain-English recommendations explaining why a function is deprecated",
         "1-click safe code patch generation for custom child themes and functions.php",
       ],
       codeSample: `// Smart Delta Scan Result
 [PHP 8.4 Delta] 0 Fatal syntax errors detected
 [Deprecation] functions.php:42 -> Implicitly nullable parameter $tax
-[AI Fix Suggestion] Change "string $tax = null" to "?string $tax = null"
+[Fix Suggestion] Change "string $tax = null" to "?string $tax = null"
 [Safety Index] 99.4% Ready for Host PHP 8.4 switch`,
     },
     {
@@ -143,14 +143,14 @@ Update Guard active, PHP 8.3 certified.`,
         </h1>
 
         <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-          From automated pre-flight update protection to live OPcache telemetry and white-label client reporting — all inside your native WP admin.
+          From automated pre-flight update protection to live OPcache telemetry and white-label client reporting, all inside your native WP admin.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link href="/demo">
             <Button size="lg" className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 shadow-sm">
               <Play className="mr-2 h-4 w-4" />
-              <span>Try It Live In Sandbox</span>
+              <span>Try it live In Sandbox</span>
             </Button>
           </Link>
           <Link href="/pricing">
@@ -241,7 +241,7 @@ Update Guard active, PHP 8.3 certified.`,
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link href="/pricing">
               <Button size="lg" className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6">
-                <span>Get Pro License</span>
+                <span>Get pro license</span>
                 <AnimatedArrow className="ml-2" />
               </Button>
             </Link>

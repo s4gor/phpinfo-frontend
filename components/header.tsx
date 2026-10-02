@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { SiWordpress } from "react-icons/si";
-import { BookOpen, Sparkles, Menu, X, Play, ArrowRight, ShieldCheck, Scale, CreditCard } from "lucide-react";
+import { BookOpen, Sparkles, Menu, X, Play, ArrowRight, ShieldCheck, Scale, CreditCard, Star } from "lucide-react";
 import AnimatedArrow from "@/components/ui/animated-arrow";
 
 export default function Header() {
@@ -88,7 +88,7 @@ export default function Header() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span>Try It Live</span>
+                <span>Try it live</span>
               </Button>
             </Link>
 
@@ -148,7 +148,7 @@ export default function Header() {
               <Button
                 size="sm"
                 className="group h-9 sm:h-10 rounded-xl bg-violet-500 px-3.5 sm:px-5 text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-600 font-medium text-xs sm:text-sm">
-                <span>Get Pro</span>
+                <span>Get pro</span>
                 <AnimatedArrow className="ml-1.5 sm:ml-2" />
               </Button>
             </Link>
@@ -188,7 +188,7 @@ export default function Header() {
                 className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50/70 hover:bg-emerald-100/70 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300 font-semibold">
                 <span className="flex items-center gap-2.5">
                   <Play className="h-4 w-4 text-emerald-600" />
-                  <span>Try It Live (Interactive Sandbox)</span>
+                  <span>Try it live (Interactive Sandbox)</span>
                 </span>
                 <span className="rounded-full bg-emerald-200/70 text-emerald-800 text-[10px] px-2 py-0.5 font-bold">
                   LIVE
@@ -218,6 +218,17 @@ export default function Header() {
               </Link>
 
               <Link
+                href="/#reviews"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
+                <span className="flex items-center gap-2.5">
+                  <Star className="h-4 w-4 text-amber-500 fill-amber-400" />
+                  <span>Reviews (4.9/5)</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-zinc-400" />
+              </Link>
+
+              <Link
                 href="/docs"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
@@ -234,6 +245,22 @@ export default function Header() {
                 className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
                 <span>Changelog</span>
                 <span className="text-xs text-zinc-400">v8.0</span>
+              </Link>
+
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
+                <span>About Us</span>
+                <ArrowRight className="h-4 w-4 text-zinc-400" />
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
+                <span>Contact Us</span>
+                <ArrowRight className="h-4 w-4 text-zinc-400" />
               </Link>
 
               <div className="pt-2 border-t border-zinc-200 dark:border-zinc-800">

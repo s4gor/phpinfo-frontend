@@ -8,7 +8,7 @@ const pillars = [
     tag: "Prevent fatal crashes and downtime.",
     items: [
       "Update Guard (Pre & post update loopback)",
-      "PHP Compatibility Engine (PHP 7.4–8.4)",
+      "PHP Compatibility Engine (PHP 7.4-8.4)",
       "Zero-Downtime Troubleshooting Mode",
       "File Permissions & 777 Risk Scanner",
     ],
@@ -41,7 +41,7 @@ const pillars = [
     tag: "Turn server audits into client retainers.",
     items: [
       "White-label PDF Audit Reports (Branded)",
-      "Native AI Plain-English Fix Explanations",
+      "Native Plain-English Fix Guidance",
       "Weekly Health Digest & Instant Alerts",
       "Slack / Discord Webhook Notifications",
       "Multi-site (Network) Centralized Dashboard",

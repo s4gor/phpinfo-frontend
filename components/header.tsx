@@ -109,7 +109,11 @@ export default function Header() {
             </Link>
 
             {/* Try It Live link (highlighted with live green pulse) */}
-            <Link href="/demo" className="inline-flex">
+            <a
+              href="https://demo.phpinfowp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex">
               <Button
                 size="sm"
                 variant="ghost"
@@ -120,7 +124,7 @@ export default function Header() {
                 </span>
                 <span>Try it live</span>
               </Button>
-            </Link>
+            </a>
 
             {/* Docs link */}
             <Link href="/docs" className="hidden md:inline-flex">
@@ -153,6 +157,16 @@ export default function Header() {
 
           {/* Right navigation + Get Pro button */}
           <div className="flex items-center justify-end gap-1.5 sm:gap-2">
+            {/* Agencies link */}
+            <Link href="/agencies" className="hidden xl:inline-flex">
+              <Button
+                size="sm"
+                variant="ghost"
+                className="h-9 sm:h-10 rounded-xl px-2.5 sm:px-3 text-zinc-700 transition-colors hover:bg-zinc-100/70 hover:text-violet-700 font-medium text-xs sm:text-sm dark:text-zinc-300 dark:hover:bg-zinc-800">
+                <span>Agencies</span>
+              </Button>
+            </Link>
+
             {/* Compare link */}
             <Link href="/compare" className="hidden lg:inline-flex">
               <Button
@@ -212,8 +226,10 @@ export default function Header() {
                 <ArrowRight className="h-4 w-4 text-zinc-400" />
               </Link>
 
-              <Link
-                href="/demo"
+              <a
+                href="https://demo.phpinfowp.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50/70 hover:bg-emerald-100/70 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300 font-semibold">
                 <span className="flex items-center gap-2.5">
@@ -223,7 +239,7 @@ export default function Header() {
                 <span className="rounded-full bg-emerald-200/70 text-emerald-800 text-[10px] px-2 py-0.5 font-bold">
                   LIVE
                 </span>
-              </Link>
+              </a>
 
               <Link
                 href="/pricing"
@@ -232,6 +248,17 @@ export default function Header() {
                 <span className="flex items-center gap-2.5">
                   <CreditCard className="h-4 w-4 text-violet-500" />
                   <span>Pricing &amp; Plans</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-zinc-400" />
+              </Link>
+
+              <Link
+                href="/agencies"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
+                <span className="flex items-center gap-2.5">
+                  <ShieldCheck className="h-4 w-4 text-violet-500" />
+                  <span>Agency Solutions (Fleet)</span>
                 </span>
                 <ArrowRight className="h-4 w-4 text-zinc-400" />
               </Link>

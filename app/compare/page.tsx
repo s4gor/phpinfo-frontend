@@ -90,12 +90,12 @@ export default function ComparePage() {
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/demo">
+          <a href="https://demo.phpinfowp.com" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 shadow-sm">
               <Play className="mr-2 h-4 w-4" />
               <span>Try it live In Browser</span>
             </Button>
-          </Link>
+          </a>
           <Link href="/pricing">
             <Button size="lg" variant="outline" className="rounded-xl border-zinc-300 font-semibold px-6">
               <span>View Pricing Plans</span>
@@ -209,9 +209,72 @@ export default function ComparePage() {
         </div>
       </section>
 
-      {/* Full Comparison Table Component */}
+      {/* Dedicated Competitor Deep Dives */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
-        <Comparison />
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Dedicated In-Depth Competitor Analyses
+          </h2>
+          <p className="mt-2 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+            Compare specific architectural trade-offs, performance benchmarks, and production workflows.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <Link
+            href="/vs/query-monitor"
+            className="group rounded-2xl border border-zinc-200 bg-white p-5 hover:border-violet-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="text-xs font-semibold text-violet-600 dark:text-violet-400 mb-1">
+              Developer Profiling vs Live Ops
+            </div>
+            <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-violet-600 transition-colors">
+              vs. Query Monitor
+            </h3>
+            <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Why Query Monitor is great on local dev, but phpinfo() WP is engineered for production with 0.00ms frontend overhead.
+            </p>
+            <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-violet-600 dark:text-violet-400 group-hover:underline">
+              <span>Read comparison</span>
+              <ArrowRight className="h-3 w-3" />
+            </div>
+          </Link>
+
+          <Link
+            href="/vs/health-check-troubleshooting"
+            className="group rounded-2xl border border-zinc-200 bg-white p-5 hover:border-violet-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="text-xs font-semibold text-violet-600 dark:text-violet-400 mb-1">
+              Active Updates vs Abandoned Legacy
+            </div>
+            <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-violet-600 transition-colors">
+              vs. Health Check
+            </h3>
+            <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Why developers are replacing the unmaintained official Health Check plugin to avoid fatal admin lockout bugs.
+            </p>
+            <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-violet-600 dark:text-violet-400 group-hover:underline">
+              <span>Read comparison</span>
+              <ArrowRight className="h-3 w-3" />
+            </div>
+          </Link>
+
+          <Link
+            href="/vs/wp-server-stats"
+            className="group rounded-2xl border border-zinc-200 bg-white p-5 hover:border-violet-300 hover:shadow-md transition-all dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="text-xs font-semibold text-violet-600 dark:text-violet-400 mb-1">
+              Full Server Ops vs Basic Gauges
+            </div>
+            <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-violet-600 transition-colors">
+              vs. WP Server Stats
+            </h3>
+            <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Move beyond simple CPU/RAM meters to proactive update safeguards, database tuning, and PDF client audits.
+            </p>
+            <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-violet-600 dark:text-violet-400 group-hover:underline">
+              <span>Read comparison</span>
+              <ArrowRight className="h-3 w-3" />
+            </div>
+          </Link>
+        </div>
       </section>
 
       {/* Bottom CTA Block */}
@@ -230,12 +293,12 @@ export default function ComparePage() {
                 <AnimatedArrow className="ml-2" />
               </Button>
             </Link>
-            <Link href="/demo">
+            <a href="https://demo.phpinfowp.com" target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="ghost" className="rounded-xl text-white hover:bg-white/10 font-semibold px-5 border border-white/20">
                 <Play className="mr-2 h-4 w-4" />
                 <span>Test Live Demo</span>
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

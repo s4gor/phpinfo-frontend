@@ -7,7 +7,7 @@ export default function Founder() {
           <div className="relative">
             <img
               src="/founder.jpg"
-              alt="Emran Hossain Sagor - founder, phpinfo() WP"
+              alt="Emran Hossain Sagor - Founder & Lead Developer, phpinfo() WP"
               width={112}
               height={112}
               className="h-28 w-28 rounded-full border-2 border-violet-400/40 object-cover"
@@ -20,21 +20,12 @@ export default function Founder() {
                   );
               }}
             />
-            {/* Active online green dot */}
-            <span
-              title="Online & reading messages"
-              className="absolute bottom-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white ring-2 ring-white dark:bg-zinc-900 dark:ring-zinc-900">
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-            </span>
           </div>
 
-          {/* User handle and creator badge */}
+          {/* User handle and badge */}
           <div className="flex flex-col items-center gap-1.5 pt-0.5">
-            <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
-              @s4gor
-            </span>
             <span className="inline-flex items-center rounded-md bg-[#0073aa]/10 px-2.5 py-1 text-xs font-medium text-[#0073aa] dark:bg-[#0073aa]/20 dark:text-[#72aee6] border border-[#0073aa]/20 dark:border-[#0073aa]/30">
-              Creator of phpinfo() WP
+              Founder &amp; Lead Developer
             </span>
           </div>
         </div>
@@ -42,25 +33,25 @@ export default function Founder() {
         {/* Note Content */}
         <div className="flex flex-col gap-3">
           <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-            Built because I was done with duct tape.
+            Built so you never have to guess.
           </h3>
           <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
-            Checking what was really going on inside a WordPress site meant four plugins, a pile of screenshots, and still no clear answer. So I built the tool I should have had from the start.
+            Finding server issues on WordPress used to mean juggling multiple plugins, messy logs, and guesswork. We built phpinfo() WP to put every answer in one clean dashboard.
           </p>
           <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
-            phpinfo() WP puts it all in one place. 3,000+ sites already run it.
+            Over 3,000 WordPress sites rely on it every day.
           </p>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            Questions before you buy?{" "}
+            Questions before buying?{" "}
             <a
-              href="mailto:support@exeebit.com"
+              href="mailto:support@phpinfowp.com"
               className="font-medium text-violet-700 dark:text-violet-400 hover:underline">
-              Email me
+              Email us
             </a>
-            . I read every message.
+            . We reply quickly with real technical answers.
           </p>
           <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            - Emran Hossain Sagor, phpinfo() WP
+            - Emran Hossain Sagor
           </p>
         </div>
       </div>

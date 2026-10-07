@@ -50,10 +50,10 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@exeebit.com>",
+      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@phpinfowp.com>",
       to: [adminEmail()],
       subject: "Sign in to phpinfo() WP admin",
-      replyTo: "support@exeebit.com",
+      replyTo: "support@phpinfowp.com",
       html: magicLinkHtml(link),
     });
   } catch (err) {

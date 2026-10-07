@@ -173,23 +173,23 @@ export const UpgradedLicenseEmail = ({
             </Text>
           </Section>
 
-          {/* Personal Note from Emran (Solo Developer) */}
+          {/* Personal Note from Engineering Leadership */}
           <Section style={aboutStudioSection} className="about-box">
             <table role="presentation" border={0} cellPadding={0} cellSpacing={0} style={{ width: "100%" }}>
               <tbody>
                 <tr>
                   <td>
                     <Text style={aboutStudioHeading} className="text-title">
-                      A personal note from the creator
+                      A personal note from engineering leadership
                     </Text>
                     <Text style={aboutStudioBody} className="text-muted">
-                      Hi, I&apos;m <strong>Emran Hossain Sagor</strong>, the solo developer behind phpinfo() WP. As an independent developer based in Germany, I build, maintain, and support every feature of this tool. I want to make sure your WordPress sites always run smoothly with the latest performance and security standards. If you ever need help with your license, reply directly to this email and I will personally assist you.
+                      Hi, I&apos;m <strong>Emran Hossain Sagor</strong>, Founder &amp; Lead Developer behind phpinfo() WP. Based in Germany, our core mission is ensuring your WordPress infrastructure operates with peak performance, rock-solid security, and zero downtime. If you ever have questions, need assistance with a deployment, or want to share feedback, reply directly to this email - our engineering desk is here to support you.
                     </Text>
                     <Text style={{ fontSize: "13px", fontWeight: 600, color: "#18181b", margin: "10px 0 0" }} className="text-title">
                       - Emran Hossain Sagor
                     </Text>
                     <Text style={{ fontSize: "11px", color: "#71717a", margin: "2px 0 0" }} className="text-subtle">
-                      Founder & Solo Developer · phpinfo() WP
+                      Founder &amp; Lead Developer · phpinfo() WP
                     </Text>
                   </td>
                 </tr>
@@ -201,8 +201,8 @@ export const UpgradedLicenseEmail = ({
           <Section style={supportSection}>
             <Text style={supportText} className="text-muted">
               <strong>Questions about your upgrade?</strong> Simply reply directly to this email or reach us at{" "}
-              <a href="mailto:support@exeebit.com" style={inlineLink}>
-                support@exeebit.com
+              <a href="mailto:support@phpinfowp.com" style={inlineLink}>
+                support@phpinfowp.com
               </a>
               . We are always here to assist you.
             </Text>
@@ -218,7 +218,7 @@ export const UpgradedLicenseEmail = ({
             <Text style={footerCompany} className="text-subtle">
               phpinfo() WP · Registered Software Business · Germany
               <br />
-              <a href="https://phpinfowp.com" style={footerLink}>phpinfowp.com</a> · <a href="mailto:support@exeebit.com" style={footerLink}>support@exeebit.com</a>
+              <a href="https://phpinfowp.com" style={footerLink}>phpinfowp.com</a> · <a href="mailto:support@phpinfowp.com" style={footerLink}>support@phpinfowp.com</a>
             </Text>
           </Section>
 

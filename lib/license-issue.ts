@@ -90,10 +90,10 @@ export async function issueLicenseForSession(
 
   try {
     const res = await resend.emails.send({
-      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@exeebit.com>",
+      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@phpinfowp.com>",
       to: [email],
       subject: "Your phpinfo() WP Pro license",
-      replyTo: "support@exeebit.com",
+      replyTo: "support@phpinfowp.com",
       html: await render(LicenseEmail({ email, tier, licenseKey: key })),
     });
     const msgId = res.data?.id;
@@ -128,10 +128,10 @@ export async function issueLicenseForSession(
 export async function resendLicenseEmail(rec: LicenseRecord): Promise<{ ok: boolean; error?: string; messageId?: string }> {
   try {
     const res = await resend.emails.send({
-      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@exeebit.com>",
+      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@phpinfowp.com>",
       to: [rec.email],
       subject: "Your phpinfo() WP Pro license",
-      replyTo: "support@exeebit.com",
+      replyTo: "support@phpinfowp.com",
       html: await render(LicenseEmail({ email: rec.email, tier: rec.tier, licenseKey: rec.key })),
     });
     const msgId = res.data?.id;
@@ -187,10 +187,10 @@ export async function sendUpgradedLicenseEmail(
     }
 
     const res = await resend.emails.send({
-      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@exeebit.com>",
+      from: process.env.RESEND_FROM || "phpinfo() WP <licenses@phpinfowp.com>",
       to: [rec.email],
       subject: "Your updated phpinfo() WP Pro license key",
-      replyTo: "support@exeebit.com",
+      replyTo: "support@phpinfowp.com",
       html: await render(
         UpgradedLicenseEmail({
           email: rec.email,

@@ -49,8 +49,8 @@ export default function RefundPage() {
               </p>
               <p>
                 If phpinfo() WP Pro does not fit your hosting setup, server requirements, or development workflow, simply email us at{" "}
-                <a href="mailto:support@exeebit.com" className="font-bold underline underline-offset-2 hover:opacity-80">
-                  support@exeebit.com
+                <a href="mailto:support@phpinfowp.com" className="font-bold underline underline-offset-2 hover:opacity-80">
+                  support@phpinfowp.com
                 </a>{" "}
                 with your purchase email address or license key, and we will issue a full, prompt refund via Stripe. No questions asked.
               </p>
@@ -117,11 +117,11 @@ export default function RefundPage() {
             <div className="mt-4 rounded-xl bg-zinc-50 border border-zinc-200 p-5 font-mono text-xs text-zinc-800 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 space-y-2.5 leading-relaxed">
               <p>
                 To:<br />
-                Emran Hossain Sagor – phpinfo() WP<br />
+                Emran Hossain Sagor, phpinfo() WP<br />
                 Peter-Hille-Weg 13<br />
                 33098 Paderborn<br />
                 Germany<br />
-                Email: support@exeebit.com
+                Email: support@phpinfowp.com
               </p>
               <p>
                 I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*) / for the provision of the following service (*):
@@ -153,10 +153,10 @@ export default function RefundPage() {
             </p>
             <div className="mt-3">
               <a
-                href="mailto:support@exeebit.com?subject=Refund%20Request%20-%20phpinfo()%20WP"
+                href="mailto:support@phpinfowp.com?subject=Refund%20Request%20-%20phpinfo()%20WP"
                 className="inline-flex items-center gap-2 rounded-xl bg-violet-50 px-4 py-2.5 text-xs sm:text-sm font-semibold text-violet-700 hover:bg-violet-100 dark:bg-violet-950/60 dark:text-violet-300 dark:hover:bg-violet-900/60">
                 <Mail className="h-4 w-4" />
-                <span>support@exeebit.com</span>
+                <span>support@phpinfowp.com</span>
               </a>
             </div>
             <p className="text-xs text-zinc-400 pt-4">

@@ -147,12 +147,12 @@ Update Guard active, PHP 8.3 certified.`,
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/demo">
+          <a href="https://demo.phpinfowp.com" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 shadow-sm">
               <Play className="mr-2 h-4 w-4" />
               <span>Try it live In Sandbox</span>
             </Button>
-          </Link>
+          </a>
           <Link href="/pricing">
             <Button size="lg" variant="outline" className="rounded-xl border-zinc-300 font-semibold px-6">
               <span>View Pricing Plans</span>
@@ -245,12 +245,12 @@ Update Guard active, PHP 8.3 certified.`,
                 <AnimatedArrow className="ml-2" />
               </Button>
             </Link>
-            <Link href="/demo">
+            <a href="https://demo.phpinfowp.com" target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="ghost" className="rounded-xl text-zinc-300 hover:text-white hover:bg-zinc-800 font-semibold px-5 border border-zinc-700">
                 <Play className="mr-2 h-4 w-4" />
                 <span>Test Live Demo</span>
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

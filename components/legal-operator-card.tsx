@@ -13,7 +13,7 @@ interface LegalOperatorCardProps {
 export default function LegalOperatorCard({
   title = "Emran Hossain Sagor",
   roleLabel,
-  badgeLabel = "Sole Proprietorship (Einzelunternehmer)",
+  badgeLabel = "Registered Software Studio (Germany)",
   showWebsite = true,
   compact = false,
   className = "",
@@ -37,14 +37,9 @@ export default function LegalOperatorCard({
             <div>
               <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
                 <span>{title}</span>
-                {roleLabel && (
-                  <span className="text-[10px] font-medium text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/60 border border-violet-200/70 dark:border-violet-900/50 px-1.5 py-0.2 rounded">
-                    {roleLabel}
-                  </span>
-                )}
               </div>
               <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
-                phpinfo() WP · Software Development
+                Founder &amp; Lead Developer · phpinfo() WP
               </div>
             </div>
           </div>
@@ -64,9 +59,9 @@ export default function LegalOperatorCard({
             <div className="flex items-center gap-2">
               <span className="text-zinc-400 text-[10px] w-10">Email:</span>
               <a
-                href="mailto:support@exeebit.com"
+                href="mailto:support@phpinfowp.com"
                 className="font-mono text-[11px] text-violet-600 dark:text-violet-400 underline hover:text-violet-700">
-                support@exeebit.com
+                support@phpinfowp.com
               </a>
             </div>
             <div className="flex items-center gap-2">
@@ -93,19 +88,13 @@ export default function LegalOperatorCard({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/founder.jpg"
-              alt="Emran Hossain Sagor - Founder"
+              alt="Emran Hossain Sagor - Founder & Lead Developer"
               className="h-11 w-11 rounded-full object-cover border border-zinc-200/90 dark:border-zinc-700 shadow-2xs"
               onError={(e) => {
                 const img = e.currentTarget as HTMLImageElement;
                 img.style.display = "none";
               }}
             />
-            {/* Online green indicator */}
-            <span
-              title="Verified Operator"
-              className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white dark:bg-zinc-900 ring-2 ring-white dark:ring-zinc-900">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
           </div>
 
           <div>
@@ -113,14 +102,9 @@ export default function LegalOperatorCard({
               <span className="text-[15px] font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                 {title}
               </span>
-              {roleLabel && (
-                <span className="text-[11px] font-medium text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/60 border border-violet-200/80 dark:border-violet-900/60 px-2 py-0.5 rounded-md">
-                  {roleLabel}
-                </span>
-              )}
             </div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 flex items-center gap-1.5 flex-wrap">
-              <span>Solo Software Developer</span>
+              <span>Founder &amp; Lead Developer</span>
               <span>&bull;</span>
               <span className="font-semibold text-zinc-800 dark:text-zinc-200">phpinfo() WP</span>
             </div>
@@ -161,9 +145,9 @@ export default function LegalOperatorCard({
             <div className="flex items-center gap-2">
               <span className="text-zinc-400 text-[11px] w-12 shrink-0">Email:</span>
               <a
-                href="mailto:support@exeebit.com"
+                href="mailto:support@phpinfowp.com"
                 className="font-mono text-xs text-zinc-800 dark:text-zinc-200 hover:text-violet-600 dark:hover:text-violet-400 underline underline-offset-2 transition-colors">
-                support@exeebit.com
+                support@phpinfowp.com
               </a>
             </div>
             <div className="flex items-center gap-2">

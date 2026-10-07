@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, ShieldCheck, Lock } from "lucide-react";
+import { Check, ShieldCheck, Lock, Infinity as InfinityIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AnimatedArrow from "@/components/ui/animated-arrow";
 import { useEffect, useRef } from "react";
@@ -19,6 +19,7 @@ const tiers: Array<{
   name: string;
   price: string;
   cadence: string;
+  subprice?: string;
   blurb: string;
   features: string[];
   flagFor?: "lifetime" | "popular";
@@ -31,7 +32,8 @@ const tiers: Array<{
     cadence: "/year",
     blurb: "You own one site and want it running at its best.",
     features: [
-      "All Pro v8.0 features on 1 site",
+      "1 Site",
+      "All Pro v8.0 features included",
       "Standard PDF reports (Branded)",
       "1 External API monitor & 3 config snapshots",
       "1 year of updates & email support",
@@ -44,7 +46,8 @@ const tiers: Array<{
     cadence: "/year",
     blurb: "You manage multiple sites. One license covers every one of them.",
     features: [
-      "All Pro v8.0 features on unlimited sites",
+      "Unlimited Sites",
+      "All Pro v8.0 features included",
       "Fully white-labeled PDF reports (Custom Logo)",
       "Weekly digests & Slack/Discord alerts",
       "Unlimited snapshots & API monitors",
@@ -58,8 +61,10 @@ const tiers: Array<{
     name: "Lifetime",
     price: "$249",
     cadence: "once",
+    subprice: "Pays for itself in 3 years",
     blurb: "One payment. Updates and support forever. Zero renewal fees.",
     features: [
+      "Early access to new features",
       "All Pro v8.0 features on unlimited sites",
       "Fully white-labeled PDF reports (Custom Logo)",
       "Weekly digests & Slack/Discord alerts",
@@ -132,10 +137,10 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
               {flagLabel && (
                 <div
                   className={cn(
-                    "absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider",
+                    "absolute -top-3 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider shadow-xs",
                     isLifetime
-                      ? "bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800"
-                      : "bg-violet-400/20 text-violet-700 border border-violet-300 dark:bg-violet-950/60 dark:text-violet-300 dark:border-violet-800"
+                      ? "bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950 dark:text-emerald-200 dark:border-emerald-700"
+                      : "bg-violet-100 text-violet-800 border border-violet-300 dark:bg-violet-950 dark:text-violet-200 dark:border-violet-700"
                   )}>
                   {flagLabel}
                 </div>
@@ -150,15 +155,54 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
                 </span>
                 <span className="text-sm text-zinc-500 dark:text-zinc-400">{tier.cadence}</span>
               </div>
+              {tier.subprice ? (
+                <div className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 -mt-0.5 mb-1.5">
+                  {tier.subprice}
+                </div>
+              ) : null}
               <div className="mb-5 text-sm text-zinc-600 dark:text-zinc-400">{tier.blurb}</div>
 
               <ul className="mb-6 flex flex-grow flex-col gap-2 text-sm text-zinc-700 dark:text-zinc-300">
-                {tier.features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-violet-600 dark:text-violet-400" />
-                    <span>{f}</span>
-                  </li>
-                ))}
+                {tier.features.map((f, i) => {
+                  const isBetaFeature = f.startsWith("Early access");
+                  const isInfinitySites = f.includes("Sites") && (f.includes("∞") || f.includes("Unlimited"));
+                  const isSingleSite = f === "1 Site";
+                  const isHighlight = isBetaFeature || isInfinitySites || isSingleSite;
+                  return (
+                    <li
+                      key={i}
+                      className={cn(
+                        "flex items-start gap-2",
+                        isHighlight && "font-medium text-zinc-900 dark:text-zinc-100"
+                      )}>
+                      <Check
+                        className={cn(
+                          "mt-0.5 h-4 w-4 flex-shrink-0",
+                          isBetaFeature
+                            ? "text-emerald-600 dark:text-emerald-400"
+                            : "text-violet-600 dark:text-violet-400"
+                        )}
+                      />
+                      <span className="flex-1">
+                        {isInfinitySites ? (
+                          <span className="inline-flex items-center gap-1">
+                            <InfinityIcon className="h-4 w-4 text-violet-600 dark:text-violet-400 shrink-0" />
+                            <span>Sites</span>
+                          </span>
+                        ) : isBetaFeature ? (
+                          <span>
+                            {f}{" "}
+                            <span className="inline-flex items-center rounded-md bg-emerald-50 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700 border border-emerald-200/80 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800 align-middle ml-1 whitespace-nowrap">
+                              Exclusive
+                            </span>
+                          </span>
+                        ) : (
+                          <span>{f}</span>
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
 
               <button

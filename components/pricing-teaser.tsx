@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const tiers = [
   { id: "single",    name: "Single",    price: "$39",  cadence: "/year", blurb: "1 site you own" },
   { id: "unlimited", name: "Unlimited", price: "$79",  cadence: "/year", blurb: "Unlimited sites", featured: true },
-  { id: "lifetime",  name: "Lifetime",  price: "$249", cadence: "once",  blurb: "Zero renewals forever" },
+  { id: "lifetime",  name: "Lifetime",  price: "$249", cadence: "once",  blurb: "Pays for itself in 3 years" },
 ];
 
 export default function PricingTeaser() {

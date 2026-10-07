@@ -35,19 +35,19 @@ export default function AboutPage() {
         </div>
 
         <h1 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          Made with care by one person.
+          Engineered with precision. Built without compromise.
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-          phpinfo() WP is an independent software tool created by Emran Hossain Sagor (<a href="https://s4gor.exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 font-semibold underline underline-offset-2 hover:text-violet-700">@s4gor</a>) to craft developer tools and WordPress software. Based in Germany.
+          phpinfo() WP is engineered by Emran Hossain Sagor (<a href="https://s4gor.exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 font-semibold underline underline-offset-2 hover:text-violet-700">@s4gor</a>), Founder &amp; Lead Developer building high-performance SaaS platforms, production web &amp; mobile apps, and developer infrastructure from Germany.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
           <a
-            href="mailto:emran@exeebit.com"
+            href="mailto:emran@phpinfowp.com"
             className="flex items-center gap-1.5 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
             <Mail className="h-3.5 w-3.5" />
-            <span>emran@exeebit.com</span>
+            <span>emran@phpinfowp.com</span>
           </a>
           <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
           <a
@@ -87,7 +87,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-4 space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
               <p>
-                Seven years of building software taught one recurring lesson: <em>stay small, ship slowly, and listen attentively to real engineering problems</em>.
+                Seven years of systems and software engineering taught one uncompromising standard: <em>prioritize architectural precision, eliminate runtime bloat, and engineer solutions directly for production environments</em>.
               </p>
               <p>
                 Every WordPress agency owner and developer knows the exact sinking feeling: an automatic or routine plugin update triggers a fatal PHP error or database mismatch, breaking a high-value client store in the middle of the day. Meanwhile, native WordPress diagnostic tools only show raw text tables or passive summaries without triage suggestions, and external SaaS monitors charge endless per-site subscriptions ($3-$5/month per site) while harvesting sensitive hosting credentials and error dumps onto remote servers.
@@ -147,7 +147,7 @@ export default function AboutPage() {
                   German Quality &amp; Compliance
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Operated pursuant to strict EU GDPR principles and German legal standards (§ 5 DDG). Built by an experienced sole proprietorship based in Germany.
+                  Operated pursuant to strict EU GDPR principles and German legal standards (§ 5 DDG). Built with German engineering discipline and enterprise-grade reliability.
                 </p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
               Get in Touch Directly
             </h2>
             <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-              Have questions about roadmap plans, custom agency white-labeling, or enterprise deployments? I read and reply to every message personally.
+              Have questions about roadmap capabilities, agency white-labeling, or multi-site fleet deployments? Our engineering desk provides direct, priority technical guidance.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link

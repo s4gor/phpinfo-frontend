@@ -107,9 +107,9 @@ export default async function SuccessPage({ searchParams }: SuccessPageProps) {
             your inbox in the next minute, or refresh this page. If it doesn't
             arrive, email{" "}
             <a
-              href="mailto:support@exeebit.com"
+              href="mailto:support@phpinfowp.com"
               className="underline underline-offset-2">
-              support@exeebit.com
+              support@phpinfowp.com
             </a>{" "}
             with your order number - we'll resend instantly.
           </div>
@@ -141,9 +141,9 @@ export default async function SuccessPage({ searchParams }: SuccessPageProps) {
           <span>
             Need help?{" "}
             <a
-              href="mailto:support@exeebit.com"
+              href="mailto:support@phpinfowp.com"
               className="text-violet-700 underline underline-offset-2">
-              support@exeebit.com
+              support@phpinfowp.com
             </a>
           </span>
           <Link

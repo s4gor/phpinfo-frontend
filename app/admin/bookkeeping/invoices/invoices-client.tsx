@@ -770,7 +770,7 @@ export function InvoicesClient({ licenses, stripeInvoices = [] }: Props) {
                     <p>33098 Paderborn</p>
                     <p>Germany</p>
                     <p className="font-mono text-zinc-700">+49 175 5075508</p>
-                    <p className="text-zinc-500 pt-0.5">support@exeebit.com</p>
+                    <p className="text-zinc-500 pt-0.5">support@phpinfowp.com</p>
                   </div>
                 </div>
                 <div className="text-right">
@@ -898,7 +898,7 @@ export function InvoicesClient({ licenses, stripeInvoices = [] }: Props) {
                 </div>
                 <p>
                   Thank you for purchasing phpinfo() WP Pro.<br />
-                  We&apos;ve sent your digital license key and download link to your email address. For product documentation, updates, and priority developer support, visit https://exeebit.com or contact support@exeebit.com.
+                  We&apos;ve sent your digital license key and download link to your email address. For product documentation, updates, and priority developer support, visit https://phpinfowp.com or contact support@phpinfowp.com.
                 </p>
               </div>
 
@@ -911,7 +911,7 @@ export function InvoicesClient({ licenses, stripeInvoices = [] }: Props) {
                   Operated by Exeebit · Emran Hossain Sagor
                 </p>
                 <p className="text-[11px] text-zinc-400">
-                  Peter-Hille-Weg 13 · 33098 Paderborn · Germany · +49 175 5075508 · support@exeebit.com
+                  Peter-Hille-Weg 13 · 33098 Paderborn · Germany · +49 175 5075508 · support@phpinfowp.com
                 </p>
               </div>
             </div>

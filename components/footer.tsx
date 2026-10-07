@@ -67,12 +67,14 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
                   <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
                     Test drive the live diagnostic engine and update simulator in our interactive demo.
                   </p>
-                  <Link
-                    href="/demo"
+                  <a
+                    href="https://demo.phpinfowp.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group inline-flex items-center gap-1 text-xs font-semibold text-violet-600 hover:text-violet-700 transition-colors dark:text-violet-400">
                     <span>Integration options</span>
                     <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -82,7 +84,7 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
 
       {/* Modern, clean, full-width footer columns (Linear/Raycast style) */}
       <div className="mx-auto max-w-6xl px-4 pt-14 pb-10 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pb-10">
           {/* Column 1: Product */}
           <div>
             <h3 className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
@@ -98,10 +100,9 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               </li>
               <li>
                 <Link
-                  href="/demo"
-                  className="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-                  <span>Try it live</span>
+                  href="/agencies"
+                  className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
+                  Agency Solutions
                 </Link>
               </li>
               <li>
@@ -121,11 +122,8 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               <li>
                 <Link
                   href="/changelog"
-                  className="inline-flex items-center gap-1.5 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
-                  <span>Changelog</span>
-                  <span className="rounded bg-violet-50 dark:bg-violet-950/60 border border-violet-200/80 dark:border-violet-900/60 text-violet-700 dark:text-violet-300 text-[10px] px-1.5 py-0.2 font-semibold">
-                    v8.0
-                  </span>
+                  className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
+                  Version Changelog
                 </Link>
               </li>
             </ul>
@@ -146,21 +144,20 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               </li>
               <li>
                 <a
+                  href="https://demo.phpinfowp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
+                  Interactive Demo
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://wordpress.org/plugins/phpinfo-wp/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
                   <span>Free WP Plugin</span>
-                  <ExternalLink className="h-3 w-3 opacity-60" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wordpress.org/support/plugin/phpinfo-wp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
-                  <span>Community Support</span>
                   <ExternalLink className="h-3 w-3 opacity-60" />
                 </a>
               </li>
@@ -212,11 +209,14 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
+                <a
+                  href="https://wordpress.org/support/plugin/phpinfo-wp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
-                  <span>About phpinfo() WP</span>
-                </Link>
+                  <span>Community Forum</span>
+                  <ExternalLink className="h-3 w-3 opacity-60" />
+                </a>
               </li>
               <li>
                 <a
@@ -268,13 +268,23 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               <li>
                 <CookieSettingsButton />
               </li>
-              <li className="pt-1">
-                <span className="text-[11px] text-zinc-400 dark:text-zinc-500 block">
-                  EU GDPR &bull; § 5 DDG
-                </span>
-              </li>
             </ul>
           </div>
+        </div>
+
+        {/* Subtle Horizontal Competitor Directory for SEO */}
+        <div className="pt-6 pb-6 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center justify-between gap-y-2 text-xs text-zinc-500 dark:text-zinc-400">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span className="font-semibold text-zinc-700 dark:text-zinc-300">Compare Alternatives:</span>
+            <Link href="/vs/query-monitor" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">vs. Query Monitor</Link>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
+            <Link href="/vs/health-check-troubleshooting" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">vs. Health Check</Link>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
+            <Link href="/vs/wp-server-stats" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">vs. WP Server Stats</Link>
+          </div>
+          <span className="text-[11px] text-zinc-400 dark:text-zinc-500">
+            EU GDPR &bull; § 5 DDG Compliant
+          </span>
         </div>
 
         {/* Bottom bar */}
@@ -287,14 +297,6 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
               rel="noopener noreferrer"
               className="text-zinc-700 dark:text-zinc-300 underline underline-offset-2 hover:text-violet-700">
               Exeebit
-            </a>{" "}
-            &bull; Built by{" "}
-            <a
-              href="https://s4gor.exeebit.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-700 dark:text-zinc-300 underline underline-offset-2 hover:text-violet-700">
-              @s4gor
             </a>
           </div>
 

@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-const SUPPORT_EMAIL = "support@exeebit.com";
+const SUPPORT_EMAIL = "support@phpinfowp.com";
 
 function mailto(subject: string, body?: string) {
   const params = new URLSearchParams({ subject });
@@ -120,7 +120,7 @@ export default function ContactPage() {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-          One direct inbox for all phpinfo() WP questions, technical assistance, and billing. We typically reply within 24–48 hours on business days.
+          One direct inbox for all phpinfo() WP questions, technical assistance, and billing. We typically reply within 24-48 hours on business days.
         </p>
       </section>
 
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 Email us directly
               </h2>
               <p className="mt-1.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Direct inbox managed by founder Emran Hossain Sagor. No automated support bots.
+                Direct engineering desk with founder-level technical oversight. No automated bots, real answers from engineers.
               </p>
               <div className="mt-4 font-mono text-sm font-semibold text-violet-600 dark:text-violet-400 group-hover:underline">
                 {SUPPORT_EMAIL}
@@ -154,7 +154,7 @@ export default function ContactPage() {
                 </h3>
               </div>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Monday to Friday: 09:00 – 18:00 CET (Central European Time). Urgent licensing or update crash inquiries receive priority triage.
+                Monday to Friday: 09:00 - 18:00 CET (Central European Time). Urgent licensing or update crash inquiries receive priority triage.
               </p>
             </div>
 

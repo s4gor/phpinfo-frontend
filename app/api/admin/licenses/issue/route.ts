@@ -63,10 +63,10 @@ export async function POST(req: Request) {
   if (sendEmail) {
     try {
       const res = await resend.emails.send({
-        from: process.env.RESEND_FROM || "phpinfo() WP <licenses@exeebit.com>",
+        from: process.env.RESEND_FROM || "phpinfo() WP <licenses@phpinfowp.com>",
         to: [email],
         subject: "Your phpinfo() WP Pro license",
-        replyTo: "support@exeebit.com",
+        replyTo: "support@phpinfowp.com",
         html: await render(LicenseEmail({ email, tier, licenseKey: key })),
       });
       const msgId = res.data?.id;

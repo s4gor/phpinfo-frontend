@@ -124,8 +124,10 @@ export default function CTA() {
               <span>See plans & pricing</span>
               <AnimatedArrow className="ml-1" />
             </Link>
-            <Link
-              href="/demo"
+            <a
+              href="https://demo.phpinfowp.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-300 bg-emerald-50/60 px-5 py-3 text-sm font-semibold text-emerald-900 shadow-xs transition hover:bg-emerald-100/70">
               <span className="relative flex h-2 w-2 mr-0.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -133,7 +135,7 @@ export default function CTA() {
               </span>
               <span>Try it live</span>
               <AnimatedArrow className="ml-1 text-emerald-600" />
-            </Link>
+            </a>
           </div>
           <p className="text-xs text-zinc-500 flex items-center gap-1.5 mt-1">
             <span>From <strong className="font-semibold text-zinc-800">$39/year</strong></span>

@@ -51,12 +51,12 @@ export default function ImpressumPage() {
             <div className="mt-3 space-y-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
               <p>
                 <strong className="text-zinc-900 dark:text-zinc-100">Email:</strong>{" "}
-                <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  support@exeebit.com
+                <a href="mailto:support@phpinfowp.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
+                  support@phpinfowp.com
                 </a>{" "}
                 /{" "}
-                <a href="mailto:emran@exeebit.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  emran@exeebit.com
+                <a href="mailto:emran@phpinfowp.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
+                  emran@phpinfowp.com
                 </a>
               </p>
               <p>

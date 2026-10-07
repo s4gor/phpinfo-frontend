@@ -18,6 +18,7 @@ const rows: Row[] = [
   { label: "Sites", free: "1", single: "1", unlimited: "Unlimited", lifetime: "Unlimited" },
   { label: "Updates", free: "While free version is supported", single: "1 year", unlimited: "1 year", lifetime: "Lifetime" },
   { label: "Support", free: "Community (WP.org forum)", single: "Email", unlimited: "Priority email", lifetime: "Priority forever" },
+  { label: "Early Beta Access (Pre-release builds)", free: false, single: false, unlimited: false, lifetime: true },
 
   // Free-tier features
   { label: "phpinfo() viewer", free: true, single: true, unlimited: true, lifetime: true },
@@ -56,12 +57,13 @@ const cols: Array<{
   name: string;
   price: string;
   cadence: string;
+  subprice?: string;
   featured?: boolean;
 }> = [
   { id: "free", name: "Free", price: "$0", cadence: "WP.org" },
   { id: "single", name: "Single Site", price: "$39", cadence: "/year" },
   { id: "unlimited", name: "Unlimited", price: "$79", cadence: "/year", featured: true },
-  { id: "lifetime", name: "Lifetime", price: "$249", cadence: "once" },
+  { id: "lifetime", name: "Lifetime", price: "$249", cadence: "once", subprice: "Pays for itself in 3 yrs" },
 ];
 
 export default function Comparison() {
@@ -101,6 +103,11 @@ export default function Comparison() {
                       <span className="text-2xl font-semibold text-zinc-900">{c.price}</span>
                       <span className="text-xs text-zinc-500">{c.cadence}</span>
                     </div>
+                    {c.subprice ? (
+                      <div className="text-[10px] font-semibold text-emerald-600 mt-0.5">
+                        {c.subprice}
+                      </div>
+                    ) : null}
                   </th>
                 ))}
               </tr>

@@ -84,7 +84,7 @@ export default function TermsPage() {
                   <strong className="text-zinc-900 dark:text-zinc-100">Unlimited Sites License ($79/year):</strong> Authorizes activation on unlimited personal and client websites, white-labeled client PDF reporting, weekly digest alerts, and 1 year of continuous updates and priority support.
                 </li>
                 <li>
-                  <strong className="text-zinc-900 dark:text-zinc-100">Lifetime License ($249 one-time):</strong> Authorizes activation on unlimited websites with perpetual access to all future major version updates and priority support without recurring renewal fees.
+                  <strong className="text-zinc-900 dark:text-zinc-100">Lifetime License ($249 one-time):</strong> Authorizes activation on unlimited websites with continuous access to all future major version updates, exclusive early access to pre-release beta builds, and priority support without recurring renewal fees. &quot;Lifetime&quot; is legally defined as the active commercial product lifecycle of phpinfo() WP for as long as the software is maintained and supported by the provider, not the natural lifespan of the licensee.
                 </li>
               </ul>
               <p>
@@ -103,10 +103,13 @@ export default function TermsPage() {
                 All prices are stated in USD. Pursuant to § 19 UStG (German Small Business Regulation / <em>Kleinunternehmerregelung</em>), VAT is not charged or displayed on invoices.
               </p>
               <p>
-                Annual subscriptions (Single Site and Unlimited) renew automatically every 12 months unless cancelled prior to the renewal date. You may cancel renewal at any time directly through the Stripe Customer Portal or by emailing <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline">support@exeebit.com</a>.
+                Annual subscriptions (Single Site and Unlimited) renew automatically every 12 months unless cancelled prior to the renewal date. You may cancel renewal at any time directly through the Stripe Customer Portal or by emailing <a href="mailto:support@phpinfowp.com" className="text-violet-600 dark:text-violet-400 underline">support@phpinfowp.com</a>.
               </p>
               <p>
                 If an annual license is cancelled or expires, your installed software remains functional; however, access to automated security updates, bug fixes, and support ceases at the end of the paid billing cycle.
+              </p>
+              <p>
+                The Lifetime License is a single, non-recurring charge. For Lifetime licenses, updates and technical support remain active for the operational lifetime of the phpinfo() WP software product. In the unlikely event that the product is ever permanently retired or sunset, active installations will continue to function on customer servers without restriction, and notice will be provided at least 90 days in advance.
               </p>
             </div>
           </section>
@@ -121,7 +124,7 @@ export default function TermsPage() {
                 We stand behind our tools. We offer a voluntary <strong>100% 14-Day Money-Back Guarantee</strong> on all first-time purchases.
               </p>
               <p>
-                If the plugin does not meet your technical expectations or workflow needs, email us at <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline">support@exeebit.com</a> within 14 days of purchase with your order email or license key, and we will issue a full refund promptly.
+                If the plugin does not meet your technical expectations or workflow needs, email us at <a href="mailto:support@phpinfowp.com" className="text-violet-600 dark:text-violet-400 underline">support@phpinfowp.com</a> within 14 days of purchase with your order email or license key, and we will issue a full refund promptly.
               </p>
               <p>
                 For statutory EU consumer cancellation provisions, please review our{" "}

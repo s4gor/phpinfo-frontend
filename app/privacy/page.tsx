@@ -60,7 +60,7 @@ export default function PrivacyPage() {
               <p>
                 The data controller responsible for the processing of personal data on this website under Article 4(7) GDPR is:
               </p>
-              <LegalOperatorCard roleLabel="Art. 4(7) GDPR" />
+              <LegalOperatorCard />
             </div>
           </section>
 
@@ -169,7 +169,7 @@ export default function PrivacyPage() {
           {/* 6. Your Rights */}
           <section className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs dark:border-zinc-800 dark:bg-zinc-900">
             <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-              6. Your GDPR Rights (Articles 15–21)
+              6. Your GDPR Rights (Articles 15-21)
             </h2>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
               <p>Under the GDPR, you have the right to:</p>
@@ -183,8 +183,8 @@ export default function PrivacyPage() {
               </ul>
               <p className="pt-2">
                 To exercise any right, contact:{" "}
-                <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  support@exeebit.com
+                <a href="mailto:support@phpinfowp.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
+                  support@phpinfowp.com
                 </a>.
               </p>
             </div>

@@ -50,6 +50,7 @@ import {
   CheckSquare,
   Bookmark,
   Share2,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
@@ -1021,12 +1022,11 @@ export default function DocsPage() {
   );
 
   const filteredDocs = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
     return docsData.filter((doc) => {
       const matchCat = selectedCategory === "All" || doc.category === selectedCategory;
-      if (!matchCat) return false;
-      if (!searchQuery.trim()) return true;
+      if (!q) return matchCat;
 
-      const q = searchQuery.toLowerCase();
       const matchTitle = doc.title.toLowerCase().includes(q);
       const matchWhat = doc.whatFor.toLowerCase().includes(q);
       const matchWhere = doc.where?.toLowerCase().includes(q) ?? false;
@@ -1034,8 +1034,12 @@ export default function DocsPage() {
       const matchTables = doc.tables?.some((t) =>
         t.data.rows.some((r) => r.col1.toLowerCase().includes(q) || r.col2.toLowerCase().includes(q) || (r.col3 && r.col3.toLowerCase().includes(q)))
       ) ?? false;
+      const matchCallouts = doc.callouts?.some((c) => c.title.toLowerCase().includes(q) || c.text.toLowerCase().includes(q)) ?? false;
+      const matchSteps = doc.steps?.items.some((s) => s.toLowerCase().includes(q)) ?? false;
+      const matchNotes = doc.notes?.some((n) => n.toLowerCase().includes(q)) ?? false;
 
-      return matchTitle || matchWhat || matchWhere || matchOverview || matchTables;
+      const textMatch = matchTitle || matchWhat || matchWhere || matchOverview || matchTables || matchCallouts || matchSteps || matchNotes;
+      return matchCat && textMatch;
     });
   }, [searchQuery, selectedCategory]);
 
@@ -1242,8 +1246,47 @@ export default function DocsPage() {
               <span className="text-[10px] text-zinc-400 font-mono">v8.0</span>
             </div>
 
+            {/* Quick Live Search bar */}
+            <div className="relative mb-2.5 px-0.5">
+              <div className="relative flex items-center">
+                <Search className="absolute left-2.5 h-3.5 w-3.5 text-zinc-400 pointer-events-none" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search sections or content..."
+                  className="w-full rounded-xl border border-zinc-200/90 bg-zinc-50/70 py-1.5 pl-8 pr-7 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500 focus:bg-white focus:outline-hidden dark:border-zinc-800 dark:bg-zinc-850/60 dark:text-zinc-100 dark:focus:border-violet-500 dark:focus:bg-zinc-900 transition-colors shadow-2xs"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    aria-label="Clear search"
+                    className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full bg-zinc-200 text-zinc-500 hover:bg-zinc-300 hover:text-zinc-800 dark:bg-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-600 transition-colors cursor-pointer">
+                    <X className="h-2.5 w-2.5" />
+                  </button>
+                )}
+              </div>
+            </div>
+
             <nav className="space-y-1">
-              {filteredDocs.map((doc) => {
+              {filteredDocs.length === 0 ? (
+                <div className="py-6 px-3 text-center">
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                    No sections match &ldquo;{searchQuery}&rdquo;
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery("");
+                      setSelectedCategory("All");
+                    }}
+                    className="mt-2 text-[11px] font-semibold text-violet-600 hover:text-violet-700 dark:text-violet-400 hover:underline cursor-pointer">
+                    Clear search &amp; show all
+                  </button>
+                </div>
+              ) : (
+                filteredDocs.map((doc) => {
                 const Icon = categoryIcons[doc.category] || FileText;
                 const isActive = activeSectionId === doc.id;
                 return (
@@ -1275,9 +1318,10 @@ export default function DocsPage() {
                         {doc.badge}
                       </span>
                     )}
-                  </button>
-                );
-              })}
+                    </button>
+                  );
+                })
+              )}
             </nav>
           </aside>
 

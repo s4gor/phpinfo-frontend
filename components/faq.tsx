@@ -41,7 +41,11 @@ const faqs = [
   },
   {
     q: "What happens after my year is up?",
-    a: "You keep the version you have, with all features unlocked. You stop getting updates and support unless you renew. We email a renewal reminder 14 days before expiry. Lifetime owners never expire.",
+    a: "You keep the version you have, with all features unlocked. You stop getting updates and support unless you renew. We email a renewal reminder 14 days before expiry. Lifetime license owners never expire and receive product updates and priority support for the entire lifetime of the product.",
+  },
+  {
+    q: "What makes the Lifetime license different from Unlimited?",
+    a: "In addition to covering unlimited WordPress sites with zero recurring renewal fees (paying for itself in 3 years vs $79/yr), Lifetime license holders receive exclusive early access to every new feature and pre-release beta build before public release.",
   },
   {
     q: "Can I move my license between sites?",
@@ -49,7 +53,7 @@ const faqs = [
   },
   {
     q: "Refund policy?",
-    a: "14 days, no questions asked. Email support@exeebit.com with your order number and we'll refund within 1-2 business days.",
+    a: "14 days, no questions asked. Email support@phpinfowp.com with your order number and we'll refund within 1-2 business days.",
   },
   {
     q: "Server requirements?",
@@ -92,9 +96,9 @@ export default function FAQ() {
         className="mt-6 text-center text-sm text-zinc-500">
         Still have questions? Email{" "}
         <a
-          href="mailto:support@exeebit.com"
+          href="mailto:support@phpinfowp.com"
           className="text-violet-700 underline underline-offset-2 hover:text-violet-700">
-          support@exeebit.com
+          support@phpinfowp.com
         </a>
       </p>
     </div>

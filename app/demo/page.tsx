@@ -135,8 +135,21 @@ export default function TryItLivePage() {
           Test real-time PHP 8.4 upgrade delta scanning, test-fire our Update Guard crash rollback simulator, and inspect live server telemetry before installing on your sites.
         </p>
 
+        {/* Launch Live Site CTA */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="https://demo.phpinfowp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors">
+            <Play className="h-4 w-4" />
+            <span>Launch Live WordPress Sandbox (demo.phpinfowp.com)</span>
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
+
         {/* Quick Action Badges */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
           <div className="flex items-center gap-1.5 rounded-lg border border-zinc-200/80 bg-white px-3 py-1.5 shadow-2xs dark:border-zinc-800 dark:bg-zinc-900">
             <CheckCircle2 className="h-4 w-4 text-emerald-500" />
             <span>Zero Server Setup</span>

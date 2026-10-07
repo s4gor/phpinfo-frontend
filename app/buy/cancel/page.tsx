@@ -38,9 +38,9 @@ export default function CancelPage() {
         <p className="mt-6 text-xs text-zinc-500">
           Questions?{" "}
           <a
-            href="mailto:support@exeebit.com"
+            href="mailto:support@phpinfowp.com"
             className="text-violet-700 underline underline-offset-2">
-            support@exeebit.com
+            support@phpinfowp.com
           </a>
         </p>
       </div>

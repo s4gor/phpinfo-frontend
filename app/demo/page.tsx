@@ -656,7 +656,7 @@ export default function TryItLivePage() {
                     <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-emerald-500" /> PHP Version EOL Status &amp; Roadmap</div>
                     <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-emerald-500" /> Security Headers &amp; SSL Certificate Check</div>
                     <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-emerald-500" /> Autoload &amp; Database Health Grade</div>
-                    <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-emerald-500" /> Zero phpinfo() WP or Exeebit branding</div>
+                    <div className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-emerald-500" /> 100% White-Label: Zero phpinfo() WP branding</div>
                   </div>
                 </div>
 

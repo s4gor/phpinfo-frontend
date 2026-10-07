@@ -766,8 +766,8 @@ export function InvoicesClient({ licenses, stripeInvoices = [] }: Props) {
                 <div>
                   <h2 className="text-lg font-bold tracking-tight text-zinc-950">phpinfo() WP Pro</h2>
                   <div className="text-zinc-600 mt-1.5 space-y-0.5 text-xs">
-                    <p className="font-medium text-zinc-800">Brüderstraße 48</p>
-                    <p>59494 Soest</p>
+                    <p className="font-medium text-zinc-800">Peter-Hille-Weg 13</p>
+                    <p>33098 Paderborn</p>
                     <p>Germany</p>
                     <p className="font-mono text-zinc-700">+49 175 5075508</p>
                     <p className="text-zinc-500 pt-0.5">support@exeebit.com</p>
@@ -911,7 +911,7 @@ export function InvoicesClient({ licenses, stripeInvoices = [] }: Props) {
                   Operated by Exeebit · Emran Hossain Sagor
                 </p>
                 <p className="text-[11px] text-zinc-400">
-                  Brüderstraße 48 · 59494 Soest · Germany · +49 175 5075508 · support@exeebit.com
+                  Peter-Hille-Weg 13 · 33098 Paderborn · Germany · +49 175 5075508 · support@exeebit.com
                 </p>
               </div>
             </div>

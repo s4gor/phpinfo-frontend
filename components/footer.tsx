@@ -212,14 +212,11 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://exeebit.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/about"
                   className="inline-flex items-center gap-1 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
-                  <span>Exeebit Studio</span>
-                  <ExternalLink className="h-3 w-3 opacity-60" />
-                </a>
+                  <span>About phpinfo() WP</span>
+                </Link>
               </li>
               <li>
                 <a
@@ -283,21 +280,21 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-zinc-200/80 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <div>
-            &copy; {new Date().getFullYear()} phpinfo() WP &bull; Built by{" "}
-            <a
-              href="https://s4gor.exeebit.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-700 dark:text-zinc-300 underline underline-offset-2 hover:text-violet-700">
-              @s4gor
-            </a>{" "}
-            at{" "}
+            &copy; {new Date().getFullYear()} phpinfo() WP &bull; A Product of{" "}
             <a
               href="https://exeebit.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-700 dark:text-zinc-300 underline underline-offset-2 hover:text-violet-700">
               Exeebit
+            </a>{" "}
+            &bull; Built by{" "}
+            <a
+              href="https://s4gor.exeebit.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-700 dark:text-zinc-300 underline underline-offset-2 hover:text-violet-700">
+              @s4gor
             </a>
           </div>
 
@@ -310,7 +307,7 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
             <img
               src="/logo.svg"
               alt="phpinfo() WP Cyber ElePHPant"
-              className="h-7 w-auto opacity-75 hover:opacity-100 hover:scale-105 transition-all"
+              className="h-[23px] w-auto shrink-0 object-contain transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:grayscale group-hover:contrast-125 dark:group-hover:brightness-125"
             />
           </Link>
         </div>

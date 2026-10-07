@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import { ShieldCheck, Lock, Shield, Server, FileText } from "lucide-react";
 import CookieSettingsButton from "@/components/cookie-trigger";
+import LegalOperatorCard from "@/components/legal-operator-card";
 
 const LAST_UPDATED = "14 September 2026";
 
@@ -43,7 +44,7 @@ export default function PrivacyPage() {
                 Crucial Privacy Architecture: 100% In-Admin Diagnostics
               </h2>
               <p className="mt-1.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                Unlike external SaaS monitoring services, <strong className="text-zinc-900 dark:text-zinc-100">phpinfo() WP is 100% self-hosted on your WordPress server</strong>. Your server configuration, PHP diagnostics, database schema indexes, user activity logs, and error logs are processed and rendered entirely within your local WordPress database and admin dashboard. <em>They never leave your host and are never transmitted to Exeebit or third-party servers.</em>
+                Unlike external SaaS monitoring services, <strong className="text-zinc-900 dark:text-zinc-100">phpinfo() WP is 100% self-hosted on your WordPress server</strong>. Your server configuration, PHP diagnostics, database schema indexes, user activity logs, and error logs are processed and rendered entirely within your local WordPress database and admin dashboard. <em>They never leave your host and are never transmitted to phpinfo() WP or third-party servers.</em>
               </p>
             </div>
           </div>
@@ -59,26 +60,7 @@ export default function PrivacyPage() {
               <p>
                 The data controller responsible for the processing of personal data on this website under Article 4(7) GDPR is:
               </p>
-              <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-4 text-xs sm:text-sm text-zinc-800 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-200">
-                <strong className="text-zinc-900 dark:text-zinc-100">Emran Hossain Sagor (Exeebit)</strong><br />
-                Sole Proprietorship (Einzelunternehmer) · Software Development<br />
-                Brüderstraße, 59494 Soest, Germany<br />
-                <span className="text-xs text-zinc-500 italic">
-                  (Relocating to Paderborn, Germany in October 2026)
-                </span><br />
-                Email:{" "}
-                <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  support@exeebit.com
-                </a>{" "}
-                /{" "}
-                <a href="mailto:emran@exeebit.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  emran@exeebit.com
-                </a><br />
-                Phone:{" "}
-                <a href="tel:+491755075508" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  +49 175 5075508
-                </a>
-              </div>
+              <LegalOperatorCard roleLabel="Art. 4(7) GDPR" />
             </div>
           </section>
 
@@ -155,11 +137,11 @@ export default function PrivacyPage() {
               <div className="rounded-xl border border-zinc-200 dark:border-zinc-800">
                 <div className="overflow-x-auto sm:overflow-x-visible">
                   <table className="w-full text-xs sm:text-sm border-collapse">
-                    <thead className="sticky top-16 md:top-20 z-20">
-                      <tr className="bg-zinc-100/95 dark:bg-zinc-850/95 backdrop-blur-md shadow-xs border-b border-zinc-200 dark:border-zinc-800 text-[11px] uppercase tracking-wider text-zinc-600 dark:text-zinc-300">
-                        <th className="sticky top-16 md:top-20 z-20 px-4 py-2.5 text-left bg-zinc-100/95 dark:bg-zinc-850/95 backdrop-blur-md first:rounded-tl-xl">Cookie</th>
-                        <th className="sticky top-16 md:top-20 z-20 px-4 py-2.5 text-left bg-zinc-100/95 dark:bg-zinc-850/95 backdrop-blur-md">Purpose</th>
-                        <th className="sticky top-16 md:top-20 z-20 px-4 py-2.5 text-left bg-zinc-100/95 dark:bg-zinc-850/95 backdrop-blur-md last:rounded-tr-xl">Lifespan</th>
+                    <thead>
+                      <tr className="bg-zinc-100/90 dark:bg-zinc-850/90 border-b border-zinc-200 dark:border-zinc-800 text-[11px] uppercase tracking-wider text-zinc-600 dark:text-zinc-300">
+                        <th className="px-4 py-2.5 text-left font-semibold first:rounded-tl-xl">Cookie</th>
+                        <th className="px-4 py-2.5 text-left font-semibold">Purpose</th>
+                        <th className="px-4 py-2.5 text-left font-semibold last:rounded-tr-xl">Lifespan</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">

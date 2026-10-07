@@ -71,7 +71,7 @@ const shots: Shot[] = [
       subtext: "1-click export with your logo & company colors",
     },
     highlights: [
-      { title: "Custom Branding", desc: "Replace all Exeebit branding with your agency logo and custom footer notes." },
+      { title: "Custom Branding", desc: "Replace all phpinfo() WP branding with your agency logo and custom footer notes." },
       { title: "Executive Summaries", desc: "Clear A-F config grades and issue breakdowns clients immediately understand." },
       { title: "1-Click PDF Generation", desc: "Generates vector-crisp multi-page PDF documents in under 2 seconds." },
     ],

@@ -1234,7 +1234,7 @@ export default function DocsPage() {
           {/* Sticky Interactive Sidebar */}
           <aside
             ref={sidebarNavRef}
-            className="lg:col-span-4 sticky top-28 max-h-[calc(100vh-8.5rem)] overflow-y-auto rounded-2xl border border-zinc-200 bg-white p-3 shadow-xs dark:border-zinc-800 dark:bg-zinc-900 hidden lg:block scrollbar-none no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            className="lg:col-span-4 docs-sidebar-sticky overflow-y-auto rounded-2xl border border-zinc-200 bg-white p-3 shadow-xs dark:border-zinc-800 dark:bg-zinc-900 hidden lg:block scrollbar-none no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <div className="px-2 py-1.5 mb-2 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
               <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
                 Guide Navigation ({filteredDocs.length})
@@ -1409,10 +1409,10 @@ export default function DocsPage() {
                             )}
                             <div className="overflow-x-auto sm:overflow-x-visible">
                               <table className="w-full text-left text-xs sm:text-sm border-collapse">
-                                <thead className="sticky top-20 md:top-28 z-20">
-                                  <tr className="bg-zinc-100/95 dark:bg-zinc-850/95 backdrop-blur-md shadow-xs border-b border-zinc-200 dark:border-zinc-800 text-[11px] uppercase tracking-wider text-zinc-600 dark:text-zinc-300">
+                                <thead>
+                                  <tr className="bg-zinc-100/90 dark:bg-zinc-850/90 border-b border-zinc-200 dark:border-zinc-800 text-[11px] uppercase tracking-wider text-zinc-600 dark:text-zinc-300">
                                     {t.data.headers.map((h, hIdx) => (
-                                      <th key={hIdx} className="sticky top-20 md:top-28 z-20 px-4 py-2.5 font-semibold bg-zinc-100/95 dark:bg-zinc-850/95 backdrop-blur-md">
+                                      <th key={hIdx} className="px-4 py-2.5 font-semibold">
                                         {h}
                                       </th>
                                     ))}

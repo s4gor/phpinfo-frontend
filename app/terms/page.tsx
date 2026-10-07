@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import { FileText, ShieldCheck, Scale, Check } from "lucide-react";
+import LegalOperatorCard from "@/components/legal-operator-card";
 
 const LAST_UPDATED = "14 September 2026";
 
@@ -27,7 +28,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-            General terms and conditions for software licenses, digital downloads, and subscriptions offered by Exeebit.
+            General terms and conditions for software licenses, digital downloads, and subscriptions offered by phpinfo() WP.
           </p>
         </div>
 
@@ -41,16 +42,12 @@ export default function TermsPage() {
               <p>
                 These Terms of Service (&quot;Terms&quot;) govern the purchase and licensing of software products, subscriptions, and digital downloads between:
               </p>
-              <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-4 text-xs sm:text-sm text-zinc-800 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-200">
-                <strong className="text-zinc-900 dark:text-zinc-100">Emran Hossain Sagor (Exeebit)</strong><br />
-                Sole Proprietorship / Software Development<br />
-                Brüderstraße, 59494 Soest, Germany<br />
-                <span className="text-xs text-zinc-500 italic">(Relocating to Paderborn, Germany in October 2026)</span><br />
-                Email: <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">support@exeebit.com</a><br />
-                (&quot;Exeebit&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
-              </div>
+              <LegalOperatorCard roleLabel="Licensor & Contracting Party" />
+              <p className="text-xs text-zinc-500 italic">
+                (&quot;phpinfo() WP&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
+              </p>
               <p>
-                and the customer (&quot;Customer&quot;, &quot;you&quot;, or &quot;your&quot;) through <code>exeebit.com</code> and related subdomains. These terms apply to both commercial agencies, independent developers, and individual site owners.
+                and the customer (&quot;Customer&quot;, &quot;you&quot;, or &quot;your&quot;) through <code>phpinfowp.com</code> and related services. These terms apply to commercial agencies, independent developers, and individual site owners.
               </p>
             </div>
           </section>
@@ -77,7 +74,7 @@ export default function TermsPage() {
             </h2>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
               <p>
-                Upon payment confirmation, Exeebit grants you a non-exclusive, worldwide license to install, activate, and operate phpinfo() WP Pro in accordance with your chosen plan:
+                Upon payment confirmation, phpinfo() WP grants you a non-exclusive, worldwide license to install, activate, and operate phpinfo() WP Pro in accordance with your chosen plan:
               </p>
               <ul className="list-disc space-y-2 pl-5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
                 <li>
@@ -145,7 +142,7 @@ export default function TermsPage() {
                 Our software is engineered in accordance with rigorous WordPress and PHP quality standards. However, given the vast variety of third-party plugins, server environments, and database engines, uninterrupted operation in every custom hosting configuration cannot be guaranteed.
               </p>
               <p>
-                Exeebit is liable without limitation for intent and gross negligence. In cases of slight negligence, liability is limited to foreseeable, contract-typical damages. Customers remain responsible for keeping current backups of their WordPress databases and file trees.
+                phpinfo() WP is liable without limitation for intent and gross negligence. In cases of slight negligence, liability is limited to foreseeable, contract-typical damages. Customers remain responsible for keeping current backups of their WordPress databases and file trees.
               </p>
             </div>
           </section>
@@ -160,7 +157,7 @@ export default function TermsPage() {
                 These Terms and all legal relationships arising from them are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG).
               </p>
               <p>
-                For commercial merchants, the exclusive place of jurisdiction is the registered seat of Exeebit (Soest / Paderborn, Germany).
+                For commercial merchants, the exclusive place of jurisdiction is the registered seat of the provider (Paderborn, Germany).
               </p>
               <p className="text-xs text-zinc-400 pt-2">
                 Last updated: {LAST_UPDATED}

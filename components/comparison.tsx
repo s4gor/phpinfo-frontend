@@ -82,16 +82,16 @@ export default function Comparison() {
         className="mt-8 rounded-xl border border-zinc-200 bg-white shadow-xs">
         <div className="overflow-x-auto sm:overflow-x-visible">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm bg-white">
-            <thead className="sticky top-[var(--header-height,0rem)] z-20 transition-[top] duration-300 ease-in-out">
+            <thead className="sticky top-[var(--header-height,0px)] z-20 transition-[top] duration-300 ease-in-out will-change-[top]">
               <tr className="border-b border-zinc-200 bg-white/95 backdrop-blur-md shadow-xs">
-                <th className="sticky top-[var(--header-height,0rem)] z-20 px-4 py-4 text-xs font-medium uppercase tracking-wider text-zinc-500 bg-white/95 backdrop-blur-md first:rounded-tl-xl transition-[top] duration-300 ease-in-out">
+                <th className="sticky top-[var(--header-height,0px)] z-20 px-4 py-4 text-xs font-medium uppercase tracking-wider text-zinc-500 bg-white/95 backdrop-blur-md first:rounded-tl-xl transition-[top] duration-300 ease-in-out will-change-[top]">
                   Feature
                 </th>
                 {cols.map((c) => (
                   <th
                     key={c.id}
                     className={cn(
-                      "sticky top-[var(--header-height,0rem)] z-20 px-4 py-4 text-center backdrop-blur-md transition-[top] duration-300 ease-in-out",
+                      "sticky top-[var(--header-height,0px)] z-20 px-4 py-4 text-center backdrop-blur-md transition-[top] duration-300 ease-in-out will-change-[top]",
                       c.featured ? "bg-violet-50/95" : "bg-white/95",
                     )}>
                     <div className="text-xs font-bold uppercase tracking-wider text-zinc-600">

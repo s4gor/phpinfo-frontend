@@ -367,7 +367,7 @@ export default function HeroSocialProof() {
           {/* Site count summary badge */}
           <div className="css-wei53j">
             <span className="css-1hbel6m">
-              1,000+
+              400+
             </span>
             <span className="css-g6k7kb">
               WordPress sites protected

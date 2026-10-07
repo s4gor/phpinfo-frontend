@@ -189,7 +189,7 @@ export const UpgradedLicenseEmail = ({
                       - Emran Hossain Sagor
                     </Text>
                     <Text style={{ fontSize: "11px", color: "#71717a", margin: "2px 0 0" }} className="text-subtle">
-                      Founder & Solo Developer · Exeebit
+                      Founder & Solo Developer · phpinfo() WP
                     </Text>
                   </td>
                 </tr>
@@ -216,9 +216,9 @@ export const UpgradedLicenseEmail = ({
               This upgraded license key was generated for {email}. Keep this email for your records.
             </Text>
             <Text style={footerCompany} className="text-subtle">
-              Exeebit · Registered Software Business · Germany
+              phpinfo() WP · Registered Software Business · Germany
               <br />
-              <a href="https://exeebit.com" style={footerLink}>exeebit.com</a> · <a href="mailto:support@exeebit.com" style={footerLink}>support@exeebit.com</a>
+              <a href="https://phpinfowp.com" style={footerLink}>phpinfowp.com</a> · <a href="mailto:support@exeebit.com" style={footerLink}>support@exeebit.com</a>
             </Text>
           </Section>
 

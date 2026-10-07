@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import { Shield, FileText, Globe, Mail, Phone } from "lucide-react";
+import LegalOperatorCard from "@/components/legal-operator-card";
 
 const LAST_UPDATED = "14 September 2026";
 
@@ -35,25 +36,10 @@ export default function ImpressumPage() {
           {/* 1. Service Provider Details */}
           <section className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-xs dark:border-zinc-800 dark:bg-zinc-900">
             <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-              1. Service Provider (Diensteanbieter)
+              1. Service Provider (Diensteanbieter gem. § 5 DDG)
             </h2>
-            <div className="mt-3 space-y-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-              <p>
-                <strong className="text-zinc-900 dark:text-zinc-100">Full Legal Name:</strong> Emran Hossain Sagor
-              </p>
-              <p>
-                <strong className="text-zinc-900 dark:text-zinc-100">Legal Form:</strong> Sole Proprietorship (Einzelunternehmer) · Software Development &amp; Digital Products
-              </p>
-              <p>
-                <strong className="text-zinc-900 dark:text-zinc-100">Registered Business Address:</strong><br />
-                Emran Hossain Sagor<br />
-                Brüderstraße<br />
-                59494 Soest<br />
-                Germany<br />
-                <span className="text-xs text-zinc-500 italic">
-                  (Note: Business location relocating to Paderborn, Germany in October 2026)
-                </span>
-              </p>
+            <div className="mt-3">
+              <LegalOperatorCard roleLabel="§ 5 DDG Provider" />
             </div>
           </section>
 
@@ -81,8 +67,8 @@ export default function ImpressumPage() {
               </p>
               <p>
                 <strong className="text-zinc-900 dark:text-zinc-100">Website:</strong>{" "}
-                <a href="https://exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
-                  https://exeebit.com
+                <a href="https://phpinfowp.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">
+                  https://phpinfowp.com
                 </a>
               </p>
             </div>
@@ -98,7 +84,7 @@ export default function ImpressumPage() {
                 Pursuant to § 19 UStG (German Value Added Tax Act - Small Business Regulation / <em>Kleinunternehmerregelung</em>), value added tax (VAT / Umsatzsteuer) is not charged or displayed on invoices.
               </div>
               <p className="text-xs text-zinc-500">
-                Tax ID / Steuernummer: In regular tax registration processing (Finanzamt Soest / Paderborn, Germany).
+                Tax ID / Steuernummer: In regular tax registration processing (Finanzamt Paderborn, Germany).
               </p>
             </div>
           </section>
@@ -108,10 +94,9 @@ export default function ImpressumPage() {
             <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
               4. Responsible for Content (§ 18 Para. 2 MStV)
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-              Emran Hossain Sagor<br />
-              Brüderstraße, 59494 Soest, Germany
-            </p>
+            <div className="mt-3">
+              <LegalOperatorCard compact roleLabel="§ 18 Abs. 2 MStV" />
+            </div>
           </section>
 
           {/* 5. Online Dispute Resolution */}

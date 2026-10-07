@@ -110,18 +110,18 @@ export default function ComparePage() {
         <div className="rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
           <div className="overflow-x-auto sm:overflow-x-visible">
             <table className="w-full text-left text-xs sm:text-sm border-collapse">
-              <thead className="sticky top-16 md:top-20 z-20">
+              <thead className="sticky top-[var(--header-height,0px)] z-20 transition-[top] duration-300 ease-in-out will-change-[top]">
                 <tr className="border-b border-zinc-200 bg-zinc-100/95 dark:border-zinc-800 dark:bg-zinc-800/95 backdrop-blur-md shadow-xs">
-                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-zinc-900 dark:text-zinc-100 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md first:rounded-tl-2xl">
+                  <th className="sticky top-[var(--header-height,0px)] z-20 p-4 sm:p-5 font-bold text-zinc-900 dark:text-zinc-100 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md first:rounded-tl-2xl transition-[top] duration-300 ease-in-out will-change-[top]">
                     Feature / Aspect
                   </th>
-                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-violet-700 dark:text-violet-400 bg-violet-50/95 dark:bg-violet-950/80 backdrop-blur-md w-1/4">
+                  <th className="sticky top-[var(--header-height,0px)] z-20 p-4 sm:p-5 font-bold text-violet-700 dark:text-violet-400 bg-violet-50/95 dark:bg-violet-950/80 backdrop-blur-md w-1/4 transition-[top] duration-300 ease-in-out will-change-[top]">
                     phpinfo() WP Pro 8.0
                   </th>
-                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md">
+                  <th className="sticky top-[var(--header-height,0px)] z-20 p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md transition-[top] duration-300 ease-in-out will-change-[top]">
                     Health Check (WP.org)
                   </th>
-                  <th className="sticky top-16 md:top-20 z-20 p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md last:rounded-tr-2xl">
+                  <th className="sticky top-[var(--header-height,0px)] z-20 p-4 sm:p-5 font-bold text-zinc-600 dark:text-zinc-300 w-1/4 bg-zinc-100/95 dark:bg-zinc-800/95 backdrop-blur-md last:rounded-tr-2xl transition-[top] duration-300 ease-in-out will-change-[top]">
                     SaaS (ManageWP / Umbrella)
                   </th>
                 </tr>

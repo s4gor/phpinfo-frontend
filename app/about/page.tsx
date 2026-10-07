@@ -31,7 +31,7 @@ export default function AboutPage() {
       <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-12 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-4">
           <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500/20" />
-          <span>About phpinfo() WP &amp; Exeebit Studio</span>
+          <span>About phpinfo() WP</span>
         </div>
 
         <h1 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
@@ -39,7 +39,7 @@ export default function AboutPage() {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-          Exeebit is the independent studio founded by Emran Hossain Sagor (<a href="https://s4gor.exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 font-semibold underline underline-offset-2 hover:text-violet-700">@s4gor</a>) to craft developer tools and WordPress software. Based in Germany.
+          phpinfo() WP is an independent software tool created by Emran Hossain Sagor (<a href="https://s4gor.exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 font-semibold underline underline-offset-2 hover:text-violet-700">@s4gor</a>) to craft developer tools and WordPress software. Based in Germany.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">

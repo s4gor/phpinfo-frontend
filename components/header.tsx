@@ -12,6 +12,26 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const isVisibleRef = useRef(true);
   const lastScrollYRef = useRef(0);
+  const headerRef = useRef<HTMLElement>(null);
+
+  const updateHeaderCss = (visible: boolean) => {
+    const el = headerRef.current;
+    const measuredHeight = el ? el.getBoundingClientRect().height : (typeof window !== "undefined" && window.innerWidth >= 640 ? 73 : 61);
+    if (measuredHeight > 0) {
+      document.documentElement.style.setProperty("--header-actual-height", `${measuredHeight}px`);
+    }
+    document.documentElement.style.setProperty(
+      "--header-height",
+      visible ? `${measuredHeight}px` : "0px"
+    );
+    if (visible) {
+      document.documentElement.classList.remove("header-hidden");
+      document.documentElement.classList.add("header-visible");
+    } else {
+      document.documentElement.classList.remove("header-visible");
+      document.documentElement.classList.add("header-hidden");
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +66,9 @@ export default function Header() {
       lastScrollYRef.current = currentScrollY;
     };
 
+    // Run once on mount to sync initial state
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -53,14 +76,21 @@ export default function Header() {
   const isHeaderVisible = isVisible || mobileMenuOpen;
 
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--header-height",
-      isHeaderVisible ? "4.25rem" : "0rem"
-    );
+    updateHeaderCss(isHeaderVisible);
   }, [isHeaderVisible]);
+
+  useEffect(() => {
+    if (!headerRef.current) return;
+    const observer = new ResizeObserver(() => {
+      updateHeaderCss(isVisibleRef.current || mobileMenuOpen);
+    });
+    observer.observe(headerRef.current);
+    return () => observer.disconnect();
+  }, [mobileMenuOpen]);
 
   return (
     <header
+      ref={headerRef}
       className={`relative border-b border-zinc-200/60 bg-white/85 backdrop-blur-md supports-[backdrop-filter]:bg-white/75 dark:border-zinc-800/80 dark:bg-zinc-950/85 transition-transform duration-300 ease-in-out will-change-transform ${
         isHeaderVisible ? "translate-y-0" : "-translate-y-full pointer-events-none"
       }`}>

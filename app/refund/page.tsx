@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import { ShieldCheck, Check, Mail, AlertCircle, FileText } from "lucide-react";
+import LegalOperatorCard from "@/components/legal-operator-card";
 
 const LAST_UPDATED = "14 September 2026";
 
@@ -27,7 +28,7 @@ export default function RefundPage() {
             Cancellation &amp; Refund Policy
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Statutory cancellation policy for digital goods and Exeebit&apos;s voluntary 14-day 100% satisfaction guarantee.
+            Statutory cancellation policy for digital goods and phpinfo() WP&apos;s voluntary 14-day 100% satisfaction guarantee.
           </p>
         </div>
 
@@ -44,7 +45,7 @@ export default function RefundPage() {
             </div>
             <div className="mt-3 space-y-3 text-xs sm:text-sm text-emerald-900 dark:text-emerald-200 leading-relaxed">
               <p>
-                We want you to be completely satisfied with your purchase. Even though statutory withdrawal rights on instant digital downloads can expire once delivery begins, <strong>Exeebit voluntarily provides a 100% money-back guarantee within 14 days of purchase</strong>.
+                We want you to be completely satisfied with your purchase. Even though statutory withdrawal rights on instant digital downloads can expire once delivery begins, <strong>phpinfo() WP voluntarily provides a 100% money-back guarantee within 14 days of purchase</strong>.
               </p>
               <p>
                 If phpinfo() WP Pro does not fit your hosting setup, server requirements, or development workflow, simply email us at{" "}
@@ -70,15 +71,7 @@ export default function RefundPage() {
                 <p className="mt-2 text-xs sm:text-sm">
                   To exercise your statutory right of withdrawal, you must notify us:
                 </p>
-                <div className="mt-2 rounded-xl bg-zinc-50 border border-zinc-200 p-4 text-xs sm:text-sm text-zinc-800 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-200">
-                  <strong className="text-zinc-900 dark:text-zinc-100">Emran Hossain Sagor (Exeebit)</strong><br />
-                  Brüderstraße, 59494 Soest, Germany<br />
-                  Email:{" "}
-                  <a href="mailto:support@exeebit.com" className="text-violet-600 dark:text-violet-400 underline">
-                    support@exeebit.com
-                  </a><br />
-                  Phone: +49 175 5075508
-                </div>
+                <LegalOperatorCard roleLabel="Statutory Recipient" />
                 <p className="mt-2 text-xs sm:text-sm">
                   by means of an unequivocal declaration (e.g. an email or letter). You may use the model withdrawal form below, but it is not mandatory.
                 </p>
@@ -108,7 +101,7 @@ export default function RefundPage() {
                 <li>the merchant has provided confirmation on a durable medium.</li>
               </ul>
               <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-4 text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300">
-                <strong>Important Note:</strong> Regardless of statutory digital goods exceptions, <em>Exeebit&apos;s voluntary 14-day 100% money-back guarantee applies unconditionally to all purchases</em>.
+                <strong>Important Note:</strong> Regardless of statutory digital goods exceptions, <em>phpinfo() WP&apos;s voluntary 14-day 100% money-back guarantee applies unconditionally to all purchases</em>.
               </div>
             </div>
           </section>
@@ -124,8 +117,10 @@ export default function RefundPage() {
             <div className="mt-4 rounded-xl bg-zinc-50 border border-zinc-200 p-5 font-mono text-xs text-zinc-800 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 space-y-2.5 leading-relaxed">
               <p>
                 To:<br />
-                Emran Hossain Sagor (Exeebit)<br />
-                Brüderstraße, 59494 Soest, Germany<br />
+                Emran Hossain Sagor – phpinfo() WP<br />
+                Peter-Hille-Weg 13<br />
+                33098 Paderborn<br />
+                Germany<br />
                 Email: support@exeebit.com
               </p>
               <p>

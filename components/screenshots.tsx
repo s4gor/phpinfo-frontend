@@ -192,7 +192,12 @@ const shots: Shot[] = [
   },
 ];
 
-export default function Screenshots() {
+interface ScreenshotsProps {
+  hideHeading?: boolean;
+  className?: string;
+}
+
+export default function Screenshots({ hideHeading = false, className = "" }: ScreenshotsProps = {}) {
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const [imgErrorMap, setImgErrorMap] = useState<Record<string, boolean>>({});
@@ -230,24 +235,30 @@ export default function Screenshots() {
   return (
     <div
       id="screenshots"
-      className="flex w-full max-w-5xl flex-col items-center gap-2 pt-16 md:pt-24 scroll-mt-24">
+      className={`flex w-full max-w-6xl flex-col items-center gap-2 scroll-mt-24 ${
+        hideHeading ? "" : "pt-12 md:pt-16"
+      } ${className}`}>
 
-      <div>
-        <TextBlur
-          className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"
-          text="The exact operations suite you'll run."
-        />
-      </div>
-      <div>
-        <TextBlur
-          className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg"
-          text="From live server telemetry and pre-update guards to client-ready PDF audits - built directly into WordPress."
-          duration={0.8}
-        />
-      </div>
+      {!hideHeading && (
+        <>
+          <div>
+            <TextBlur
+              className="text-center text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 md:text-3xl"
+              text="The exact operations suite you'll run."
+            />
+          </div>
+          <div>
+            <TextBlur
+              className="mx-auto max-w-[34rem] text-center text-sm sm:text-base text-zinc-600 dark:text-zinc-400"
+              text="From live server telemetry and pre-update guards to client-ready PDF audits - built directly into WordPress."
+              duration={0.8}
+            />
+          </div>
+        </>
+      )}
 
       {/* Segmented Interactive Tab Navigation */}
-      <div className="mt-6 w-full max-w-5xl">
+      <div className="mt-4 w-full max-w-6xl">
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 p-1.5 rounded-xl border border-zinc-200/80 bg-zinc-100/70 backdrop-blur-sm shadow-2xs">
           {shots.map((shot, idx) => {
             const Icon = shot.badge.icon;
@@ -377,12 +388,12 @@ export default function Screenshots() {
         {activeShot.highlights.map((h, i) => (
           <div
             key={i}
-            className="flex flex-col rounded-xl border border-zinc-200/90 bg-white p-4 shadow-xs text-left transition hover:border-violet-300/60 hover:shadow-sm">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-900 flex items-center gap-1.5">
+            className="flex flex-col rounded-xl border border-zinc-200/90 bg-white p-4 shadow-xs text-left transition hover:border-violet-300/60 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
               <span className="flex h-2 w-2 rounded-full bg-violet-500" />
               {h.title}
             </h4>
-            <p className="mt-1.5 text-xs text-zinc-600 leading-relaxed">
+            <p className="mt-1.5 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {h.desc}
             </p>
           </div>
@@ -434,7 +445,7 @@ function LightboxModal({
       {/* Top Bar with Title & Close Button */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="mb-3 flex w-full max-w-5xl items-center justify-between gap-4 px-2 text-white">
+        className="mb-3 flex w-full max-w-6xl items-center justify-between gap-4 px-2 text-white">
         <div className="flex items-center gap-2.5">
           <span className="flex items-center gap-1 rounded-md bg-violet-600/80 px-2 py-0.5 text-xs font-semibold">
             <BadgeIcon className="h-3.5 w-3.5" />
@@ -459,7 +470,7 @@ function LightboxModal({
       {/* Center Image Stage with Next/Prev Buttons */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative flex max-h-[75vh] w-full max-w-5xl items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
+        className="relative flex max-h-[75vh] w-full max-w-6xl items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl">
         {!modalImgError ? (
           <img
             src={shot.src}

@@ -18,6 +18,7 @@ import {
   Shield,
   HelpCircle,
   Send,
+  ChevronDown,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -230,17 +231,20 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5">
                       Inquiry Category
                     </label>
-                    <select
-                      value={category}
-                      onChange={(e) => setCategory(e.target.value)}
-                      className="w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm text-zinc-900 focus:border-violet-500 focus:outline-hidden dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
-                      <option value="Technical Support">Technical Support / Diagnostics</option>
-                      <option value="Bug Report">Bug Report</option>
-                      <option value="Feature Request">Feature Request</option>
-                      <option value="Billing & Refunds">Billing &amp; 14-Day Refund</option>
-                      <option value="Agency & Bulk Licensing">Agency &amp; Bulk Licensing</option>
-                      <option value="Other">Other / General</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        className="w-full appearance-none rounded-xl border border-zinc-200 bg-white pl-3.5 pr-10 py-2.5 text-sm text-zinc-900 focus:border-violet-500 focus:outline-hidden dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 cursor-pointer">
+                        <option value="Technical Support">Technical Support / Diagnostics</option>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Feature Request">Feature Request</option>
+                        <option value="Billing & Refunds">Billing &amp; 14-Day Refund</option>
+                        <option value="Agency & Bulk Licensing">Agency &amp; Bulk Licensing</option>
+                        <option value="Other">Other / General</option>
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400 dark:text-zinc-500" />
+                    </div>
                   </div>
 
                   <div>

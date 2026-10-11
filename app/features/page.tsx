@@ -226,7 +226,7 @@ Update Guard active, PHP 8.3 certified.`,
             Intuitive, lightning fast, and crafted with attention to every pixel.
           </p>
         </div>
-        <Screenshots />
+        <Screenshots hideHeading />
       </section>
 
       {/* Bottom CTA Banner */}

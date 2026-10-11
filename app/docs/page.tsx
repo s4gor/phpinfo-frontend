@@ -1110,17 +1110,17 @@ export default function DocsPage() {
     const containerRect = container.getBoundingClientRect();
     const elRect = activeEl.getBoundingClientRect();
 
-    // If active item is near or above the top boundary of the sidebar
-    if (elRect.top < containerRect.top + 70) {
+    // If active item is near or above the top boundary of the scroll container
+    if (elRect.top < containerRect.top + 16) {
       container.scrollTo({
-        top: Math.max(0, container.scrollTop + (elRect.top - containerRect.top) - 90),
+        top: Math.max(0, container.scrollTop + (elRect.top - containerRect.top) - 24),
         behavior: "smooth",
       });
     }
-    // If active item is near or below the bottom boundary of the sidebar
-    else if (elRect.bottom > containerRect.bottom - 70) {
+    // If active item is near or below the bottom boundary of the scroll container
+    else if (elRect.bottom > containerRect.bottom - 16) {
       container.scrollTo({
-        top: container.scrollTop + (elRect.bottom - containerRect.bottom) + 90,
+        top: container.scrollTop + (elRect.bottom - containerRect.bottom) + 24,
         behavior: "smooth",
       });
     }
@@ -1237,92 +1237,99 @@ export default function DocsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Sticky Interactive Sidebar */}
           <aside
-            ref={sidebarNavRef}
-            className="lg:col-span-4 docs-sidebar-sticky overflow-y-auto rounded-2xl border border-zinc-200 bg-white p-3 shadow-xs dark:border-zinc-800 dark:bg-zinc-900 hidden lg:block scrollbar-none no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div className="px-2 py-1.5 mb-2 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
-                Guide Navigation ({filteredDocs.length})
-              </span>
-              <span className="text-[10px] text-zinc-400 font-mono">v8.0</span>
-            </div>
+            className="lg:col-span-4 docs-sidebar-sticky rounded-2xl border border-zinc-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-900 hidden lg:flex lg:flex-col overflow-hidden">
+            {/* Pinned Sticky Header & Search Bar (Always visible while scrolling guide) */}
+            <div className="p-3 pb-2.5 border-b border-zinc-100 dark:border-zinc-800/80 shrink-0 bg-white dark:bg-zinc-900 z-10">
+              <div className="px-1 pb-1.5 flex items-center justify-between">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
+                  Guide Navigation ({filteredDocs.length})
+                </span>
+                <span className="text-[10px] text-zinc-400 font-mono">v8.0</span>
+              </div>
 
-            {/* Quick Live Search bar */}
-            <div className="relative mb-2.5 px-0.5">
-              <div className="relative flex items-center">
-                <Search className="absolute left-2.5 h-3.5 w-3.5 text-zinc-400 pointer-events-none" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search sections or content..."
-                  className="w-full rounded-xl border border-zinc-200/90 bg-zinc-50/70 py-1.5 pl-8 pr-7 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500 focus:bg-white focus:outline-hidden dark:border-zinc-800 dark:bg-zinc-850/60 dark:text-zinc-100 dark:focus:border-violet-500 dark:focus:bg-zinc-900 transition-colors shadow-2xs"
-                />
-                {searchQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setSearchQuery("")}
-                    aria-label="Clear search"
-                    className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full bg-zinc-200 text-zinc-500 hover:bg-zinc-300 hover:text-zinc-800 dark:bg-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-600 transition-colors cursor-pointer">
-                    <X className="h-2.5 w-2.5" />
-                  </button>
-                )}
+              {/* Quick Live Search bar */}
+              <div className="relative px-0.5">
+                <div className="relative flex items-center">
+                  <Search className="absolute left-2.5 h-3.5 w-3.5 text-zinc-400 pointer-events-none" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search sections or content..."
+                    className="w-full rounded-xl border border-zinc-200/90 bg-zinc-50/70 py-1.5 pl-8 pr-7 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500 focus:bg-white focus:outline-hidden dark:border-zinc-800 dark:bg-zinc-850/60 dark:text-zinc-100 dark:focus:border-violet-500 dark:focus:bg-zinc-900 transition-colors shadow-2xs"
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery("")}
+                      aria-label="Clear search"
+                      className="absolute right-2 flex h-4 w-4 items-center justify-center rounded-full bg-zinc-200 text-zinc-500 hover:bg-zinc-300 hover:text-zinc-800 dark:bg-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-600 transition-colors cursor-pointer">
+                      <X className="h-2.5 w-2.5" />
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
 
-            <nav className="space-y-1">
-              {filteredDocs.length === 0 ? (
-                <div className="py-6 px-3 text-center">
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    No sections match &ldquo;{searchQuery}&rdquo;
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSearchQuery("");
-                      setSelectedCategory("All");
-                    }}
-                    className="mt-2 text-[11px] font-semibold text-violet-600 hover:text-violet-700 dark:text-violet-400 hover:underline cursor-pointer">
-                    Clear search &amp; show all
-                  </button>
-                </div>
-              ) : (
-                filteredDocs.map((doc) => {
-                const Icon = categoryIcons[doc.category] || FileText;
-                const isActive = activeSectionId === doc.id;
-                return (
-                  <button
-                    key={doc.id}
-                    data-nav-id={doc.id}
-                    onClick={() => handleNavClick(doc.id)}
-                    className={`group flex items-center justify-between w-full text-left gap-2 rounded-xl px-2.5 py-1.5 text-xs font-medium transition-all ${
-                      isActive
-                        ? "bg-violet-600 text-white shadow-xs"
-                        : "text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                    }`}>
-                    <div className="flex items-center gap-2 truncate">
-                      <Icon className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-white" : "text-violet-500"}`} />
-                      <span className="truncate">
-                        {doc.number ? `${doc.number}. ` : ""}
-                        {doc.title}
-                      </span>
-                    </div>
-                    {doc.badge && (
-                      <span
-                        className={`text-[9px] px-1.5 py-0.2 rounded font-semibold shrink-0 uppercase tracking-wider ${
-                          isActive
-                            ? "bg-white/20 text-white"
-                            : doc.badge === "Pro"
-                            ? "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300"
-                            : "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
-                        }`}>
-                        {doc.badge}
-                      </span>
-                    )}
+            {/* Scrollable Navigation List */}
+            <div
+              ref={sidebarNavRef}
+              className="overflow-y-auto p-3 pt-2 flex-1 scrollbar-none no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              <nav className="space-y-1">
+                {filteredDocs.length === 0 ? (
+                  <div className="py-6 px-3 text-center">
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                      No sections match &ldquo;{searchQuery}&rdquo;
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSearchQuery("");
+                        setSelectedCategory("All");
+                      }}
+                      className="mt-2 text-[11px] font-semibold text-violet-600 hover:text-violet-700 dark:text-violet-400 hover:underline cursor-pointer">
+                      Clear search &amp; show all
                     </button>
-                  );
-                })
-              )}
-            </nav>
+                  </div>
+                ) : (
+                  filteredDocs.map((doc) => {
+                    const Icon = categoryIcons[doc.category] || FileText;
+                    const isActive = activeSectionId === doc.id;
+                    return (
+                      <button
+                        key={doc.id}
+                        data-nav-id={doc.id}
+                        onClick={() => handleNavClick(doc.id)}
+                        className={`group flex items-center justify-between w-full text-left gap-2 rounded-xl px-2.5 py-1.5 text-xs font-medium transition-all ${
+                          isActive
+                            ? "bg-violet-600 text-white shadow-xs"
+                            : "text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                        }`}>
+                        <div className="flex items-center gap-2 truncate">
+                          <Icon className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-white" : "text-violet-500"}`} />
+                          <span className="truncate">
+                            {doc.number ? `${doc.number}. ` : ""}
+                            {doc.title}
+                          </span>
+                        </div>
+                        {doc.badge && (
+                          <span
+                            className={`text-[9px] px-1.5 py-0.5 rounded font-semibold shrink-0 uppercase tracking-wider ${
+                              isActive
+                                ? "bg-white/20 text-white"
+                                : doc.badge === "Pro"
+                                ? "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300"
+                                : "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
+                            }`}>
+                            {doc.badge}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })
+                )}
+              </nav>
+            </div>
           </aside>
 
           {/* Main Article Content Feed */}

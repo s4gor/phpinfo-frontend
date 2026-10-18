@@ -82,11 +82,11 @@ export default function ComparePage() {
         </div>
 
         <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          How phpinfo() WP Compares to the Alternatives
+          Why Modern Developers Replace Their Diagnostic Stack
         </h1>
 
         <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-          See why modern WordPress agencies and site owners choose phpinfo() WP Pro over abandoned plugins and expensive per-site monthly SaaS tools.
+          One unified in-admin engine replaces abandoned plugins, manual FTP info.php files, and expensive per-site monthly SaaS subscriptions.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

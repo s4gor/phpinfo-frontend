@@ -17,7 +17,7 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
                   Ready to get started?
                 </h2>
                 <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 max-w-md">
-                  Take control of your WordPress server operations, prevent breaking updates, and export executive white-label audit reports today.
+                  Take control of your WordPress server health, diagnose bottlenecks before they cause downtime, and export executive white-label audit reports today.
                 </p>
                 <div className="flex flex-wrap items-center gap-3">
                   <Link
@@ -283,7 +283,7 @@ export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
             <Link href="/vs/wp-server-stats" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">vs. WP Server Stats</Link>
           </div>
           <span className="text-[11px] text-zinc-400 dark:text-zinc-500">
-            EU GDPR &bull; § 5 DDG Compliant
+            100% Local In-Admin Execution &bull; EU GDPR Compliant &bull; § 5 DDG Impressum Verified
           </span>
         </div>
 

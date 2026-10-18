@@ -30,7 +30,7 @@ const tiers: Array<{
     name: "Single Site",
     price: "$39",
     cadence: "/year",
-    blurb: "You own one site and want it running at its best.",
+    blurb: "For your revenue site. Pinpoint slow checkouts, fix PHP limits, and eliminate $150/hr sysadmin bills.",
     features: [
       "1 Site",
       "All Pro v8.0 features included",
@@ -44,7 +44,7 @@ const tiers: Array<{
     name: "Unlimited",
     price: "$79",
     cadence: "/year",
-    blurb: "You manage multiple sites. One license covers every one of them.",
+    blurb: "For agencies & freelancers. Unlimited client sites. One-click white-label PDF audit reports that justify your monthly retainer.",
     features: [
       "Unlimited Sites",
       "All Pro v8.0 features included",
@@ -62,7 +62,7 @@ const tiers: Array<{
     price: "$249",
     cadence: "once",
     subprice: "Pays for itself in 3 years",
-    blurb: "One payment. Updates and support forever. Zero renewal fees.",
+    blurb: "Own the engine forever. Pays for itself in 3 years. Never receive another renewal invoice again.",
     features: [
       "Early access to new features",
       "All Pro v8.0 features on unlimited sites",
@@ -104,11 +104,11 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
 
       <h2
         className="max-w-4xl mx-auto text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl dark:text-zinc-100">
-        Start in 60 seconds.
+        One in-admin tool. Complete server clarity.
       </h2>
       <p
         className="mx-auto max-w-md text-center text-base text-zinc-600 dark:text-zinc-400">
-        Install free from WordPress.org, or go straight to Pro - 14-day refund, no questions asked.
+        Try the free version on WordPress.org, or unlock Pro for deep diagnostics, auto-fixes, and PDF reports. Covered by a 14-day refund.
       </p>
 
       <div
@@ -209,7 +209,7 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
                 onClick={() => { trackBeginCheckout(tier.id); onBuy(tier.id); }}
                 disabled={disabled || loading}
                 className="group flex items-center justify-center gap-2 w-full rounded-xl bg-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-600 disabled:bg-violet-500/40 disabled:cursor-not-allowed">
-                <span>{loading ? "Opening checkout…" : `Buy ${tier.name}`}</span>
+                <span>{loading ? "Opening checkout…" : `Buy ${tier.name} - ${tier.price}${tier.cadence === "once" ? "" : tier.cadence}`}</span>
                 {!loading && <AnimatedArrow className="ml-1" />}
               </button>
             </div>

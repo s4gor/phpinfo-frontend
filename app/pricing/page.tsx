@@ -75,11 +75,11 @@ export default function PricingPage() {
         </div>
 
         <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          Predictable Pricing for WordPress Professionals
+          One in-admin engine. Zero monthly SaaS taxes.
         </h1>
 
         <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-          One flat license. Zero per-site SaaS meter ticks. All Pro v8.0 features included with a 14-day 100% money-back guarantee.
+          Stop paying recurring per-site monthly bills just to monitor basic server limits. Choose flat, honest pricing with 100% in-admin privacy and a 14-day zero-risk guarantee.
         </p>
       </section>
 

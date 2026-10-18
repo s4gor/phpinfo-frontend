@@ -35,7 +35,7 @@ export default function AboutPage() {
         </div>
 
         <h1 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          Engineered with precision. Built without compromise.
+          Engineered with precision. Built for sites that can't afford downtime.
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
@@ -87,7 +87,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-4 space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
               <p>
-                Seven years of systems and software engineering taught one uncompromising standard: <em>prioritize architectural precision, eliminate runtime bloat, and engineer solutions directly for production environments</em>.
+                We believe you shouldn't have to hire a $150/hr sysadmin or FTP an insecure info.php file just to know why your WordPress site is slow. Seven years of systems and software engineering taught one uncompromising standard: <em>prioritize architectural precision, eliminate runtime bloat, and engineer solutions directly for production environments</em>.
               </p>
               <p>
                 Every WordPress agency owner and developer knows the exact sinking feeling: an automatic or routine plugin update triggers a fatal PHP error or database mismatch, breaking a high-value client store in the middle of the day. Meanwhile, native WordPress diagnostic tools only show raw text tables or passive summaries without triage suggestions, and external SaaS monitors charge endless per-site subscriptions ($3-$5/month per site) while harvesting sensitive hosting credentials and error dumps onto remote servers.

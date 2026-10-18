@@ -122,7 +122,7 @@ export default function Header() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span>Try it live</span>
+                <span>Try Live Demo</span>
               </Button>
             </a>
 
@@ -280,7 +280,7 @@ export default function Header() {
                 className="flex items-center justify-between p-2.5 rounded-xl hover:bg-zinc-100 text-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-800">
                 <span className="flex items-center gap-2.5">
                   <Star className="h-4 w-4 text-amber-500 fill-amber-400" />
-                  <span>Reviews (4.9/5)</span>
+                  <span>Reviews (4.5/5)</span>
                 </span>
                 <ArrowRight className="h-4 w-4 text-zinc-400" />
               </Link>
@@ -322,7 +322,7 @@ export default function Header() {
 
               <div className="pt-2 border-t border-zinc-200 dark:border-zinc-800">
                 <Link
-                  href="https://wordpress.org/plugins//"
+                  href="https://wordpress.org/plugins/phpinfo-wp/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 p-2.5 rounded-xl text-zinc-600 hover:text-violet-700">

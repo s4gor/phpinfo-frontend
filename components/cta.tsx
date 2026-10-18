@@ -8,12 +8,12 @@ import { Star, RefreshCcw, Download, ShieldCheck } from "lucide-react";
 import AnimatedArrow from "@/components/ui/animated-arrow";
 import HeroShowcase from "@/components/hero-showcase";
 
-const WP_ORG_URL = "https://wordpress.org/plugins//";
+const WP_ORG_URL = "https://wordpress.org/plugins/phpinfo-wp/";
 
 export default function CTA() {
   const [lastUpdated, setLastUpdated] = useState("2 days ago");
-  const [wpRating, setWpRating] = useState("4.3");
-  const [version, setVersion] = useState("8.0.0");
+  const [wpRating, setWpRating] = useState("4.5");
+  const [version, setVersion] = useState("8.0.4");
   const [activeInstalls, setActiveInstalls] = useState("3,000+");
 
   useEffect(() => {
@@ -86,93 +86,98 @@ export default function CTA() {
 
   return (
     <div className="flex w-full flex-col items-center">
-      {/* Text, Buttons & Proof Pills - cleanly constrained to max-w-4xl */}
-      <div className="flex w-full max-w-4xl flex-col items-center gap-5 text-center">
+      {/* Text, Buttons & Proof Pills - identical styling & hierarchy to all other pages */}
+      <div className="flex w-full max-w-4xl flex-col items-center text-center">
 
         {/* Release Announcement Pill */}
-        <div>
+        <div className="mb-3.5">
           <Link
             href="#pricing"
             className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             <AnimatedShinyText className="text-xs font-semibold text-violet-800">
-              <span>Version 8.0 Live: Live Telemetry, Update Guard & Activity Log</span>
+              <span>New in 8.0: Update Guard catches breaking updates before they break you</span>
             </AnimatedShinyText>
             <AnimatedArrow className="ml-1 text-violet-600" />
           </Link>
         </div>
 
-        {/* Punchy Hero Headline */}
-        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl leading-[1.12]">
-          Stop WordPress update crashes{" "}
+        {/* Hero Headline - Exactly matches other pages (pricing, features, compare, etc.) */}
+        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
+          Complete server clarity.{" "}
           <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            before they take you down.
+            Right inside WordPress.
           </span>
         </h1>
 
-        {/* Subheading */}
-        <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 leading-relaxed">
-          Real-time server health, update warnings, and security reports - all in your WP admin, no SaaS fees, no downtime.
+        {/* Subheading - Exactly matches other pages (pricing, features, compare, etc.) */}
+        <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+          Stop juggling five disconnected diagnostic plugins and risky info.php files. Get instant, in-admin clarity on site & server health with 1-click fixes. Zero SaaS fees.
         </p>
 
         {/* CTA Button Group */}
-        <div className="mt-2 flex flex-col items-center gap-3">
+        <div className="mt-6 flex flex-col items-center gap-4">
           <div className="flex flex-col items-stretch gap-2.5 sm:flex-row sm:items-center sm:gap-3">
             <Link
               href="/pricing"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-700">
-              <span>See plans & pricing</span>
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(167,139,250,0.6)] transition-all duration-150 ease-linear hover:bg-violet-700">
+              <span>Get Pro - From $39/yr</span>
               <AnimatedArrow className="ml-1" />
             </Link>
             <a
               href="https://demo.phpinfowp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-300 bg-emerald-50/60 px-5 py-3 text-sm font-semibold text-emerald-900 shadow-xs transition hover:bg-emerald-100/70">
+              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-300 bg-emerald-50/60 px-5 py-2.5 text-sm font-semibold text-emerald-900 shadow-xs transition hover:bg-emerald-100/70 dark:border-emerald-800/60 dark:bg-emerald-950/40 dark:text-emerald-300">
               <span className="relative flex h-2 w-2 mr-0.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>Try it live</span>
-              <AnimatedArrow className="ml-1 text-emerald-600" />
+              <span>Explore the Live Demo</span>
+              <AnimatedArrow className="ml-1 text-emerald-600 dark:text-emerald-400" />
             </a>
           </div>
-          <p className="text-xs text-zinc-500 flex items-center gap-1.5 mt-1">
-            <span>From <strong className="font-semibold text-zinc-800">$39/year</strong></span>
-            <span className="text-zinc-300">·</span>
-            <span className="inline-flex items-center text-emerald-700 font-medium">
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5">
+            <span>License key emailed right after checkout</span>
+            <span className="text-zinc-300 dark:text-zinc-700">·</span>
+            <span className="inline-flex items-center text-emerald-700 dark:text-emerald-400 font-medium">
               <ShieldCheck className="mr-1 h-3.5 w-3.5" />
-              14-day money-back guarantee
+              14-day refund, no questions asked
             </span>
           </p>
         </div>
 
         {/* Proof Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-4">
           <a
             href={WP_ORG_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs text-zinc-800 shadow-2xs transition hover:border-zinc-300 hover:bg-zinc-50">
-            <SiWordpress className="h-3.5 w-3.5 text-violet-700" />
+            className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-800 shadow-2xs transition hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200">
+            <SiWordpress className="h-3.5 w-3.5 text-violet-700 dark:text-violet-400" />
             <span className="font-semibold">{activeInstalls}</span>
-            <span className="text-zinc-500">active sites</span>
+            <span className="text-zinc-500 dark:text-zinc-400">active sites</span>
           </a>
           <a
             href={WP_ORG_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs text-amber-800 transition hover:border-amber-300">
-            <span className="flex items-center" aria-hidden>
+            className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs text-amber-800 transition hover:border-amber-300 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-300">
+            <span className="flex items-center gap-0.5" aria-hidden>
               {[0, 1, 2, 3].map((i) => (
                 <Star key={i} className="h-3 w-3 fill-amber-500 text-amber-600" />
               ))}
-              <Star className="h-3 w-3 text-amber-600" />
+              <span className="relative inline-flex items-center justify-center h-3 w-3">
+                <Star className="h-3 w-3 text-amber-600" />
+                <span className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
+                  <Star className="h-3 w-3 fill-amber-500 text-amber-600 max-w-none" />
+                </span>
+              </span>
             </span>
             <span className="font-semibold">{wpRating}</span>
-            <span className="text-amber-700">on WP.org</span>
+            <span className="text-amber-700 dark:text-amber-400">on WP.org</span>
           </a>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs text-emerald-800">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs text-emerald-800 dark:border-emerald-900/40 dark:bg-emerald-950/30 dark:text-emerald-300">
             <RefreshCcw className="h-3 w-3" />
             <span>Updated {lastUpdated}</span>
           </span>

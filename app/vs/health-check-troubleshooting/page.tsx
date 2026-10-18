@@ -80,7 +80,7 @@ export default function VsHealthCheckPage() {
             phpinfo() WP vs. Health Check &amp; Troubleshooting
           </h1>
           <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mt-4">
-            Health Check &amp; Troubleshooting was once the go-to plugin. Today, it suffers from abandoned development and dangerous lockout bugs. Here is why developers and agencies are upgrading to <strong>phpinfo() WP</strong>.
+            The official WordPress "Health Check" plugin has been neglected and unmaintained for over 2 years. phpinfo() WP is its modern, actively engineered successor with PHP 8.4 support and zero breaking themes.
           </p>
         </div>
 

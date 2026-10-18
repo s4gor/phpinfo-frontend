@@ -18,7 +18,7 @@ export async function GET() {
     return NextResponse.json({
       rating: data.rating ?? null,
       last_updated: data.last_updated ?? null,
-      version: data.version ?? "7.2.3",
+      version: data.version ?? "8.0.4",
       active_installs: data.active_installs ?? 3000,
     });
   } catch {

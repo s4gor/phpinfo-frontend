@@ -5,7 +5,7 @@ import Link from "next/link";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
-import { ArrowRight, ShieldCheck, Zap, Database, Server, ChevronRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Database, Server, Cloud, ChevronRight } from "lucide-react";
 
 export default function VsIndexPage() {
   const competitors = [
@@ -13,21 +13,21 @@ export default function VsIndexPage() {
       slug: "query-monitor",
       title: "phpinfo() WP vs. Query Monitor",
       subtitle: "Production Operations vs. Local Query Profiling",
-      desc: "Why Query Monitor is great for local SQL queries, but phpinfo() WP is engineered for production with 0.00ms frontend overhead, Update Guard crash safeguards, and white-label client PDF audits.",
+      desc: "Query Monitor is fantastic for localhost PHP developers inspecting SQL queries during page loads. It is NOT built for production server operations, PHP version upgrades, or client PDF reports. Use Query Monitor on localhost; run phpinfo() WP in production.",
       icon: Database,
     },
     {
       slug: "health-check-troubleshooting",
       title: "phpinfo() WP vs. Health Check & Troubleshooting",
-      subtitle: "Active Engineering vs. Unmaintained Legacy",
-      desc: "Health Check has been unmaintained for over two years with critical lockout bugs. Discover why developers are upgrading to our safe, session-isolated diagnostic engine.",
+      subtitle: "Modern Engineering vs. Abandoned Legacy",
+      desc: "The official WordPress 'Health Check' plugin has been neglected and unmaintained for over 2 years. phpinfo() WP is its modern, actively engineered successor with PHP 8.4 support and zero breaking themes.",
       icon: ShieldCheck,
     },
     {
       slug: "wp-server-stats",
       title: "phpinfo() WP vs. WP Server Stats",
       subtitle: "Complete Operations Stack vs. Basic Gauges",
-      desc: "Move beyond simple CPU/RAM dials. Discover actionable pre-update safeguards, autoload bloat scanning, PHP configuration editors, and executive audit reports.",
+      desc: "Move beyond simple CPU and RAM dials. Discover actionable pre-update safeguards, autoload bloat scanning, live OPcache telemetry, and executive audit reports.",
       icon: Server,
     },
   ];
@@ -59,7 +59,7 @@ export default function VsIndexPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {competitors.map((c) => {
             const Icon = c.icon;
             return (
@@ -88,6 +88,30 @@ export default function VsIndexPage() {
               </Link>
             );
           })}
+        </div>
+
+        {/* vs Third-Party SaaS Callout Banner */}
+        <div className="mb-12 rounded-2xl border border-violet-200/90 bg-violet-50/50 p-6 sm:p-8 dark:border-violet-900/60 dark:bg-violet-950/20">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-800 dark:text-violet-300">
+                <Cloud className="h-4 w-4" />
+                <span>phpinfo() WP vs. Third-Party SaaS (Datadog / New Relic)</span>
+              </div>
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                Why pay $15/site every month to store private database credentials on a remote cloud?
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
+                External monitoring SaaS platforms charge recurring monthly per-site fees and require root database access keys leaving your infrastructure. phpinfo() WP gives you instant server telemetry with 100% in-admin privacy, zero telemetry, and a flat annual fee.
+              </p>
+            </div>
+            <Link
+              href="/pricing"
+              className="shrink-0 inline-flex items-center justify-center h-10 rounded-xl bg-violet-600 hover:bg-violet-700 px-4 text-xs font-semibold text-white transition-colors">
+              <span>View Flat Pricing</span>
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
 
         {/* Global Compare CTA */}

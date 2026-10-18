@@ -5,36 +5,39 @@ import { Users, User, Globe } from "lucide-react";
 
 const cases = [
   {
+    icon: Globe,
+    name: "For Site Owners",
+    tier: "$39 / year",
+    pain: "Is my site healthy? You shouldn't need to hire someone to find out.",
+    win: "Identify exactly what's wrong in 30 seconds & fix without hiring a $150/hr sysadmin.",
+    bullets: [
+      "A-to-F Config Grader translates cryptic limits into plain English",
+      "Find why checkout or admin is sluggish - without hiring a sysadmin",
+      "PHP EOL Timeline - know before an upgrade breaks your site",
+    ],
+  },
+  {
     icon: Users,
     name: "For Agencies",
-    pain: "Quarterly audits across 40 client sites - and a PDF for each.",
-    win: "One plugin per site. Hit Export. Hand the branded PDF to the client. Done in a morning.",
+    tier: "$79/yr · $249 Lifetime",
+    pain: "Auditing 30 client sites eats unbillable hours, and clients ask why they pay monthly retainers.",
+    win: "One click turns server telemetry into a branded, white-label executive PDF report that proves your retainer value.",
     bullets: [
-      "Multi-site (Network) support",
-      "White-label PDF with your logo",
-      "Slack/Discord alerts so you hear about issues before clients do",
+      "White-label PDF reports branded with your agency logo",
+      "Safe per-user Troubleshooting Mode (zero visitor disruption)",
+      "Multi-site (Network) centralized support & webhook alerts",
     ],
   },
   {
     icon: User,
     name: "For Freelancers",
-    pain: "Clients ask 'is my site OK?' and you wing it from memory.",
-    win: "Run an audit in 30 seconds. Reply with a PDF that looks like you charge $5K.",
+    tier: "$79 / year",
+    pain: "Clients ask 'is my site OK?' and upgrading PHP feels like Russian roulette.",
+    win: "Pre-flight compatibility scanner and letter grade you can show in 30 seconds.",
     bullets: [
-      "Config Grader with letter grade",
-      "PHP EOL Timeline + Compatibility Scanner",
-      "Email alerts when something on a site degrades",
-    ],
-  },
-  {
-    icon: Globe,
-    name: "For Site Owners",
-    pain: "You have no idea if your site is actually healthy - and you don't want to hire someone to find out.",
-    win: "Install the plugin. Open the dashboard. In 30 seconds you'll know exactly what's wrong, what's fine, and what to fix first.",
-    bullets: [
-      "A-F Config Grader with plain-English explanations",
-      "PHP EOL Timeline - know if your version is at risk",
-      "One-click fixes - no dev needed",
+      "Pre-flight PHP 7.4-8.4 compatibility checks",
+      "Instant memory and timeout bottleneck discovery",
+      "1-click safe server directive fixes",
     ],
   },
 ];
@@ -53,7 +56,7 @@ export default function UseCases() {
       <div>
         <TextBlur
           className="mx-auto max-w-[34rem] text-center text-base text-zinc-700 sm:text-lg"
-          text="Three audiences, same plugin - pick the row that sounds like your week."
+          text="Whether you run a single WooCommerce store or manage dozens of client retainers."
           duration={0.8}
         />
       </div>
@@ -65,16 +68,21 @@ export default function UseCases() {
           return (
             <div
               key={c.name}
-              className="flex flex-col rounded-xl border border-zinc-200 bg-white p-6 shadow-xs transition-all hover:border-violet-400/40">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100">
-                <Icon className="h-5 w-5 text-violet-700" strokeWidth={1.75} />
+              className="flex flex-col rounded-xl border border-zinc-200 bg-white p-6 shadow-xs transition-all hover:border-violet-400/40 dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800">
+                  <Icon className="h-5 w-5 text-violet-700 dark:text-violet-400" strokeWidth={1.75} />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-violet-700 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/50 border border-violet-200/80 dark:border-violet-800/60 rounded-full px-2 py-0.5">
+                  {c.tier}
+                </span>
               </div>
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-900">
+              <h3 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                 {c.name}
               </h3>
-              <p className="mt-1 text-sm italic text-zinc-600">{c.pain}</p>
-              <p className="mt-3 text-sm text-zinc-800">{c.win}</p>
-              <ul className="mt-4 flex flex-col gap-2 text-sm text-zinc-700">
+              <p className="mt-1 text-sm italic text-zinc-600 dark:text-zinc-400">&ldquo;{c.pain}&rdquo;</p>
+              <p className="mt-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">&ldquo;{c.win}&rdquo;</p>
+              <ul className="mt-4 flex flex-col gap-2 text-sm text-zinc-700 dark:text-zinc-300">
                 {c.bullets.map((b, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-violet-300/70" />

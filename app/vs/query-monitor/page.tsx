@@ -85,7 +85,7 @@ export default function VsQueryMonitorPage() {
             phpinfo() WP vs. Query Monitor
           </h1>
           <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mt-4">
-            Query Monitor is legendary for finding slow SQL queries during development. But for live server operations, update crash prevention, and client reporting, you need <strong>phpinfo() WP</strong>.
+            Query Monitor is fantastic for localhost PHP developers inspecting SQL queries during page loads. It is NOT built for production server operations, PHP version upgrades, or client PDF reports. Use Query Monitor on localhost; run phpinfo() WP in production.
           </p>
         </div>
 

@@ -208,8 +208,8 @@ const productJsonLd = {
   ],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "48",
+    ratingValue: "4.5",
+    ratingCount: "8",
     bestRating: "5",
     worstRating: "1",
   },

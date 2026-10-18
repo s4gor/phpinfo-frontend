@@ -10,118 +10,92 @@ import Screenshots from "@/components/screenshots";
 import {
   Shield,
   Zap,
-  Activity,
-  FileText,
   Cpu,
+  FileText,
+  Play,
+  Sparkles,
   CheckCircle2,
   Lock,
   ArrowRight,
   Database,
   Terminal,
-  Play,
-  Sparkles,
   Server,
   Layers,
-  FileSpreadsheet,
 } from "lucide-react";
-import { SiWordpress } from "react-icons/si";
 
 export default function FeaturesPage() {
   const pillars = [
     {
-      id: "safeguard",
-      icon: Shield,
-      badge: "Pillar 1 &bull; Crash Prevention",
-      title: "Update Guard & Zero-Downtime Safe Deployments",
-      lead: "Never fear clicking 'Update' again. Pre-flight floor checks and automated 60-second loopback health tests ensure your WooCommerce store never drops offline.",
-      points: [
-        "Pre-flight compatibility scanning (PHP floor, WP minimum, changelog risk parsing)",
-        "Automated 60-second loopback health check immediately post-update",
-        "Instant automatic rollback on fatal errors with zero visitor interruption",
-        "Per-user isolated Troubleshooting Mode (your visitors never see a broken layout)",
-      ],
-      codeSample: `// Update Guard Pre-Flight Execution
-$guard = new PIWP_Update_Guard([
-    'target_plugin' => 'woocommerce/woocommerce.php',
-    'php_floor'      => '7.4',
-    'wp_floor'       => '6.5',
-    'auto_rollback'  => true
-]);
-$status = $guard->execute_safe_stage(); // -> Status: HEALTHY`,
-    },
-    {
-      id: "scanner",
+      id: "compatibility",
       icon: Cpu,
-      badge: "Pillar 2 &bull; Delta Compatibility",
-      title: "Smart PHP 8.4 Upgrade Scanner (Zero False Alarms)",
-      lead: "Older scanners flood you with 500+ false alarms on polyfills inside dormant vendor folders. phpinfo() WP tests real active code paths so you can upgrade hosting PHP with 100% confidence.",
+      badge: "Suite 1 &bull; Compatibility & Upgrades",
+      title: "The Compatibility Suite",
+      lead: "PHP 7.4-8.4 syntax scanner, WordPress 6.8 readiness, and deprecated function alerts. Upgrade hosting PHP versions with zero fear of fatal crashes or white-screens.",
       points: [
-        "Relative delta scanning specifically for PHP 8.2 ➜ 8.3 ➜ 8.4 migrations",
-        "Detects breaking syntax changes, implicit null deprecations, and removed functions",
-        "Plain-English recommendations explaining why a function is deprecated",
-        "1-click safe code patch generation for custom child themes and functions.php",
+        "Pre-flight PHP 7.4-8.4 AST syntax scanner (know what breaks BEFORE updating)",
+        "WordPress 6.8 readiness check & deprecated function alerts",
+        "Smart delta scanning: zero false alarms inside dormant vendor libraries",
+        "1-click safe code patch generation for child themes & functions.php",
       ],
-      codeSample: `// Smart Delta Scan Result
-[PHP 8.4 Delta] 0 Fatal syntax errors detected
-[Deprecation] functions.php:42 -> Implicitly nullable parameter $tax
-[Fix Suggestion] Change "string $tax = null" to "?string $tax = null"
-[Safety Index] 99.4% Ready for Host PHP 8.4 switch`,
+      codeSample: `// Compatibility Suite: Pre-Flight AST Scanner
+$scanner = new PIWP_Compat_Scanner(['target_php' => '8.4', 'wp_core' => '6.8']);
+$report  = $scanner->run_preflight();
+// -> Result: 0 Fatal syntax errors, 1 deprecation in functions.php:42
+// -> Status: 100% Ready for Host PHP 8.4 Switch`,
     },
     {
-      id: "optimize",
+      id: "performance",
       icon: Zap,
-      badge: "Pillar 3 &bull; TTFB & Throughput",
-      title: "Live OPcache, Autoload Bloat & Server Snippets",
-      lead: "Cut server TTFB in half without touching raw server configs. Inspect live OPcache hit rates, clean database autoload bloat, and inject safe Apache/Nginx rules with instant rollback.",
+      badge: "Suite 2 &bull; Speed & Throughput",
+      title: "The Performance Suite",
+      lead: "Live OPcache hit rate telemetry, MySQL missing index scanner, and autoload bloat visualizer. Cut server TTFB in half without touching raw server configs.",
       points: [
-        "Live OPcache visualizer (memory usage, hit rates, cached script counter)",
-        "wp_options Autoload bloat scanner (identifies massive transient bloat draining RAM)",
+        "Live OPcache & Object Cache telemetry (memory usage, hit rates, script counts)",
         "Missing MySQL database index detector for high-traffic WooCommerce sites",
-        "1-click Server Snippet library (Brotli compression, Expires headers, Bad Bots blocker)",
+        "wp_options autoload bloat visualizer (identifies transient leaks draining RAM)",
+        "1-click Server Snippet library (Brotli compression, Expires headers, Bad Bots)",
       ],
-      codeSample: `# Generated Safe Server Snippet (Apache / Nginx)
-# Expires Headers: Static Assets 1 Year
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType application/javascript "access plus 1 year"
-</IfModule>`,
+      codeSample: `# Performance Suite: Server Telemetry
+[OPcache] 96.4% Hit Rate · 1,420 Cached Scripts · 42MB Free Buffer
+[Database] 2 Missing Indexes detected on wp_woocommerce_order_items
+[Autoload] 1.8MB options table bloat scanned · 1-Click Clean available`,
     },
     {
-      id: "monitor",
-      icon: Activity,
-      badge: "Pillar 4 &bull; Security & Auditing",
-      title: "Admin Activity Log & Loopback Security Audit",
-      lead: "Know exactly who changed what, when, and from what IP address. Auto-fix missing security headers and track SSL certificate expiry days before disaster strikes.",
+      id: "safe-operations",
+      icon: Shield,
+      badge: "Suite 3 &bull; Risk & Downtime Prevention",
+      title: "The Safe-Operations Suite",
+      lead: "Per-user isolated troubleshooting mode, sensitive file exposure audit, and .htaccess editor with automatic backup. Fix bugs live without real customers noticing.",
       points: [
-        "Real-time Admin Activity Log: plugin changes, logins, role updates with 1-click CSV export",
-        "Real visitor IP resolution behind Cloudflare, LiteSpeed, and reverse proxies",
-        "Loopback Security Headers auditor with 1-click auto-fix injection",
-        "SSL certificate expiry monitor & stuck WP-Cron queue alerts",
+        "Safe per-user Troubleshooting Mode (your visitors never see a broken layout)",
+        "Update Guard: automated 60-second loopback health checks post-update",
+        "Sensitive file exposure & 777 permissions scanner (.env, backup zips, git folders)",
+        "In-admin .htaccess & nginx snippet editor with instant automatic rollback",
       ],
-      codeSample: `// Security Audit Loopback Result
-[Header Audit] Missing: Content-Security-Policy, X-Frame-Options
-[Action Available] Click "Auto-Fix Missing Headers"
-[Result] Security Grade improved from F (Zero headers) to A+ (All 6 active)`,
+      codeSample: `// Safe-Operations Suite: Per-User Session Isolation
+$session = new PIWP_Troubleshooter(['admin_user_id' => 1]);
+$session->isolate_theme('twentytwentyfour');
+// -> Live store visitors continue seeing active storefront
+// -> Only Admin #1 experiences isolated troubleshooting environment`,
     },
     {
-      id: "deliver",
+      id: "agency",
       icon: FileText,
-      badge: "Pillar 5 &bull; Client Deliverables",
-      title: "White-Label PDF Reports for Agencies & Freelancers",
-      lead: "Turn routine server maintenance into recurring retainer revenue. Export beautifully branded executive audit reports customized with your agency logo and colors.",
+      badge: "Suite 4 &bull; Client Deliverables",
+      title: "The Agency Suite",
+      lead: "White-label PDF exporter, Slack/Discord health webhooks, and centralized network multi-site support. Turn routine maintenance into recurring retainer revenue.",
       points: [
-        "100% white-label client PDF audit reports (zero phpinfo() WP branding)",
-        "Custom agency logo, company name, and client domain headers",
-        "Executive summaries with overall health score (A to F) ready for client review",
-        "Scheduled weekly/monthly health digests delivered directly to client inboxes",
+        "100% white-label client PDF audit reports (branded with your agency logo)",
+        "Slack and Discord webhook alerts so you hear about server issues before clients do",
+        "Multi-site (Network) centralized dashboard across all client installs",
+        "Executive summaries with overall health score (A to F) ready for client invoices",
       ],
-      codeSample: `// Generated Client Deliverable
+      codeSample: `// Agency Suite: White-Label Deliverable
 Agency: Apex Digital Web Studio
-Client: Acme eCommerce Store
-Grade: A+ (98/100)
-Executive Summary: 0 security vulnerabilities, OPcache optimal (96%),
-Update Guard active, PHP 8.3 certified.`,
+Client: Acme Store (Staging & Production)
+Grade: A+ (99/100)
+Executive Summary: 0 breaking deprecations, OPcache optimal,
+PHP 8.4 certified, 0 security vulnerabilities.`,
     },
   ];
 
@@ -143,7 +117,7 @@ Update Guard active, PHP 8.3 certified.`,
         </h1>
 
         <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-          From automated pre-flight update protection to live OPcache telemetry and white-label client reporting, all inside your native WP admin.
+          Four cohesive suites in one native dashboard: Compatibility, Performance, Safe Operations, and Agency Deliverables - with zero SaaS fees and zero telemetry.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -154,7 +128,7 @@ Update Guard active, PHP 8.3 certified.`,
             </Button>
           </a>
           <Link href="/pricing">
-            <Button size="lg" variant="outline" className="rounded-xl border-zinc-300 font-semibold px-6">
+            <Button size="lg" variant="outline" className="rounded-xl border-zinc-300 font-semibold px-6 dark:border-zinc-800 dark:text-zinc-200">
               <span>View Pricing Plans</span>
               <AnimatedArrow className="ml-2" />
             </Button>
@@ -171,44 +145,65 @@ Update Guard active, PHP 8.3 certified.`,
           return (
             <div
               key={pillar.id}
-              className={`rounded-3xl border border-zinc-200 bg-white p-6 sm:p-10 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center`}>
-              <div className={`lg:col-span-7 space-y-4 ${isEven ? "lg:order-2" : ""}`}>
-                <div className="inline-flex items-center gap-2 rounded-md bg-violet-100 px-2.5 py-1 text-xs font-bold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
-                  <Icon className="h-3.5 w-3.5" />
-                  <span dangerouslySetInnerHTML={{ __html: pillar.badge }} />
-                </div>
+              id={pillar.id}
+              className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-14 ${
+                isEven ? "lg:flex-row-reverse" : ""
+              }`}>
+              {/* Text Description Column */}
+              <div className="flex-1 space-y-4">
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 dark:bg-violet-950/60 px-3 py-1 text-xs font-semibold text-violet-800 dark:text-violet-300"
+                  dangerouslySetInnerHTML={{ __html: pillar.badge }}
+                />
 
-                <h2 className="max-w-4xl text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                   {pillar.title}
                 </h2>
 
-                <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   {pillar.lead}
                 </p>
 
                 <ul className="space-y-2.5 pt-2">
-                  {pillar.points.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                  {pillar.points.map((pt, pIdx) => (
+                    <li key={pIdx} className="flex items-start gap-2.5 text-sm text-zinc-700 dark:text-zinc-300">
+                      <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
                       <span>{pt}</span>
                     </li>
                   ))}
                 </ul>
+
+                <div className="pt-2">
+                  <a
+                    href="https://demo.phpinfowp.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-700 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300">
+                    <span>Test this feature live in sandbox</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
 
-              {/* Code / Visual Box */}
-              <div className={`lg:col-span-5 ${isEven ? "lg:order-1" : ""}`}>
-                <div className="rounded-2xl bg-zinc-950 p-5 font-mono text-xs text-zinc-300 shadow-md border border-zinc-800 overflow-x-auto">
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80 text-[11px] text-zinc-500">
-                    <span className="flex items-center gap-1.5">
-                      <Terminal className="h-3.5 w-3.5 text-violet-400" />
-                      <span>Live Intelligence Stream</span>
-                    </span>
-                    <span className="text-emerald-400 font-bold">READY</span>
+              {/* Terminal Code Mockup Column */}
+              <div className="flex-1 w-full max-w-xl">
+                <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-900 text-zinc-100 shadow-xl overflow-hidden font-mono text-xs">
+                  {/* Window Bar */}
+                  <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-950 border-b border-zinc-800">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    </div>
+                    <span className="text-[11px] text-zinc-500">{pillar.id}.engine.log</span>
+                    <Icon className="h-3.5 w-3.5 text-zinc-400" />
                   </div>
-                  <pre className="text-[11px] sm:text-xs leading-relaxed text-zinc-300 whitespace-pre-wrap">
-                    {pillar.codeSample}
-                  </pre>
+                  {/* Code Body */}
+                  <div className="p-5 overflow-x-auto">
+                    <pre className="text-emerald-400 font-mono text-xs leading-relaxed whitespace-pre">
+                      {pillar.codeSample}
+                    </pre>
+                  </div>
                 </div>
               </div>
             </div>
@@ -217,42 +212,8 @@ Update Guard active, PHP 8.3 certified.`,
       </section>
 
       {/* Screenshots Gallery Section */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-8">
-          <h2 className="max-w-4xl mx-auto text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Engineered for Modern WordPress Dashboards
-          </h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Intuitive, lightning fast, and crafted with attention to every pixel.
-          </p>
-        </div>
-        <Screenshots hideHeading />
-      </section>
-
-      {/* Bottom CTA Banner */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-        <div className="rounded-3xl bg-zinc-900 p-8 sm:p-12 text-white text-center shadow-xl border border-zinc-800">
-          <h2 className="max-w-4xl mx-auto text-2xl sm:text-4xl font-black tracking-tight">
-            Stop guessing server health. Start managing it like a pro.
-          </h2>
-          <p className="mt-3 text-sm sm:text-base text-zinc-400 max-w-xl mx-auto">
-            Join thousands of WordPress agencies, store owners, and freelancers who rely on phpinfo() WP every day.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/pricing">
-              <Button size="lg" className="rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6">
-                <span>Get pro license</span>
-                <AnimatedArrow className="ml-2" />
-              </Button>
-            </Link>
-            <a href="https://demo.phpinfowp.com" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="ghost" className="rounded-xl text-zinc-300 hover:text-white hover:bg-zinc-800 font-semibold px-5 border border-zinc-700">
-                <Play className="mr-2 h-4 w-4" />
-                <span>Test Live Demo</span>
-              </Button>
-            </a>
-          </div>
-        </div>
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+        <Screenshots />
       </section>
 
       <Footer />

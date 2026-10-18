@@ -54,7 +54,7 @@ export default function AgenciesPage() {
         </h1>
 
         <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mt-4">
-          Prevent breaking client updates, eliminate $3-$10/mo per-site SaaS tax, and export white-label executive audit PDFs that prove monthly maintenance value to your clients.
+          Prevent breaking client updates, eliminate recurring per-site monthly SaaS taxes, and export branded executive PDF audit reports that prove your monthly maintenance retainer to clients.
         </p>
 
         {/* CTA Buttons */}
@@ -115,7 +115,7 @@ export default function AgenciesPage() {
               Stop paying monthly per-site SaaS tolls.
             </h2>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              External SaaS monitors charge $3-$10/month for every site you manage. See how much your agency keeps with phpinfo() WP Unlimited.
+              External SaaS monitors charge $3-$10/month for every site you manage. Managing your client fleet on external SaaS tools drains thousands every year. With phpinfo() WP Unlimited ($79/yr flat), your agency keeps that revenue as pure margin.
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export default function AgenciesPage() {
               Enterprise and EU clients strictly forbid third-party SaaS services from collecting server access keys or reading customer databases. phpinfo() WP runs 100% inside your WordPress install. No external data telemetry, zero liability risk.
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-amber-600 dark:text-amber-400">
-              <span>Compliant with strict EU GDPR § 5 DDG</span>
+              <span>EU GDPR Compliant &bull; § 5 DDG Impressum Verified</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </div>
           </div>

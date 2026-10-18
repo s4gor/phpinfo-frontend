@@ -22,7 +22,7 @@ export default function HeroShowcase() {
           >
             {/* Handwritten Note with Arrow */}
             <div className="hero-deck-note" aria-hidden="true">
-              <span>Real-time server diagnostics</span>
+              <span>In admin dashboard with 1-click fixes</span>
               <svg className="hero-deck-note-arrow" viewBox="0 0 40 36" aria-hidden="true">
                 <path d="M 14 4 C 16 14 22 22 20 30" />
                 <path d="M 14 24 L 20 32 L 26 24" />
@@ -73,8 +73,8 @@ export default function HeroShowcase() {
               <div className="bg-white border border-slate-200 rounded-[10px] p-2.5 mb-1 shadow-[0_1px_3px_rgba(15,23,42,0.04)]">
                 <div className="flex items-start justify-between mb-1.5">
                   <div className="flex flex-col">
-                    <span className="text-[11px] font-bold text-slate-900 leading-tight">PHP Server Health &amp; Configuration</span>
-                    <span className="text-[8px] text-slate-500 mt-0.5">Automated audit against standards</span>
+                    <span className="text-[11px] font-bold text-slate-900 leading-tight">Database Bottlenecks &amp; OPcache Telemetry</span>
+                    <span className="text-[8px] text-slate-500 mt-0.5">Find un-indexed queries and autoload bloat slowing down TTFB</span>
                   </div>
                   <span className="text-[11px] font-extrabold text-emerald-600 bg-emerald-100 border border-emerald-300 rounded-md px-1.5 py-0.5 leading-tight">
                     A+
@@ -175,7 +175,7 @@ export default function HeroShowcase() {
           >
             {/* Handwritten Note with Arrow */}
             <div className="hero-deck-note" aria-hidden="true">
-              <span>Prevent update crashes with guard</span>
+              <span>Find plugin updates that may break in advance</span>
               <svg className="hero-deck-note-arrow" viewBox="0 0 40 36" aria-hidden="true">
                 <path d="M 14 4 C 16 14 22 22 20 30" />
                 <path d="M 14 24 L 20 32 L 26 24" />
@@ -195,18 +195,18 @@ export default function HeroShowcase() {
                   </span>
                 </div>
                 <h3 className="text-[13px] font-extrabold text-slate-900 leading-tight tracking-tight m-0">
-                  Update Guard: Zero-Downtime Insurance
+                  PHP 8.4 Engine &amp; Safe Troubleshooting
                 </h3>
               </div>
 
               {/* Tabs Bar */}
               <div className="flex items-center gap-2 border-b border-slate-200 pb-1 text-[8px] font-semibold text-slate-500">
                 <div className="flex items-center gap-1 text-indigo-600 border-b-2 border-indigo-600 -mb-[5px] pb-0.5 font-bold cursor-pointer">
-                  <span>Plugins &amp; Themes Guard</span>
+                  <span>PHP 8.4 Pre-Flight Sniffer</span>
                   <span className="bg-red-500 text-white rounded-full px-1 text-[7.5px] font-extrabold leading-3">11</span>
                 </div>
                 <div className="flex items-center gap-1 cursor-pointer hover:text-slate-700">
-                  <span>Core Audit</span>
+                  <span>Safe Troubleshooting Mode</span>
                 </div>
                 <div className="flex items-center gap-1 cursor-pointer hover:text-slate-700">
                   <span>History &amp; Health</span>
@@ -222,12 +222,12 @@ export default function HeroShowcase() {
                     </span>
                     <div>
                       <div className="text-[9.5px] font-extrabold text-slate-900 leading-tight">Update with caution</div>
-                      <div className="text-[7px] text-slate-500 leading-tight">11 updates scanned before applying</div>
+                      <div className="text-[7px] text-slate-500 leading-tight">Debug live sites per-user with ZERO disruption to real store visitors</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-1 mt-0.5">
                     <span className="text-[7px] font-semibold rounded px-1 py-0.5 text-emerald-700 bg-emerald-100"><b>4</b> Safe</span>
-                    <span className="text-[7px] font-semibold rounded px-1 py-0.5 text-amber-800 bg-amber-100"><b>9</b> Caution</span>
+                    <span className="text-[7px] font-semibold rounded px-1 py-0.5 text-amber-800 bg-amber-100"><b>7</b> Caution</span>
                     <span className="text-[7px] font-semibold rounded px-1 py-0.5 text-sky-700 bg-sky-100"><b>0</b> Risky</span>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ export default function HeroShowcase() {
           >
             {/* Handwritten Note with Arrow */}
             <div className="hero-deck-note" aria-hidden="true">
-              <span>Fix Server issue with config audit</span>
+              <span>Instant A-to-F server grade & fixes</span>
               <svg className="hero-deck-note-arrow" viewBox="0 0 40 36" aria-hidden="true">
                 <path d="M 14 4 C 16 14 22 22 20 30" />
                 <path d="M 14 24 L 20 32 L 26 24" />
@@ -368,7 +368,7 @@ export default function HeroShowcase() {
                   </span>
                 </div>
                 <h3 className="text-[13px] font-extrabold text-slate-900 leading-tight tracking-tight m-0">
-                  Config Grader: Production Standard
+                  Config Grader: 1-Click Server Recommendations
                 </h3>
               </div>
 

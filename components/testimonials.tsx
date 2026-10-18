@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     company: "Apex Digital",
     avatarBg: "bg-emerald-600 text-white",
     avatarInitials: "AR",
-    tierTag: "Pro License",
+    tierTag: "Single Site Pro",
     rating: 5,
     highlight: "Instantly showed us what was bottlenecking PHP.",
     content:
@@ -47,7 +47,7 @@ const testimonials: Testimonial[] = [
     company: "Northline Studio",
     avatarBg: "bg-blue-600 text-white",
     avatarInitials: "DM",
-    tierTag: "Agency License",
+    tierTag: "Unlimited License",
     rating: 5,
     highlight: "The PDF audit reports stopped clients questioning our retainers.",
     content:
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
     company: "SJ Creative",
     avatarBg: "bg-rose-600 text-white",
     avatarInitials: "SJ",
-    tierTag: "Pro License",
+    tierTag: "Single Site Pro",
     rating: 5,
     highlight: "No more fear when upgrading PHP versions.",
     content:
@@ -83,7 +83,7 @@ const testimonials: Testimonial[] = [
     company: "StackPilot Ops",
     avatarBg: "bg-teal-600 text-white",
     avatarInitials: "MD",
-    tierTag: "Agency License",
+    tierTag: "Unlimited License",
     rating: 5,
     highlight: "Finally stopped creating disposable info.php files.",
     content:
@@ -198,7 +198,7 @@ export default function Testimonials() {
       <div className="flex flex-col items-center text-center px-4">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-violet-300/80 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-800 shadow-sm">
           <Sparkles className="h-3.5 w-3.5 text-violet-600" />
-          <span>Real Experiences from 3,000+ WordPress Developers &amp; Site Owners</span>
+          <span>Trusted on 3,000+ active WordPress sites</span>
         </div>
 
         <TextBlur
@@ -219,10 +219,10 @@ export default function Testimonials() {
               <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
             ))}
           </div>
-          <span className="font-bold text-zinc-900">4.9 / 5</span>
+          <span className="font-bold text-zinc-900">4.5 / 5</span>
           <span className="text-zinc-400">•</span>
           <span className="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> User &amp; Developer Feedback
+            <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> WordPress.org Verified Rating
           </span>
         </div>
       </div>

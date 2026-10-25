@@ -96,13 +96,6 @@ export default function Logos() {
 
       {/* The Consolidation Visual - Styled identically to other flagship sections */}
       <div className="mt-16 sm:mt-24 w-full flex flex-col items-center">
-        <div className="mb-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200/80 bg-violet-50/80 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-800/60 dark:bg-violet-950/40 dark:text-violet-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
-            Consolidate &amp; Save
-          </span>
-        </div>
-
         <div>
           <TextBlur
             className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl dark:text-zinc-100"

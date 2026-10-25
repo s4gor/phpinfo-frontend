@@ -60,7 +60,7 @@ export default function VsWpServerStatsPage() {
         <Header />
       </div>
 
-      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-zinc-500 mb-6">
           <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-100">Home</Link>
@@ -71,7 +71,7 @@ export default function VsWpServerStatsPage() {
         </nav>
 
         {/* Hero Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-4">
             <span>WP Server Stats Alternative</span>
           </div>
@@ -84,72 +84,78 @@ export default function VsWpServerStatsPage() {
         </div>
 
         {/* Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <div className="p-6 rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-            <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">WP Server Stats</h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Provides visual speedometer-style gauges for CPU, Memory, and Server Load. Useful for a quick surface-level glance, but offers no actionable tools, no database tuning, no update crash guards, and no client reporting.
-            </p>
-          </div>
+        <div className="pt-16 md:pt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
+              <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">WP Server Stats</h2>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Provides visual speedometer-style gauges for CPU, Memory, and Server Load. Useful for a quick surface-level glance, but offers no actionable tools, no database tuning, no update crash guards, and no client reporting.
+              </p>
+            </div>
 
-          <div className="p-6 rounded-2xl border border-violet-300/80 bg-violet-50/40 dark:border-violet-900/60 dark:bg-violet-950/20">
-            <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">phpinfo() WP Pro</h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              A full server operations command center. In addition to memory telemetry, it validates PHP directives, prevents plugin update crashes, uncovers database bloat, inspects security headers, and exports executive audit PDFs.
-            </p>
+            <div className="p-6 rounded-2xl border border-violet-300/80 bg-violet-50/40 dark:border-violet-900/60 dark:bg-violet-950/20">
+              <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">phpinfo() WP Pro</h2>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                A full server operations command center. In addition to memory telemetry, it validates PHP directives, prevents plugin update crashes, uncovers database bloat, inspects security headers, and exports executive audit PDFs.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Comparison Table */}
-        <div className="rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-xs dark:border-zinc-800 dark:bg-zinc-900 mb-12">
-          <div className="p-6 border-b border-zinc-100 dark:border-zinc-800">
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-              Feature Matrix
-            </h2>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
-                <tr>
-                  <th className="py-3.5 px-6 font-semibold text-zinc-900 dark:text-zinc-100">Capability</th>
-                  <th className="py-3.5 px-6 font-semibold text-violet-700 dark:text-violet-400">phpinfo() WP Pro</th>
-                  <th className="py-3.5 px-6 font-semibold text-zinc-600 dark:text-zinc-400">WP Server Stats</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
-                {comparisonRows.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/40 transition-colors">
-                    <td className="py-4 px-6 font-medium text-zinc-900 dark:text-zinc-100">{row.capability}</td>
-                    <td className="py-4 px-6 text-zinc-800 dark:text-zinc-200 font-medium">{row.phpinfo}</td>
-                    <td className="py-4 px-6 text-zinc-500 dark:text-zinc-400">{row.wpServerStats}</td>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-xs dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="p-6 border-b border-zinc-100 dark:border-zinc-800">
+              <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                Feature Matrix
+              </h2>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
+                  <tr>
+                    <th className="py-3.5 px-6 font-semibold text-zinc-900 dark:text-zinc-100">Capability</th>
+                    <th className="py-3.5 px-6 font-semibold text-violet-700 dark:text-violet-400">phpinfo() WP Pro</th>
+                    <th className="py-3.5 px-6 font-semibold text-zinc-600 dark:text-zinc-400">WP Server Stats</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+                  {comparisonRows.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/40 transition-colors">
+                      <td className="py-4 px-6 font-medium text-zinc-900 dark:text-zinc-100">{row.capability}</td>
+                      <td className="py-4 px-6 text-zinc-800 dark:text-zinc-200 font-medium">{row.phpinfo}</td>
+                      <td className="py-4 px-6 text-zinc-500 dark:text-zinc-400">{row.wpServerStats}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="rounded-3xl border border-violet-200 bg-gradient-to-r from-violet-600 to-indigo-600 p-8 sm:p-10 text-center text-white shadow-lg">
-          <h2 className="text-2xl sm:text-3xl font-bold">
-            Move beyond simple gauges to full server control.
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-violet-100 max-w-xl mx-auto">
-            Get active safeguards, automated update protection, and agency audit reporting in one lightweight plugin.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center h-11 rounded-xl bg-white px-6 text-sm font-bold text-violet-900 shadow hover:bg-zinc-100 transition-colors">
-              View Pricing ($39 - $79)
-            </Link>
-            <a
-              href="https://demo.phpinfowp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-11 rounded-xl border border-white/40 bg-white/10 px-5 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
-              Explore Live Demo
-            </a>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-3xl border border-violet-200 bg-gradient-to-r from-violet-600 to-indigo-600 p-8 sm:p-10 text-center text-white shadow-lg">
+            <h2 className="text-2xl sm:text-3xl font-bold">
+              Move beyond simple gauges to full server control.
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-violet-100 max-w-xl mx-auto">
+              Get active safeguards, automated update protection, and agency audit reporting in one lightweight plugin.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/pricing"
+                className="inline-flex items-center justify-center h-11 rounded-xl bg-white px-6 text-sm font-bold text-violet-900 shadow hover:bg-zinc-100 transition-colors">
+                View Pricing ($39 - $79)
+              </Link>
+              <a
+                href="https://demo.phpinfowp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-11 rounded-xl border border-white/40 bg-white/10 px-5 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                Explore Live Demo
+              </a>
+            </div>
           </div>
         </div>
       </div>

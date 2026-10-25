@@ -111,7 +111,7 @@ export default function CTA() {
         </h1>
 
         {/* Subheading - Exactly matches other pages (pricing, features, compare, etc.) */}
-        <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
           Stop juggling five disconnected diagnostic plugins and risky info.php files. Get instant, in-admin clarity on site & server health with 1-click fixes. Zero SaaS fees.
         </p>
 

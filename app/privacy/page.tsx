@@ -18,10 +18,10 @@ export default function PrivacyPage() {
         <Header />
       </div>
 
-      <div className="flex w-full max-w-4xl flex-col px-4 sm:px-6 lg:px-8 pb-20 pt-4">
+      <div className="flex w-full max-w-4xl flex-col px-4 sm:px-6 lg:px-8 pt-4">
         {/* Header */}
         <div className="mb-10 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3.5">
             <ShieldCheck className="h-3.5 w-3.5" />
             <span>EU GDPR Compliance</span>
           </div>

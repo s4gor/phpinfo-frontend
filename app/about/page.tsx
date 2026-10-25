@@ -28,7 +28,7 @@ export default function AboutPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-12 text-center">
+      <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-4">
           <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500/20" />
           <span>About phpinfo() WP</span>
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story & Philosophy */}
-      <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pb-16">
+      <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-10 shadow-xs dark:border-zinc-800 dark:bg-zinc-900 space-y-8">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">

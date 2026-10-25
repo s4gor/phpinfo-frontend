@@ -137,7 +137,7 @@ export default function Changelog() {
         <Header />
       </div>
 
-      <section className="flex w-full max-w-4xl flex-col px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <section className="flex w-full max-w-4xl flex-col px-4 sm:px-6 lg:px-8 pt-4">
         <div className="mb-16 text-center">
           <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl leading-[1.12] mb-4 mx-auto">
             Changelog

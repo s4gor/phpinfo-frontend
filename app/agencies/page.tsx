@@ -43,7 +43,7 @@ export default function AgenciesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 pb-16 text-center">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-6">
           <Sparkles className="h-3.5 w-3.5 text-violet-600 dark:text-violet-400" />
           <span>Agency Operations Stack • Unlimited Client Sites</span>
@@ -104,7 +104,7 @@ export default function AgenciesPage() {
       </section>
 
       {/* Interactive ROI Calculator Section */}
-      <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
+      <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="rounded-3xl border border-violet-200/80 bg-gradient-to-b from-white to-violet-50/30 p-6 sm:p-10 shadow-sm dark:border-violet-900/40 dark:from-zinc-900 dark:to-zinc-950">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 dark:bg-violet-950/60 text-violet-700 dark:text-violet-300 px-3 py-1 text-xs font-semibold mb-3">
@@ -190,7 +190,7 @@ export default function AgenciesPage() {
       </section>
 
       {/* 4 Pillars of the Agency Stack */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
             Four features agencies depend on daily.
@@ -272,7 +272,7 @@ export default function AgenciesPage() {
       </section>
 
       {/* Agency FAQ Section */}
-      <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-14">
+      <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-zinc-900 dark:text-zinc-100 mb-8">
           Frequently asked by agency founders
         </h2>
@@ -311,7 +311,7 @@ export default function AgenciesPage() {
       </section>
 
       {/* Pre-footer Call to Action */}
-      <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pb-20 pt-6">
+      <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="rounded-3xl border border-violet-200 bg-gradient-to-br from-violet-600 to-indigo-700 p-8 sm:p-12 text-center text-white shadow-xl dark:border-violet-900/50">
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight">
             Elevate your agency maintenance retainers today.

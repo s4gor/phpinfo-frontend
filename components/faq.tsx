@@ -25,7 +25,7 @@ export default function FAQ() {
   return (
     <div
       id="faq"
-      className="flex w-full max-w-3xl flex-col gap-3 pb-12 pt-12 md:pb-16 md:pt-16">
+      className="flex w-full max-w-3xl mx-auto flex-col gap-3 pt-16 md:pt-24">
 
       <div>
         <TextBlur

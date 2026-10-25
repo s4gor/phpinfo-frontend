@@ -13,7 +13,7 @@ export default function DemoVideo() {
   return (
     <div
       id="demo"
-      className="flex w-full max-w-4xl flex-col gap-2 pt-16 md:pt-24">
+      className="flex w-full max-w-4xl mx-auto flex-col gap-2 pt-16 md:pt-24">
       <div>
         <TextBlur
           className="text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl"

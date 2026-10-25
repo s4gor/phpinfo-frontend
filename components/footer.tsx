@@ -5,7 +5,7 @@ import CookieSettingsButton from "@/components/cookie-trigger";
 
 export default function Footer({ hideCTA = false }: { hideCTA?: boolean }) {
   return (
-    <footer className="w-full mt-16 border-t border-zinc-200/80 bg-white dark:border-zinc-800/80 dark:bg-zinc-950 text-sm">
+    <footer className="w-full mt-16 md:mt-24 border-t border-zinc-200/80 bg-white dark:border-zinc-800/80 dark:bg-zinc-950 text-sm">
       {/* Pre-footer Stripe-style CTA section */}
       {!hideCTA && (
         <div className="border-b border-zinc-200/70 dark:border-zinc-800/80 bg-white dark:bg-zinc-950">

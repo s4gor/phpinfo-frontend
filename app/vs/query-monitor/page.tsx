@@ -66,7 +66,7 @@ export default function VsQueryMonitorPage() {
         <Header />
       </div>
 
-      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-16">
+      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-zinc-500 mb-6">
           <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-100">Home</Link>
@@ -77,7 +77,7 @@ export default function VsQueryMonitorPage() {
         </nav>
 
         {/* Hero Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-4">
             <span>Query Monitor Alternative for Production Operations</span>
           </div>
@@ -90,84 +90,92 @@ export default function VsQueryMonitorPage() {
         </div>
 
         {/* Side-by-Side Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <div className="p-6 rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">When to use</div>
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">Query Monitor</h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Use Query Monitor in local development environments (`localhost` or staging) when writing custom PHP plugins and optimizing slow database queries (`SELECT * ...`). It renders an in-depth developer bar attached to page renders.
-            </p>
-          </div>
+        <div className="pt-16 md:pt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">When to use</div>
+              <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">Query Monitor</h2>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Use Query Monitor in local development environments (`localhost` or staging) when writing custom PHP plugins and optimizing slow database queries (`SELECT * ...`). It renders an in-depth developer bar attached to page renders.
+              </p>
+            </div>
 
-          <div className="p-6 rounded-2xl border border-violet-300/80 bg-violet-50/40 dark:border-violet-900/60 dark:bg-violet-950/20">
-            <div className="text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">When to use</div>
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">phpinfo() WP Pro</h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Use phpinfo() WP on live production and client websites. It runs with zero front-end overhead, prevents fatal update crashes before they break stores, grades PHP/server health, and exports polished white-label PDF audit reports.
-            </p>
+            <div className="p-6 rounded-2xl border border-violet-300/80 bg-violet-50/40 dark:border-violet-900/60 dark:bg-violet-950/20">
+              <div className="text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">When to use</div>
+              <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">phpinfo() WP Pro</h2>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Use phpinfo() WP on live production and client websites. It runs with zero front-end overhead, prevents fatal update crashes before they break stores, grades PHP/server health, and exports polished white-label PDF audit reports.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Comparison Table */}
-        <div className="rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-xs dark:border-zinc-800 dark:bg-zinc-900 mb-12">
-          <div className="p-6 border-b border-zinc-100 dark:border-zinc-800">
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-              Detailed Feature Comparison
-            </h2>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
-                <tr>
-                  <th className="py-3.5 px-6 font-semibold text-zinc-900 dark:text-zinc-100">Capability</th>
-                  <th className="py-3.5 px-6 font-semibold text-violet-700 dark:text-violet-400">phpinfo() WP Pro</th>
-                  <th className="py-3.5 px-6 font-semibold text-zinc-600 dark:text-zinc-400">Query Monitor</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
-                {comparisonRows.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/40 transition-colors">
-                    <td className="py-4 px-6 font-medium text-zinc-900 dark:text-zinc-100">{row.feature}</td>
-                    <td className="py-4 px-6 text-zinc-800 dark:text-zinc-200 font-medium">{row.phpinfo}</td>
-                    <td className="py-4 px-6 text-zinc-500 dark:text-zinc-400">{row.queryMonitor}</td>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-xs dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="p-6 border-b border-zinc-100 dark:border-zinc-800">
+              <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                Detailed Feature Comparison
+              </h2>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
+                  <tr>
+                    <th className="py-3.5 px-6 font-semibold text-zinc-900 dark:text-zinc-100">Capability</th>
+                    <th className="py-3.5 px-6 font-semibold text-violet-700 dark:text-violet-400">phpinfo() WP Pro</th>
+                    <th className="py-3.5 px-6 font-semibold text-zinc-600 dark:text-zinc-400">Query Monitor</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+                  {comparisonRows.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/40 transition-colors">
+                      <td className="py-4 px-6 font-medium text-zinc-900 dark:text-zinc-100">{row.feature}</td>
+                      <td className="py-4 px-6 text-zinc-800 dark:text-zinc-200 font-medium">{row.phpinfo}</td>
+                      <td className="py-4 px-6 text-zinc-500 dark:text-zinc-400">{row.queryMonitor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
         {/* Common Question: Can they run together? */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 mb-12 space-y-3">
-          <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-            Can I run both Query Monitor and phpinfo() WP simultaneously?
-          </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            <strong>Yes, perfectly.</strong> They serve complementary roles. Query Monitor inspects SQL query bottlenecks during theme/plugin coding, while phpinfo() WP manages live server telemetry, pre-update safeguards, server security configurations, and client deliverables. Many agencies keep both in their developer toolbox.
-          </p>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 space-y-3">
+            <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+              Can I run both Query Monitor and phpinfo() WP simultaneously?
+            </h3>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <strong>Yes, perfectly.</strong> They serve complementary roles. Query Monitor inspects SQL query bottlenecks during theme/plugin coding, while phpinfo() WP manages live server telemetry, pre-update safeguards, server security configurations, and client deliverables. Many agencies keep both in their developer toolbox.
+            </p>
+          </div>
         </div>
 
         {/* Conversion CTA */}
-        <div className="rounded-3xl border border-violet-200 bg-gradient-to-r from-violet-600 to-indigo-600 p-8 sm:p-10 text-center text-white shadow-lg">
-          <h2 className="text-2xl sm:text-3xl font-bold">
-            Ready for production-grade WordPress operations?
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-violet-100 max-w-xl mx-auto">
-            Upgrade your WordPress maintenance stack with zero front-end overhead and automated crash safeguards.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center h-11 rounded-xl bg-white px-6 text-sm font-bold text-violet-900 shadow hover:bg-zinc-100 transition-colors">
-              Explore Pricing Plans ($39 - $79)
-            </Link>
-            <a
-              href="https://demo.phpinfowp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-11 rounded-xl border border-white/40 bg-white/10 px-5 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
-              Test Live Demo
-            </a>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-3xl border border-violet-200 bg-gradient-to-r from-violet-600 to-indigo-600 p-8 sm:p-10 text-center text-white shadow-lg">
+            <h2 className="text-2xl sm:text-3xl font-bold">
+              Ready for production-grade WordPress operations?
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-violet-100 max-w-xl mx-auto">
+              Upgrade your WordPress maintenance stack with zero front-end overhead and automated crash safeguards.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/pricing"
+                className="inline-flex items-center justify-center h-11 rounded-xl bg-white px-6 text-sm font-bold text-violet-900 shadow hover:bg-zinc-100 transition-colors">
+                Explore Pricing Plans ($39 - $79)
+              </Link>
+              <a
+                href="https://demo.phpinfowp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-11 rounded-xl border border-white/40 bg-white/10 px-5 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                Test Live Demo
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1165,7 +1165,7 @@ export default function DocsPage() {
       </div>
 
       {/* Hero Header - Identical size and typographic rhythm as home page */}
-      <section className="flex w-full flex-col items-center px-4 sm:px-6 lg:px-8 pt-4 pb-8 text-center">
+      <section className="flex w-full flex-col items-center px-4 sm:px-6 lg:px-8 pt-4 text-center">
         <div className="flex w-full max-w-4xl flex-col items-center gap-5 text-center">
           {/* Release Announcement Pill */}
           <div>
@@ -1233,7 +1233,7 @@ export default function DocsPage() {
       </section>
 
       {/* Main Documentation Interactive Layout */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Sticky Interactive Sidebar */}
           <aside

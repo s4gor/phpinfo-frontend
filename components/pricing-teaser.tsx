@@ -13,7 +13,7 @@ const tiers = [
 export default function PricingTeaser() {
   return (
     <div
-      className="flex w-full max-w-3xl flex-col items-center gap-3 pt-8 md:pt-12">
+      className="flex w-full max-w-3xl mx-auto flex-col items-center gap-3 pt-8 md:pt-12">
       <div
         className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
         {tiers.map((t) => (

@@ -39,7 +39,7 @@ export default function VsIndexPage() {
         <Header />
       </div>
 
-      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 pb-20">
+      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-zinc-500 mb-6">
           <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-100">Home</Link>
@@ -47,7 +47,7 @@ export default function VsIndexPage() {
           <span className="text-zinc-900 dark:text-zinc-100 font-medium">Competitor Comparisons</span>
         </nav>
 
-        <div className="text-center max-w-4xl mx-auto mb-14">
+        <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-4">
             <span>WordPress Diagnostic Plugin Alternatives</span>
           </div>
@@ -59,7 +59,7 @@ export default function VsIndexPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 md:pt-24">
           {competitors.map((c) => {
             const Icon = c.icon;
             return (
@@ -91,44 +91,48 @@ export default function VsIndexPage() {
         </div>
 
         {/* vs Third-Party SaaS Callout Banner */}
-        <div className="mb-12 rounded-2xl border border-violet-200/90 bg-violet-50/50 p-6 sm:p-8 dark:border-violet-900/60 dark:bg-violet-950/20">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-800 dark:text-violet-300">
-                <Cloud className="h-4 w-4" />
-                <span>phpinfo() WP vs. Third-Party SaaS (Datadog / New Relic)</span>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-2xl border border-violet-200/90 bg-violet-50/50 p-6 sm:p-8 dark:border-violet-900/60 dark:bg-violet-950/20">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-800 dark:text-violet-300">
+                  <Cloud className="h-4 w-4" />
+                  <span>phpinfo() WP vs. Third-Party SaaS (Datadog / New Relic)</span>
+                </div>
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  Why pay $15/site every month to store private database credentials on a remote cloud?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
+                  External monitoring SaaS platforms charge recurring monthly per-site fees and require root database access keys leaving your infrastructure. phpinfo() WP gives you instant server telemetry with 100% in-admin privacy, zero telemetry, and a flat annual fee.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-                Why pay $15/site every month to store private database credentials on a remote cloud?
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
-                External monitoring SaaS platforms charge recurring monthly per-site fees and require root database access keys leaving your infrastructure. phpinfo() WP gives you instant server telemetry with 100% in-admin privacy, zero telemetry, and a flat annual fee.
-              </p>
+              <Link
+                href="/pricing"
+                className="shrink-0 inline-flex items-center justify-center h-10 rounded-xl bg-violet-600 hover:bg-violet-700 px-4 text-xs font-semibold text-white transition-colors">
+                <span>View Flat Pricing</span>
+                <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+              </Link>
             </div>
-            <Link
-              href="/pricing"
-              className="shrink-0 inline-flex items-center justify-center h-10 rounded-xl bg-violet-600 hover:bg-violet-700 px-4 text-xs font-semibold text-white transition-colors">
-              <span>View Flat Pricing</span>
-              <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-            </Link>
           </div>
         </div>
 
         {/* Global Compare CTA */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-              Looking for our multi-tool comparison matrix?
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-              View our complete feature table comparing phpinfo() WP against Health Check, Query Monitor, and SaaS monitoring services.
-            </p>
+        <div className="pt-16 md:pt-24">
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                Looking for our multi-tool comparison matrix?
+              </h3>
+              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                View our complete feature table comparing phpinfo() WP against Health Check, Query Monitor, and SaaS monitoring services.
+              </p>
+            </div>
+            <Link
+              href="/compare"
+              className="shrink-0 inline-flex items-center justify-center h-11 rounded-xl bg-violet-600 hover:bg-violet-700 px-5 text-sm font-semibold text-white transition-colors">
+              View Full Comparison Grid
+            </Link>
           </div>
-          <Link
-            href="/compare"
-            className="shrink-0 inline-flex items-center justify-center h-11 rounded-xl bg-violet-600 hover:bg-violet-700 px-5 text-sm font-semibold text-white transition-colors">
-            View Full Comparison Grid
-          </Link>
         </div>
       </div>
 

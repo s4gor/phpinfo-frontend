@@ -76,16 +76,16 @@ export default function ComparePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 pb-8 sm:pb-12 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3.5">
           <Sparkles className="h-3.5 w-3.5" /> Direct Objective Comparison
         </div>
 
         <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          Why Modern Developers Replace Their Diagnostic Stack
+          Why modern developers replace their diagnostic stack
         </h1>
 
-        <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+        <p className="mt-5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
           One unified in-admin engine replaces abandoned plugins, manual FTP info.php files, and expensive per-site monthly SaaS subscriptions.
         </p>
 
@@ -106,7 +106,7 @@ export default function ComparePage() {
       </section>
 
       {/* Comparison Matrix Table */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-6">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
           <div className="overflow-x-auto sm:overflow-x-visible">
             <table className="w-full text-left text-xs sm:text-sm border-collapse">
@@ -159,7 +159,7 @@ export default function ComparePage() {
       </section>
 
       {/* 4 Architectural Advantages */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="text-center mb-10">
           <h2 className="max-w-4xl mx-auto text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
             The 4 Reasons WordPress Teams Switch to phpinfo() WP
@@ -210,7 +210,7 @@ export default function ComparePage() {
       </section>
 
       {/* Dedicated Competitor Deep Dives */}
-      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+      <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
             Dedicated In-Depth Competitor Analyses
@@ -278,7 +278,7 @@ export default function ComparePage() {
       </section>
 
       {/* Bottom CTA Block */}
-      <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+      <section className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <div className="rounded-3xl bg-gradient-to-br from-violet-600 to-indigo-800 p-8 sm:p-12 text-white text-center shadow-xl">
           <h2 className="max-w-4xl mx-auto text-2xl sm:text-4xl font-black tracking-tight">
             Ready to upgrade your WordPress management?

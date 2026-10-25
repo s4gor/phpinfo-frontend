@@ -80,7 +80,7 @@ export default function ServerSnippets() {
   return (
     <div
       id="snippets"
-      className="flex w-full max-w-5xl flex-col gap-2 pt-16 md:pt-24"
+      className="flex w-full max-w-5xl mx-auto flex-col gap-2 pt-16 md:pt-24"
     >
       <div>
         <TextBlur

@@ -190,7 +190,7 @@ export default function Testimonials() {
   return (
     <div
       id="testimonials"
-      className="scroll-mt-24 sm:scroll-mt-32 flex w-full max-w-6xl flex-col gap-2 pt-16 md:pt-24">
+      className="scroll-mt-24 sm:scroll-mt-32 flex w-full max-w-6xl mx-auto flex-col gap-2 pt-16 md:pt-24">
       {/* Anchor alias so #reviews also works */}
       <span id="reviews" className="sr-only" />
 

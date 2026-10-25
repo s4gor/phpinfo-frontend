@@ -236,7 +236,7 @@ export default function Screenshots({ hideHeading = false, className = "" }: Scr
     <div
       id="screenshots"
       className={`flex w-full max-w-6xl flex-col items-center gap-2 scroll-mt-24 ${
-        hideHeading ? "" : "pt-12 md:pt-16"
+        hideHeading ? "" : "pt-16 md:pt-24"
       } ${className}`}>
 
       {!hideHeading && (

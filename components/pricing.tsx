@@ -100,7 +100,7 @@ export default function Pricing({ onBuy, loadingTier }: PricingProps) {
     <div
       id="pricing"
       ref={sectionRef}
-      className="flex w-full max-w-5xl scroll-mt-24 flex-col gap-2 mt-16 md:mt-24">
+      className="flex w-full max-w-5xl mx-auto scroll-mt-24 flex-col gap-2 mt-16 md:mt-24">
 
       <h2
         className="max-w-4xl mx-auto text-center text-2xl font-medium tracking-tight text-zinc-800 md:text-3xl dark:text-zinc-100">

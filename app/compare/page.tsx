@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import { Button } from "@/components/ui/button";
 import AnimatedArrow from "@/components/ui/animated-arrow";
+import AnimatedShinyText from "@/components/ui/shimmer-text";
 import Comparison from "@/components/comparison";
 import FAQ from "@/components/faq";
 import {
@@ -77,17 +78,27 @@ export default function ComparePage() {
 
       {/* Hero Section */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3.5">
-          <Sparkles className="h-3.5 w-3.5" /> Direct Objective Comparison
+        <div className="flex w-full max-w-4xl mx-auto flex-col items-center text-center">
+          <div className="mb-3.5">
+            <div className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs dark:border-violet-900/60 dark:bg-violet-950/40">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <AnimatedShinyText className="text-xs font-semibold text-violet-800 dark:text-violet-300">
+                <span>Direct Objective Comparison</span>
+              </AnimatedShinyText>
+            </div>
+          </div>
+
+          <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
+            Why modern developers{" "}
+            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              replace their diagnostic stack.
+            </span>
+          </h1>
+
+          <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            One unified in-admin engine replaces abandoned plugins, manual FTP info.php files, and expensive per-site monthly SaaS subscriptions.
+          </p>
         </div>
-
-        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          Why modern developers replace their diagnostic stack
-        </h1>
-
-        <p className="mt-5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-          One unified in-admin engine replaces abandoned plugins, manual FTP info.php files, and expensive per-site monthly SaaS subscriptions.
-        </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <a href="https://demo.phpinfowp.com" target="_blank" rel="noopener noreferrer">

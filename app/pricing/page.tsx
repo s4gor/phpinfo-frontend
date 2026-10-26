@@ -12,6 +12,7 @@ import Testimonials from "@/components/testimonials";
 import { ShieldCheck, CheckCircle2, DollarSign, Calculator, Sparkles, HelpCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import AnimatedShinyText from "@/components/ui/shimmer-text";
 
 export default function PricingPage() {
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
@@ -70,17 +71,27 @@ export default function PricingPage() {
 
       {/* Pricing Header Hero */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-3.5">
-          <Sparkles className="h-3.5 w-3.5" /> 100% In-Admin &bull; No Monthly Per-Site Fees
+        <div className="flex w-full max-w-4xl mx-auto flex-col items-center text-center">
+          <div className="mb-3.5">
+            <div className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs dark:border-violet-900/60 dark:bg-violet-950/40">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <AnimatedShinyText className="text-xs font-semibold text-violet-800 dark:text-violet-300">
+                <span>100% In-Admin &bull; No Monthly Per-Site Fees</span>
+              </AnimatedShinyText>
+            </div>
+          </div>
+
+          <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
+            One in-admin engine.{" "}
+            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Zero monthly SaaS taxes.
+            </span>
+          </h1>
+
+          <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Stop paying recurring per-site monthly bills just to monitor basic server limits. Choose flat, honest pricing with 100% in-admin privacy and a 14-day zero-risk guarantee.
+          </p>
         </div>
-
-        <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          One in-admin engine. Zero monthly SaaS taxes.
-        </h1>
-
-        <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-          Stop paying recurring per-site monthly bills just to monitor basic server limits. Choose flat, honest pricing with 100% in-admin privacy and a 14-day zero-risk guarantee.
-        </p>
       </section>
 
       {/* Main Pricing Tiers Block */}

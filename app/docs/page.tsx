@@ -57,6 +57,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import AnimatedArrow from "@/components/ui/animated-arrow";
+import AnimatedShinyText from "@/components/ui/shimmer-text";
 
 // ─── Data Types ─────────────────────────────────────────────────────────────
 
@@ -1165,15 +1166,15 @@ export default function DocsPage() {
       </div>
 
       {/* Hero Header - Identical size and typographic rhythm as home page */}
-      <section className="flex w-full flex-col items-center px-4 sm:px-6 lg:px-8 pt-4 text-center">
-        <div className="flex w-full max-w-4xl flex-col items-center gap-5 text-center">
+      <section className="flex w-full flex-col items-center px-4 sm:px-6 lg:px-8 pt-4 pb-8 text-center">
+        <div className="flex w-full max-w-4xl flex-col items-center text-center">
           {/* Release Announcement Pill */}
-          <div>
-            <div className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs dark:border-violet-900/60 dark:bg-violet-950/40">
+          <div className="mb-3.5">
+            <div className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs dark:border-violet-900/60 dark:bg-violet-950/40">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-semibold text-violet-800 dark:text-violet-300">
-                phpinfo() WP: The Complete Guide
-              </span>
+              <AnimatedShinyText className="text-xs font-semibold text-violet-800 dark:text-violet-300">
+                <span>phpinfo() WP: The Complete Guide</span>
+              </AnimatedShinyText>
               <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-violet-200/80 text-violet-900 dark:bg-violet-900/60 dark:text-violet-200">
                 v8.0
               </span>
@@ -1181,7 +1182,7 @@ export default function DocsPage() {
           </div>
 
           {/* Punchy Hero Headline - Exactly same size as home */}
-          <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12]">
+          <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
             Every screen and setting,{" "}
             <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
               explained in plain language.
@@ -1189,12 +1190,12 @@ export default function DocsPage() {
           </h1>
 
           {/* Subheading - Exactly same size as home */}
-          <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
             You do not need to be a developer. If you can log in to wp-admin, you can use this plugin to inspect, grade, and optimize your server.
           </p>
 
           {/* Search Bar & Quick Categories */}
-          <div className="w-full max-w-2xl mt-3 flex flex-col gap-3">
+          <div className="w-full max-w-2xl mt-6 flex flex-col gap-3">
             <div className="relative w-full">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
               <input

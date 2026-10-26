@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import AnimatedArrow from "@/components/ui/animated-arrow";
+import AnimatedShinyText from "@/components/ui/shimmer-text";
 import {
   ShieldCheck,
   Server,
@@ -29,18 +30,27 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-4">
-          <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500/20" />
-          <span>About phpinfo() WP</span>
+        <div className="flex w-full max-w-4xl mx-auto flex-col items-center text-center">
+          <div className="mb-3.5">
+            <div className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs dark:border-violet-900/60 dark:bg-violet-950/40">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <AnimatedShinyText className="text-xs font-semibold text-violet-800 dark:text-violet-300">
+                <span>About phpinfo() WP Pro</span>
+              </AnimatedShinyText>
+            </div>
+          </div>
+
+          <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
+            Engineered with precision.{" "}
+            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Built for zero downtime.
+            </span>
+          </h1>
+
+          <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            phpinfo() WP is engineered by Emran Hossain Sagor (<a href="https://s4gor.exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 font-semibold underline underline-offset-2 hover:text-violet-700">@s4gor</a>), Founder &amp; Lead Developer building high-performance SaaS platforms, production web &amp; mobile apps, and developer infrastructure from Germany.
+          </p>
         </div>
-
-        <h1 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
-          Engineered with precision. Built for sites that can't afford downtime.
-        </h1>
-
-        <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-          phpinfo() WP is engineered by Emran Hossain Sagor (<a href="https://s4gor.exeebit.com" target="_blank" rel="noopener noreferrer" className="text-violet-600 dark:text-violet-400 font-semibold underline underline-offset-2 hover:text-violet-700">@s4gor</a>), Founder &amp; Lead Developer building high-performance SaaS platforms, production web &amp; mobile apps, and developer infrastructure from Germany.
-        </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
           <a

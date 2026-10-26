@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import ExeebitBar from "@/components/exeebit-bar";
 import AnimatedArrow from "@/components/ui/animated-arrow";
 import TextBlur from "@/components/ui/text-blur";
+import AnimatedShinyText from "@/components/ui/shimmer-text";
 import {
   ShieldCheck,
   FileCheck2,
@@ -44,18 +45,27 @@ export default function AgenciesPage() {
 
       {/* Hero Section */}
       <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-4 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-1 text-xs font-semibold text-violet-700 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300 mb-6">
-          <Sparkles className="h-3.5 w-3.5 text-violet-600 dark:text-violet-400" />
-          <span>Agency Operations Stack • Unlimited Client Sites</span>
+        <div className="flex w-full max-w-4xl mx-auto flex-col items-center text-center">
+          <div className="mb-3.5">
+            <div className="group inline-flex items-center gap-2 rounded-full border border-violet-200/90 bg-violet-50/90 hover:bg-violet-100/90 px-3.5 py-1.5 text-center transition-all duration-150 shadow-xs dark:border-violet-900/60 dark:bg-violet-950/40">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <AnimatedShinyText className="text-xs font-semibold text-violet-800 dark:text-violet-300">
+                <span>Agency Operations Stack • Unlimited Client Sites</span>
+              </AnimatedShinyText>
+            </div>
+          </div>
+
+          <h1 className="max-w-4xl text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12] mx-auto">
+            The WordPress operations stack{" "}
+            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              built for modern agencies.
+            </span>
+          </h1>
+
+          <p className="md:mt-5 mt-3.5 text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Prevent breaking client updates, eliminate recurring per-site monthly SaaS taxes, and export branded executive PDF audit reports that prove your monthly maintenance retainer to clients.
+          </p>
         </div>
-
-        <h1 className="max-w-4xl mx-auto text-balance text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl md:text-6xl leading-[1.12]">
-          The WordPress operations stack built for modern agencies.
-        </h1>
-
-        <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mt-4">
-          Prevent breaking client updates, eliminate recurring per-site monthly SaaS taxes, and export branded executive PDF audit reports that prove your monthly maintenance retainer to clients.
-        </p>
 
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
